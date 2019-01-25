@@ -1,0 +1,543 @@
+@charset "utf-8";
+
+a {
+    color: #069 !important;
+}
+
+/* 禁止页面，选中 复制 */
+html,body{
+moz-user-select: -moz-none;
+-moz-user-select: none;
+-o-user-select:none;
+-khtml-user-select:none;
+-webkit-user-select:none;
+-ms-user-select:none;
+user-select:none;
+}
+
+#blogTitle .title {
+    height: 100px;
+    line-height: 100px;
+    font-size: 2em;
+    padding-left: 150px;
+    width: 400px;
+}
+
+div#home {
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  div#leftcontentcontainer{
+      padding:8px;
+      padding-top: 0;
+  }
+  
+  div.newsItem{
+      padding:8px;
+      padding-top: 0;
+  }
+  
+  #mainContent
+  {
+    padding-left: 13px;
+    /**margin-right: 15px;**/
+    float: right;
+    position: relative;
+    width: 100%;
+  }
+  
+body {
+        font-family: Georgia,Times New Roman,Times,sans-serif, monospace !important;
+        font-size: 0.9em;
+}
+  
+  h3.catListTitle{
+    background: none repeat scroll 0 0 #16B3A3;
+    border-radius: 6px 6px 6px 6px;
+    box-shadow: 0 0 0 1px #16B3A3, 1px 1px 6px 1px rgba(10, 10, 0, 0.5);
+    color: #FFFFFF;
+    font-weight: bold;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    padding: 5px;
+  }
+  #navList li {
+    float: left;
+    font-size: 1.3em;
+    margin-right: 0;
+    text-align: center;
+    width: 90px;
+  }
+  
+  #navigator {
+    margin: 13px;
+    padding: 0;
+    border-radius: 6px 6px 6px 6px;
+  }
+  
+  .blogStats {
+    color: #FCFCFC;
+    margin-right: 10px;
+  }
+  
+  #navigator {
+    height: 45px;
+    line-height: 45px;
+  }
+    
+  #cnblogs_post_body h1, h2, h3, h4, h5, h6 {
+    color: blue;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    padding: 5px;
+    padding-left:0;
+  }
+  
+  #navigator {
+    background: none repeat scroll 0 0 #04A292;
+    font-weight: bold;
+    border: 1px solid #04A292;
+  }
+  
+  #navList > li a {
+    color: #FFFFFF;
+  }
+  
+  #navList li:hover {
+    background-color: #20B2AA;
+  }
+  
+  code {
+    background-color: #F7F7F9;
+    border: 1px solid #E1E1E8;
+    color: darkblue;
+    padding: 2px 4px;
+  }
+    
+  .postTitle {
+    
+  background:url('//images.cnblogs.com/cnblogs_com/IPrograming/353645/o_forward.png')
+  
+    no-repeat -2px;
+    padding-left:30px;
+    border: 1px solid #C1CDCD;
+    border-radius: 6px;
+    box-shadow: 0 0 0 1px #C1CDCD, 1px 1px 1px 1px rgba(10, 10, 0, 0.5);
+    font-weight: bold;
+    margin: 15px 0;
+  }
+  
+  #cnblogs_post_body blockquote {
+    margin: 10px 0;
+    padding: 15px 20px 15px 60px;
+    background: #FFFFCC;  
+    url('//images.cnblogs.com/cnblogs_com/IPrograming/353645/o_png_pin.png')  no-repeat 9px 0px;
+    font-size: 15px;
+    box-shadow: 0 0 8px #aaa;
+    clear: both;
+  }
+  
+  #sideBar h3 {
+      padding: 0 10px;
+      margin-bottom: 10px;
+  }
+  
+  #sideBar {
+      position: absolute;
+      width: 225px !important;
+      margin-left:12px;
+  }
+  
+  .cnblogs_code {
+      background: #E5E5CC;
+      border: solid 0px #939393;
+      font-size: 14px;
+      clear: both;
+      padding: 10px 20px;
+  }
+  
+  .cnblogs_code div {
+      background-color: #E5E5CC;
+  }
+  
+  .postDesc, .entrylistItemPostDesc {
+      border-bottom: medium none;
+      color: #999999;
+      padding-bottom: 0px;
+  }
+  
+  
+  #main a {
+      color: #00688B;
+  }
+  
+  #main a:hover {
+      color: #7CC1D4;
+  }
+  
+  .postCon a, .postBody a, .feedbackCon a {
+      border-bottom: medium none;
+      font-size: 1em;
+      font-weight: bold;
+  }
+  
+  #div_digg {
+      bottom: 25px;
+      right: 65px;
+      padding: 8px 8px 8px 10px;
+      border: 2px solid #04A292;
+      position: fixed;
+      background-color: #FFFFCC;
+  }
+  
+  ::selection {
+      /* background:#00CCCC; */
+      color:#FFFFFF;
+  }
+  ::-moz-selection {
+      /* background:#00CCCC; */
+      color:#FFFFFF;
+  }
+  ::-webkit-selection {
+      /* background:#00CCCC; */
+      color:#FFFFFF;
+  }
+  
+  .desc_img {
+      margin-left:10px;
+      border:solid 1px #fff;
+      box-shadow:0 0 10px #aaa;
+  }
+  
+  .c_b_p_desc {
+      padding: 5px;
+  }
+  
+  .postDesc {
+      padding-right: 15px;
+  }
+  
+  .cnblogs_code_toolbar a:hover,
+  .cnblogs_code_toolbar a:link,
+  .cnblogs_code_toolbar a:visited,
+  .cnblogs_code_toolbar a:active,
+  .cnblogs_code_toolbar a:link img,
+  .cnblogs_code_toolbar a:visited img
+  {background-color: #E5E5CC!important;border:none !important;}
+  
+  #div_digg .diggnum{
+      font-weight: bold;
+  }
+  
+  
+  .diggword {
+      color: #1690E4;
+  }
+  
+  /*pace class*/
+  /* This is a compiled file, you should be editing the file in the 
+  templates directory */
+  .pace {
+    -webkit-pointer-events: none;
+    pointer-events: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  .pace-inactive {
+    display: none;
+  }
+  
+  .pace .pace-progress {
+    background: #43CD80;
+    position: fixed;
+    z-index: 2000;
+    top: 0;
+    left: 0;
+    height: 2px;
+  
+    -webkit-transition: width 1s;
+    -moz-transition: width 1s;
+    -o-transition: width 1s;
+    transition: width 1s;
+  }
+  
+  .pace .pace-progress-inner {
+    display: block;
+    position: absolute;
+    right: 0px;
+    width: 100px;
+    height: 100%;
+    box-shadow: 0 0 10px #43CD80, 0 0 5px #43CD80;
+    opacity: 1.0;
+    -webkit-transform: rotate(3deg) translate(0px, -4px);
+    -moz-transform: rotate(3deg) translate(0px, -4px);
+    -ms-transform: rotate(3deg) translate(0px, -4px);
+    -o-transform: rotate(3deg) translate(0px, -4px);
+    transform: rotate(3deg) translate(0px, -4px);
+  }
+  
+  .pace .pace-activity {
+    display: block;
+    position: fixed;
+    z-index: 2000;
+    top: 15px;
+    right: 15px;
+    width: 14px;
+    height: 14px;
+    border: solid 2px transparent;
+    border-top-color: #43CD80;
+    border-left-color: #43CD80;
+    border-radius: 10px;
+    -webkit-animation: pace-spinner 400ms linear infinite;
+    -moz-animation: pace-spinner 400ms linear infinite;
+    -ms-animation: pace-spinner 400ms linear infinite;
+    -o-animation: pace-spinner 400ms linear infinite;
+    animation: pace-spinner 400ms linear infinite;
+  }
+  
+  @-webkit-keyframes pace-spinner {
+    0% { -webkit-transform: rotate(0deg); transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); }
+  }
+  @-moz-keyframes pace-spinner {
+    0% { -moz-transform: rotate(0deg); transform: rotate(0deg); }
+    100% { -moz-transform: rotate(360deg); transform: rotate(360deg); }
+  }
+  @-o-keyframes pace-spinner {
+    0% { -o-transform: rotate(0deg); transform: rotate(0deg); }
+    100% { -o-transform: rotate(360deg); transform: rotate(360deg); }
+  }
+  @-ms-keyframes pace-spinner {
+    0% { -ms-transform: rotate(0deg); transform: rotate(0deg); }
+    100% { -ms-transform: rotate(360deg); transform: rotate(360deg); }
+  }
+  @keyframes pace-spinner {
+    0% { transform: rotate(0deg); transform: rotate(0deg); }
+    100% { transform: rotate(360deg); transform: rotate(360deg); }
+
+  }
+
+
+/*scroll to top*/
+#scrollTop div{
+  left:0;
+  overflow:hidden;
+  position:absolute;
+  top:0;
+  width:149px;
+  margin:0;
+  padding:0
+}
+#scrollTop .level-2{
+  background:url(//images2015.cnblogs.com/blog/894443/201707/894443-20170716165243785-2122236756.png) no-repeat scroll -149px 0 transparent;
+  display:none;
+  height:250px;
+  opacity:0;
+  z-index:1
+}
+#scrollTop .level-3{
+  background:none repeat scroll 0 0 transparent;
+  cursor:pointer;
+  display:block;
+  height:150px;
+  z-index:2
+}
+#scrollTop{
+  background:url(//images2015.cnblogs.com/blog/894443/201707/894443-20170716165243785-2122236756.png) no-repeat scroll 0 0 transparent;
+  cursor:default;
+  display:block;
+  height:180px;
+  overflow:hidden;
+  position:fixed;
+  right:0;
+  top:90%;
+  width:149px;
+  z-index:11;
+  margin:-125px 0 0;
+  padding:0
+}
+
+/*推荐悬浮*/
+#div_digg {
+    position: fixed;
+    bottom: 20px;
+    right: 100px;
+    border: silver 1px dashed;
+    padding: 5px;
+    width: 48px;
+    background-color: rgba(255,255,255,0.7);/*半透明#FFF*/
+    border-radius: 5px;
+    opacity: 0.9;/*透明化*/
+    margin: 0 !important;
+}
+
+/*隐藏反对*/
+.buryit {
+    display: none;
+}
+.comment_bury {
+    display: none;
+}
+/*外边距*/
+.diggit {
+    margin-left: 1px !important;
+}
+ 
+/*
+这是我应用在博客园上的Markdown样式.
+*/ 
+ 
+/* 文章标题样式(这个不是markdown里的标题) */
+#topics .postTitle a {
+    /* color: #169fe6; */
+    font-family: Georgia,Times New Roman,Times,sans-serif, monospace;
+    font-weight: bold;
+}
+ 
+/* 普通文字样式 */
+#cnblogs_post_body p {
+    margin: 18px auto;
+    color: #000;
+    font-family: Georgia,Times New Roman,Times,sans-serif, monospace;
+    font-size: 16px;
+    text-indent: 0;
+}
+ 
+/* 标题样式 */
+#cnblogs_post_body h1 {
+    font-family: Georgia,Times New Roman,Times,sans-serif, monospace;
+    font-size: 32px;
+    font-weight: bold;
+    line-height: 1.5;
+    margin: 10px 0;
+}
+ 
+#cnblogs_post_body h2 {
+    font-family: Consolas, "Microsoft YaHei", monospace;
+    font-size: 26px;
+    font-weight: bold;
+    line-height: 1.5;
+    margin: 20px 0;
+}
+ 
+#cnblogs_post_body h3 {
+    font-family: Georgia,Times New Roman,Times,sans-serif, monospace;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 1.5;
+    margin: 10px 0;
+}
+ 
+#cnblogs_post_body h4 {
+    font-family: Georgia,Times New Roman,Times,sans-serif, monospace;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+/* 标题样式设置结束 */
+ 
+/* 去除双下划线斜体样式 */
+em {
+    font-style: normal;
+    color: #000;
+}
+ 
+/* 无序列表 */
+#cnblogs_post_body ul li {
+    font-family: Georgia,Times New Roman,Times,sans-serif, monospace;
+    color: #000;
+    font-size: 16px;
+    list-style-type: disc;
+}
+ 
+/* 有序列表 */
+#cnblogs_post_body ol li {
+    font-family: Georgia,Times New Roman,Times,sans-serif, monospace;
+    color: #000;
+    font-size: 16px;
+    list-style-type: decimal;
+}
+ 
+/* 超链接 */
+#cnblogs_post_body a:link {
+    text-decoration: none;
+    color: #002C99;
+}
+ 
+/* 引用背景 */
+#topics .postBody blockquote {
+    background: #fff3d4;
+    border: none;
+    border-left: 5px solid #f6b73c;
+    margin: 0;
+    padding-left: 10px;
+}
+ 
+/* 单行代码 */
+.cnblogs-markdown code {
+    font-family: Consolas, "Microsoft YaHei", monospace !important;
+    font-size: 16px !important;
+    line-height: 20px;
+    background-color: #f5f5f5 !important;
+    border: 1px solid #ccc !important;
+    padding: 0 5px !important;
+    border-radius: 3px !important;
+    line-height: 1.8;
+    margin: 1px 5px;
+    vertical-align: middle;
+    display: inline-block;
+}
+ 
+/* 多行代码, 引用 */
+.cnblogs-markdown .hljs {
+    font-family: Consolas, "Microsoft YaHei", monospace !important;
+    font-size: 16px !important;
+    line-height: 1.5 !important;
+    padding: 5px !important;
+}
+.blog_comment_body {
+    background: #B2E866;
+    float: left;
+    border-radius: 5px;
+    position: relative;
+    overflow: visible;
+    margin-left: 33px;
+    max-width: 700px;
+}
+ 
+.feedbackListSubtitle a.layer {
+    background: #B2E866;
+    color: #414141 !important;
+    padding: 2px 4px;
+    border-radius: 2px;
+}
+#feed_icon {
+                 border: #000 solid 2px;  
+                 display: block;  
+                 margin: 50px auto;  
+                 border-radius: 50%;  
+                 transition: all 2.0s;  
+}
+#feed_icon:hover {  
+                 transform: rotate(360deg);  
+}
+/* 头部 */
+#header {
+    position: relative;
+    height: 280px;
+    margin: 0;
+    background: #020031;
+    background: -moz-linear-gradient(45deg,#020031 0,#6d3353 100%);
+    background: -webkit-gradient(linear,left bottom,right top,color-stop(0%,#020031),color-stop(100%,#6d3353));
+    background: -webkit-linear-gradient(45deg,#020031 0,#6d3353 100%);
+    background: -o-linear-gradient(45deg,#020031 0,#6d3353 100%);
+    background: -ms-linear-gradient(45deg,#020031 0,#6d3353 100%);
+    background: linear-gradient(45deg,#020031 0,#6d3353 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#020031', endColorstr='#6d3353', GradientType=1);
+    -webkit-box-shadow: inset 0 3px 7px rgba(0,0,0,.2),inset 0 -3px 7px rgba(0,0,0,.2);
+    -moz-box-shadow: inset 0 3px 7px rgba(0,0,0,.2),inset 0 -3px 7px rgba(0,0,0,.2);
+    box-shadow: inset 0 3px 7px rgba(0,0,0,.2),inset 0 -3px 7px rgba(0,0,0,.2);
+}

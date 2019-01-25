@@ -1,0 +1,47 @@
+<script language="javascript" type="text/javascript">
+//生成目录索引列表
+function GenerateContentList()
+{
+    var jquery_h3_list = $('#cnblogs_post_body h4');//如果你的章节标题不是h4,只需要将这里的h4换掉即可
+    if(jquery_h3_list.length>0)
+    {
+        var content = '<a name="_labelTop"></a>';
+        content    += '<div id="navCategory">';
+        content    += '<p style="font-size:18px"><b>阅读目录</b></p>';
+        content    += '<ul>';
+        for(var i =0;i<jquery_h3_list.length;i++)
+        {
+            var go_to_top = '<div style="text-align: right"><a href="#_labelTop">回到顶部</a><a name="_label' + i + '"></a></div>';
+            $(jquery_h3_list[i]).before(go_to_top);
+            var li_content = '<li><a href="#_label' + i + '">' + $(jquery_h3_list[i]).text() + '</a></li>';
+            content += li_content;
+        }
+        content    += '</ul>';
+        content    += '</div>';
+        if($('#cnblogs_post_body').length != 0 )
+        {
+            $($('#cnblogs_post_body')[0]).prepend(content);
+        }
+    }    
+}
+GenerateContentList();
+</script>
+
+<div class="scrollBtn" id="scrollBtn">
+    <ul class="clearfix">
+        <li class="sB-home">
+            <a href="http://www.cnblogs.com/enjoy233" class="ff-t" title="首页"></a>
+        </li>
+        <li class="sB-comment">
+            <a href="#blog-comments-placeholder" onclick="$('#tbCommentBody').focus();" class="ff-t" title="添加评论"></a>
+        </li>
+        <li class="sB-share"><a onclick="if(cb_entryId !=undefined){AddToWz(cb_entryId)}" href="javascript:void(0);" title="收藏"></a></li>
+        <li class="sB-goTop" id="goTop" style="display: list-item;">
+            <a href="#top" title="回顶部"></a>
+        </li>
+    </ul>
+</div>
+
+<script type="text/javascript" src="https://gitee.com/legege007/Beautify-cnblogs/raw/master/js/bootstrap.min.js"></script>
+<link href="https://blog-static.cnblogs.com/files/enjoy233/nav.my.css" rel="stylesheet">
+<script type="text/javascript" src="http://files.cnblogs.com/files/enjoy233/nav.my.js"></script>
