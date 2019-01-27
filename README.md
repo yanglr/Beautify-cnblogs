@@ -37,9 +37,9 @@ yanglr/Beautify-cnblogs: Beautify-cnblogs
 模仿一个cnblogs
 
 ```css
-<link id="MainCss" type="text/css" rel="stylesheet" href="/skins/LessIsMore/bundle-LessIsMore.css?...">
+<link id="MainCss" type="text/css" rel="stylesheet" href="/skins/LessIsMore/bundle-LessIsMore.css?">
 
-<link type="text/css" rel="stylesheet" href="/blog/customcss/198996.css?v=...">
+<link type="text/css" rel="stylesheet" href="/blog/customcss/198996.css?v=">
 ```
 
 
