@@ -3,7 +3,7 @@ Beautify-cnblogs
 
 The method and relatd code to make your cnblogs looks more beautiful.
 
-# 前端小白/渣 也能快速学会的博客园博客美化全攻略
+# 前端小白也能快速学会的博客园博客美化全攻略
 
 ## 美化方法论简介
 
