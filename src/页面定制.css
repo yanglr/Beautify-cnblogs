@@ -52,6 +52,11 @@ div.newsItem {
 	padding-top: 0;
 }
 
+/* 隐藏底部广告 */
+#ad_t2,#cnblogs_c1,#under_post_news,#cnblogs_c2,#under_post_kb {
+display:none; !important
+}
+
 #mainContent {
 	padding-left: 13px;
     /**margin-right: 15px;**/
@@ -89,6 +94,14 @@ h3.catListTitle {
 	padding: 0;
 	border-radius: 6px 6px 6px 6px;
         line-height: auto !important;
+}
+
+/*  固定 点赞、收藏等功能 */
+#green_channel { 
+position: fixed;
+bottom: 30px;
+right: 160px;
+z-index: 100 
 }
 
 .blogStats {
