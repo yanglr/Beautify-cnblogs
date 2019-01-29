@@ -170,8 +170,7 @@
 </style>
 <script src="http://files.cnblogs.com/files/enjoy233/jquery.min.js" type="text/javascript"></script>
 <script type="text/javascript">
-    //测试用的数据
-    var test_list = [
+    var availableTags = [
         "C#", "C++", "算法",
         "ASP", "MySQL", "Oracle",
         "HTML", "CSS", "JavaScript",
@@ -191,6 +190,10 @@
         "算法实践",
         "专业学习",
         "Leetcode",
+        "知乎",
+        "Bravo Yeung",
+        "legege007",
+        "enjoy233",
         "数学",
         "内容太长，显示其中的一部分"
     ];
@@ -269,15 +272,9 @@
  
     $(function () {
         old_value = $("#zzk_q").val();
-        //    实现刷新网页自动弹出，不喜欢，舍去
-        //   $("#zzk_q").focus(function () {
-        //    if ($("#zzk_q").val() == "") {
-        //     AutoComplete("auto_div", "zzk_q", test_list);
-        //   }
-        // });
 
         $("#zzk_q").keyup(function () {
-            AutoComplete("auto_div", "zzk_q", test_list);
+            AutoComplete("auto_div", "zzk_q", availableTags);
         });
     });
  
