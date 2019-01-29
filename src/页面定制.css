@@ -8,6 +8,16 @@
 	width: 400px;
 }
 
+#sidebar_search{
+      display:none
+}
+
+.input_my_zzk_new {
+    width: 200px;
+    vertical-align: middle;
+    height: 20px;
+}
+
 #Header1_HeaderTitle.headermaintitle {
 	color: #85C2F2 !important;
 }
@@ -78,6 +88,7 @@ h3.catListTitle {
 	margin: 13px;
 	padding: 0;
 	border-radius: 6px 6px 6px 6px;
+        line-height: auto !important;
 }
 
 .blogStats {
@@ -86,8 +97,8 @@ h3.catListTitle {
 }
 
 #navigator {
-	height: 45px;
-	line-height: 45px;
+	height: auto !important;
+	/* line-height: 15px; */
 }
 
 #cnblogs_post_body h1, h2, h3, h4, h5, h6 {
@@ -578,7 +589,7 @@ em {
 /* 头部 */
 #header {
 	position: relative;
-	height: 280px;
+	height: 420px;
 	margin: 0;
 	background: #020031;
 	background: -moz-linear-gradient(45deg,#020031 0,#6d3353 100%);
@@ -591,4 +602,8 @@ em {
 	-webkit-box-shadow: inset 0 3px 7px rgba(0,0,0,.2),inset 0 -3px 7px rgba(0,0,0,.2);
 	-moz-box-shadow: inset 0 3px 7px rgba(0,0,0,.2),inset 0 -3px 7px rgba(0,0,0,.2);
 	box-shadow: inset 0 3px 7px rgba(0,0,0,.2),inset 0 -3px 7px rgba(0,0,0,.2);
+}
+
+#nav_admin{
+       display: none;
 }
