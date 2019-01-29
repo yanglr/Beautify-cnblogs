@@ -44,4 +44,84 @@ GenerateContentList();
 
 <script type="text/javascript" src="https://libs.baidu.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <link href="https://blog-static.cnblogs.com/files/enjoy233/nav.my.css" rel="stylesheet">
-<script type="text/javascript" src="http://files.cnblogs.com/files/enjoy233/nav.my.js"></script>
+<script type="text/javascript" src="https://files.cnblogs.com/files/enjoy233/nav.my.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#cnblogs_post_body").append('<br/><hr/><div style="border: 2px dotted #4d90fe; padding: 2px; background-color: lightgray">    作者：<a href="http://www.cnblogs.com/enjoy233/" target="_blank" title="Enjoy233的博客" style="color: brown">Bravo Yeung</a><br>    出处：<a href="http://www.cnblogs.com/Enjoy233/" target="_blank" title="http://www.cnblogs.com/Enjoy233/" style="color: blue">http://www.cnblogs.com/Enjoy233/</a>    <br>如果您觉得阅读本文对您有帮助，请点击一下右下方的<b style="color: blue; font-size: 16px">推荐</b>按钮，您的<b style="color: blue; font-size: 16px">推荐</b>将是我写作的最大动力！    <br>版权声明：本文为博主原创或转载文章，欢迎转载，<b>但转载文章之后必须在文章页面明显位置注明出处</b>，否则保留追究法律责任的权利。</div>');
+});
+</script>
+
+<style>
+/* 定制自己导航栏的样式 */
+#shwtop ul {
+    margin: 0;
+    width: 60px;
+    padding: 0;
+    list-style-type: none; /*去除li前的标注*/
+    background-color: #55895B;
+    overflow: hidden; /*隐藏溢出的部分，保持一行*/
+}
+#shwtop li {
+    float: left; /*左浮动*/
+}
+#shwtop li a, .dropbtn {
+    display: inline-block; /*设置成块*/
+    color: white;
+    text-align: center;
+    text-decoration: none;
+}
+/*鼠标移上去，改变背景颜色*/
+#shwtop li a:hover, .dropdown:hover .dropbtn { 
+    /* 当然颜色你可以自己改成自己喜欢的，我还是挺喜欢蓝色的 */
+    background-color: blue;
+}
+#shwtop .dropdown {
+    /*
+    display:inline-block将对象呈递为内联对象，
+    但是对象的内容作为块对象呈递。
+    旁边的内联对象会被呈递在同一行内，允许空格。
+    */
+    display: inline-block;
+}
+#shwtop .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+#shwtop .dropdown-content a {
+    display: block;
+    color: black;
+    padding: 8px 10px;
+    text-decoration:none;
+}
+#shwtop .dropdown-content a:hover {
+    background-color: #a1a1a1;
+}
+#shwtop .dropdown:hover .dropdown-content{
+    display: block;
+}
+</style>
+
+<!-- 更新导航栏的菜单-->
+<script>
+    $(function(){
+            $("#navigator").append('<div id="shwtop" >    <ul style="margin-left:5px;margin-right: 5px;">       <div class="dropdown">            <a href="#" class="dropbtn">后台管理</a>            <div class="dropdown-content">                <!-- <a class="menu" href="这里是你文章或随笔分类的链接地址，自己修改下面同理"> 这里更改下拉具体内容 </a> -->                <a class="menu" href="http://i.cnblogs.com/Configure.aspx"  target="_blank">GUI配置</a>                <a class="menu" href="http://i.cnblogs.com/posts" target="_blank">博文列表</a>                <a class="menu" href="http://wz.cnblogs.com/" target="_blank">收藏</a>                               <a class="menu" href="http://i.cnblogs.com/Files.aspx" target="_blank">文件</a>   <a class="menu" href="https://i.cnblogs.com/EditGalleries.aspx" target="_blank">相册</a>          </div>        </div>    </ul></div>');
+
+        $("#navList").append('<li id="nav_home"><a id="enjoy233" rel="nofollow" href="https://ing.cnblogs.com/" target="_blank" title="进入我的闪存">闪存</a></li>');
+        $("#navList").append('<li id="nav_follow"><a id="enjoy233" rel="nofollow" href="http://home.cnblogs.com/followees/" target="_blank" title="进入我的关注">我关注</a></li>');          
+
+        $('#navList')[0].children["nav_contact"].innerHTML='<a id="nav_contact" class="menu" rel="nofollow" href="https://msg.cnblogs.com/send/Enjoy233">私信</a>';
+        $('#navList')[0].children["nav_rss"].innerHTML='<a id="nav_rss" class="menu" rel="nofollow" href="https://www.cnblogs.com/enjoy233/rss">RSS订阅</a>';
+
+            //加载图片
+            var ponum1 = $(".postTitle").length;
+            var ponum2 = $(".entrylistPosttitle").length;
+            if(ponum1!=0)
+                articleimg(ponum1);
+            if(ponum2!=0)
+                entrylistarticleimg(ponum2);
+        });
+</script>
