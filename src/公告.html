@@ -58,7 +58,7 @@
       <img src="http://images.cnblogs.com/cnblogs_com/enjoy233/1389971/o_csdn.png" class="mr5" width = 40 height=40>
     </a>
     <a href="https://www.zhihu.com/people/legege007" target="_blank">
-      <img src="https://www.cnblogs.com/images/cnblogs_com/enjoy233/1389971/o_zhihu.png" class="mr5" width = 40 height=40>
+      <img src="http://images.cnblogs.com/cnblogs_com/enjoy233/1389971/o_zhihu-dog.jpg" class="mr5" width = 40 height=40>
     </a>
     <a href="http://weibo.com/546671991" target="_blank">
       <img src="https://www.cnblogs.com/images/cnblogs_com/enjoy233/1389971/o_weibo.png" class="mr5" width = 40 height=40>
@@ -81,11 +81,19 @@
 
 <div id="sidebar_search_new" class="mySearch">
 <h3 class="catListTitle">自定义搜索(PopUp窗口)</h3>
-    <input type="text" id="zzk_q1" class="input_my_zzk_new" placeholder="Bravo Yeung">    
+    <input type="text" id="zzk_q1" class="input_my_zzk_new" placeholder="Bravo Yeung"> 
+<span>
     <input type="button" class="btn_my_zzk" value="本博搜索" onclick="window.open('https://zzk.cnblogs.com/my/s/blogpost-p?Keywords=' + document.getElementById('zzk_q1').value,'popUpWindow','height=750,width=1000,left=10,top=10,scrollbars=yes,menubar=no'); return false;" />
 &emsp;
 <input type="button" class="btn_my_zzk" value="站内搜索" onclick="window.open('https://zzk.cnblogs.com/s/blogpost?w=' + document.getElementById('zzk_q1').value,'popUpWindow','height=750,width=1000,left=10,top=10,scrollbars=yes,menubar=no'); return false;" />
 </div>
+<span>
+<span>
+    <input type="button" class="btn_my_zzk" value="知乎搜索" onclick="window.open('https://www.zhihu.com/search?type=content&q=' + document.getElementById('zzk_q1').value,'popUpWindow','height=750,width=1000,left=10,top=10,scrollbars=yes,menubar=no'); return false;" />
+&emsp;
+<input type="button" class="btn_my_zzk" value="CSDN搜索" onclick="window.open('https://so.csdn.net/so/search/s.do?t=blog&u=yanglr2010&q=' + document.getElementById('zzk_q1').value,'popUpWindow','height=750,width=1000,left=10,top=10,scrollbars=yes,menubar=no'); return false;" />
+</div>
+<span>
 
 <script type="text/javascript">
     $(function() {
