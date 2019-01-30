@@ -26,17 +26,6 @@
 	color: orange !important;
 }
 
-/* 禁止页面，选中 复制 */
-html,body {
-	moz-user-select: -moz-none;
-	-moz-user-select: none;
-	-o-user-select: none;
-	-khtml-user-select: none;
-	-webkit-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
-}
-
 div#home {
 	max-width: 1200px;
 	margin: auto;
@@ -218,17 +207,17 @@ code {
 }
 
 ::selection {
-      /* background:#00CCCC; */
+        background:#00CCCC;
 	color: #FFFFFF;
 }
 
 ::-moz-selection {
-      /* background:#00CCCC; */
+        background:#00CCCC;
 	color: #FFFFFF;
 }
 
 ::-webkit-selection {
-      /* background:#00CCCC; */
+        background:#00CCCC;
 	color: #FFFFFF;
 }
 
@@ -465,7 +454,7 @@ code {
 /* 文章标题样式(这个不是markdown里的标题) */
 #topics .postTitle a {
     /* color: #169fe6; */
-	font-family: Georgia,Times New Roman,Times,sans-serif, monospace;
+	font-family: Georgia,Times New Roman,Times,sans-serif, monospace !important;
 	font-weight: bold;
 }
  
@@ -473,14 +462,14 @@ code {
 #cnblogs_post_body p {
 	margin: 18px auto;
 	color: #000;
-	font-family: Georgia,Times New Roman,Times,sans-serif, monospace;
+	font-family: Georgia,Times New Roman,Times,sans-serif, monospace !important;
 	font-size: 16px;
 	text-indent: 0;
 }
  
 /* 标题样式 */
 #cnblogs_post_body h1 {
-	font-family: Georgia,Times New Roman,Times,sans-serif, monospace;
+	font-family: Georgia,Times New Roman,Times,sans-serif, monospace !important;
 	font-size: 32px;
 	font-weight: bold;
 	line-height: 1.5;
@@ -488,7 +477,7 @@ code {
 }
 
 #cnblogs_post_body h2 {
-	font-family: Consolas, "Microsoft YaHei", monospace;
+	font-family: Consolas, "Microsoft YaHei", monospace !important;
 	font-size: 26px;
 	font-weight: bold;
 	line-height: 1.5;
@@ -496,7 +485,7 @@ code {
 }
 
 #cnblogs_post_body h3 {
-	font-family: Georgia,Times New Roman,Times,sans-serif, monospace;
+	font-family: Georgia,Times New Roman,Times,sans-serif, monospace !important;
 	font-size: 20px;
 	font-weight: bold;
 	line-height: 1.5;
@@ -504,7 +493,7 @@ code {
 }
 
 #cnblogs_post_body h4 {
-	font-family: Georgia,Times New Roman,Times,sans-serif, monospace;
+	font-family: Georgia,Times New Roman,Times,sans-serif, monospace !important;
 	font-size: 18px;
 	font-weight: bold;
 	margin: 10px 0;
@@ -519,7 +508,7 @@ em {
  
 /* 无序列表 */
 #cnblogs_post_body ul li {
-	font-family: Georgia,Times New Roman,Times,sans-serif, monospace;
+	font-family: Georgia,Times New Roman,Times,sans-serif, monospace !important;
 	color: #000;
 	font-size: 16px;
 	list-style-type: disc;
@@ -527,7 +516,7 @@ em {
  
 /* 有序列表 */
 #cnblogs_post_body ol li {
-	font-family: Georgia,Times New Roman,Times,sans-serif, monospace;
+	font-family: Georgia,Times New Roman,Times,sans-serif, monospace !important;
 	color: #000;
 	font-size: 16px;
 	list-style-type: decimal;
@@ -619,4 +608,15 @@ em {
 
 #nav_admin{
        display: none;
+}
+
+.tctip {
+    position: fixed;
+    _position: absolute;
+    right: 0;
+    z-index: 10000;
+    padding-left: 34px;
+    width: 0;
+    overflow: hidden;
+    box-sizing: content-box;
 }
