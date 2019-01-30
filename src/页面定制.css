@@ -207,17 +207,17 @@ code {
 }
 
 ::selection {		
-         background:#00CCCC;		
+        background: #399ab2;		
  	color: #FFFFFF;		
  }		
 
   ::-moz-selection {		
-         background:#00CCCC;		
+        background: #399ab2;		
  	color: #FFFFFF;		
  }		
 
   ::-webkit-selection {		
-         background:#00CCCC;		
+        background: #399ab2;		
  	color: #FFFFFF;		
  }
 .desc_img {
