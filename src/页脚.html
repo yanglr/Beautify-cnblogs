@@ -125,3 +125,24 @@ $(document).ready(function(){
                 entrylistarticleimg(ponum2);
         });
 </script>
+
+<!-- tctip 支付赞赏/打赏 -->
+<script type="text/javascript" src="https://files.cnblogs.com/files/enjoy233/tctip-1.0.3.min.js"></script> <!-- js文件引入 -->
+<script>
+    new tctip({
+        top: '20%',
+        button: {
+            id: 1,
+            type: 'zanzhu',
+        },
+        list: [
+            {
+                type: 'alipay',
+                qrImg: 'https://files.cnblogs.com/files/enjoy233/Reward_Alipay_Charge.bmp' //替换成自己的支付宝
+            }, {
+                type: 'wechat',
+                qrImg: 'https://files.cnblogs.com/files/enjoy233/Reward_WX_Charge.bmp' //替换成自己的微信
+            }
+        ]
+    }).init()
+</script>
