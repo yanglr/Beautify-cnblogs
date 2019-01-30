@@ -206,21 +206,6 @@ code {
 	background-color: #FFFFCC;
 }
 
-::selection {
-        background:#00CCCC;
-	color: #FFFFFF;
-}
-
-::-moz-selection {
-        background:#00CCCC;
-	color: #FFFFFF;
-}
-
-::-webkit-selection {
-        background:#00CCCC;
-	color: #FFFFFF;
-}
-
 .desc_img {
 	margin-left: 10px;
 	border: solid 1px #fff;
@@ -259,9 +244,6 @@ code {
 .pace {
 	-webkit-pointer-events: none;
 	pointer-events: none;
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	user-select: none;
 }
 
 .pace-inactive {
@@ -610,13 +592,11 @@ em {
        display: none;
 }
 
-.tctip {
-    position: fixed;
-    _position: absolute;
-    right: 0;
-    z-index: 10000;
-    padding-left: 34px;
-    width: 0;
-    overflow: hidden;
-    box-sizing: content-box;
+/* 正文中的图片可放大 */
+.post img {
+    cursor: pointer;
+    transition: all 0.5s;
+}
+.post img:hover {
+    transform: scale(2.5);
 }
