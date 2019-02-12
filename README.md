@@ -128,7 +128,7 @@ yanglr/Beautify-cnblogs: Beautify-cnblogs
 
 
 
-补充完整前缀：http://www.cnblogs.com，使用ref将该两个css引用到自己的博客中，即可进行大概样子的模仿，其他部分需要细调。
+补充完整前缀：<http://www.cnblogs.com>，使用ref将该两个css引用到自己的博客中，即可进行大概样子的模仿，其他部分需要细调。
 
 
 
