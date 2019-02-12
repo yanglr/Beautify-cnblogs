@@ -1071,7 +1071,7 @@ css部分:
 
 效果图:
 
-![custom-nav](https://files.cnblogs.com/files/enjoy233/custom-navigate.bmp)
+![custom-nav](https://raw.githubusercontent.com/yanglr/Beautify-cnblogs/master/images/custom-navigate.bmp)
 
 如需调整请自行修改~
 
