@@ -513,7 +513,7 @@ html部分：
 
 先登录网易云音乐网页版，搜索到想要的音乐，然后点击"生成外链播放器"即可得到相应的html代码。
 
-![163music_palyer](https://files.cnblogs.com/files/enjoy233/163music_player.bmp)
+![163music_palyer](https://raw.githubusercontent.com/yanglr/Beautify-cnblogs/master/images/163music_player.bmp)
 
 
 
@@ -547,7 +547,7 @@ html部分：
 
 当然该`url`中的`https:`也可删掉。
 
-![playList](https://files.cnblogs.com/files/enjoy233/163playList.bmp)
+![playList](https://raw.githubusercontent.com/yanglr/Beautify-cnblogs/master/images/163playList.bmp)
 
 
 
@@ -796,7 +796,7 @@ html部分：
 
 效果图:
 
-![customSearch2](https://files.cnblogs.com/files/enjoy233/custom_search2.bmp)
+![customSearch2](https://raw.githubusercontent.com/yanglr/Beautify-cnblogs/master/images/custom_search2.bmp)
 
 
 
@@ -1202,7 +1202,7 @@ jQuery(document).on('copy', function(e)
 
 **效果图:**
 
-![copy-With-Copyright](https://files.cnblogs.com/files/enjoy233/copyWithCopyright.bmp)
+![copy-With-Copyright](https://raw.githubusercontent.com/yanglr/Beautify-cnblogs/master/images/copyWithCopyright.bmp)
 
 
 
