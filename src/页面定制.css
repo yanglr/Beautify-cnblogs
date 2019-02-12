@@ -587,7 +587,7 @@ em {
 /* 头部 */
 #header {
 	position: relative;
-	height: 420px;
+	height: 340px;
 	margin: 0;
 	background: #020031;
 	background: -moz-linear-gradient(45deg,#020031 0,#6d3353 100%);
