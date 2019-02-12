@@ -36,7 +36,6 @@
 **<font size=6>A呦V，博客园er的自我修养是什么？第一条，别只顾收藏和偷师呀，记得点支持或关注本人喔~ </font>**
 
 
-
 ## 美化方法论简介
 
 一般而言，需要选一个默认的skin，然后在该基础上调整。
@@ -97,11 +96,7 @@ yanglr/Beautify-cnblogs: Beautify-cnblogs
 
 登陆后依次点击“我的博客” → “管理” → “设置”，在下拉后找到“博客侧边栏公告”，后方有一个“申请js权限”。
 
-
-
 ![Apply_js](https://www.cnblogs.com/images/cnblogs_com/enjoy233/1389971/o_Apply-js-with-Content.jpg)
-
-
 
 或者也可进博客园园子页面(<https://home.cnblogs.com/feed/all/>)，发状态@博客园团队，申请开通js权限。
 
@@ -948,6 +943,7 @@ cnblogs博客后台提供了"链接"功能，这个就是用来添加友情链�
 
 
 效果图:
+
 ![friend_link_result](https://files.cnblogs.com/files/enjoy233/friendLink.bmp)
 
 
@@ -1082,6 +1078,7 @@ css部分:
 
 
 效果图:
+
 ![custom-nav](https://files.cnblogs.com/files/enjoy233/custom-navigate.bmp)
 
 如需调整请自行修改~
@@ -1176,6 +1173,7 @@ document.getElementById("bdshell_js").src = "//static.dmzj.com/baidushare/static
 
 
 效果图:
+
 ![custom-nav](https://files.cnblogs.com/files/enjoy233/reward.gif)
 
 
