@@ -641,7 +641,7 @@ html部分：
 
 ## 在公告栏加入自己的社交网络账号 - 图片链接
 
-
+可以将自己不同社交网络的账号放在同一个span中，然后嵌入到div里，代码如下：
 ```html
     <div nowrap align=center>
         <img src="http://images.cnblogs.com/cnblogs_com/enjoy233/1389971/o_gzh.png" width=150 height=150>
@@ -676,6 +676,31 @@ html部分：
 
 ![socialLinks](https://files.cnblogs.com/files/enjoy233/socialLinks.gif)
 
+对于知乎，可以这样写更详细些：
+```html
+<div valign="middle" align="left" bgcolor='#F6F8FA'>
+    <span>
+        <a href="https://www.zhihu.com/people/legege007" title="知乎撩我" target="_blank">
+            <img src="http://images.cnblogs.com/cnblogs_com/enjoy233/1389971/o_zhihu-dog.jpg" height='22'>
+        </a>
+    </span>
+    <span valign='middle'>
+        <font>(</font>
+        <img src="https://www.cnblogs.com/images/cnblogs_com/enjoy233/1389971/o_vote.png" width='14' height='14' title="赞同">
+        42.8k <font color=black></font>
+        <img src="https://www.cnblogs.com/images/cnblogs_com/enjoy233/1389971/o_fav.png" width='14' height='14' title="收藏">
+        90.7k <font  color=black></font>
+        <img src="https://www.cnblogs.com/images/cnblogs_com/enjoy233/1389971/o_thank.png" width='14' height='14' title="感谢">
+        21.7k <font color=black></font>)
+    </span>
+</div>
+```
+而对于stackoverflow，官方在StackExchange页面提供了flair，比如我的是: [User Bravo Yeung - Stack Exchange](https://stackexchange.com/users/4637854/bravo-yeung?tab=flair) ，页面中提供了可嵌入的html代码:
+
+```html
+<a href="https://stackexchange.com/users/4637854/bravo-yeung"><img src="https://stackexchange.com/users/flair/4637854.png" width="208" height="58" alt="profile for Bravo Yeung on Stack Exchange, a network of free, community-driven Q&amp;A sites" title="profile for Bravo Yeung on Stack Exchange, a network of free, community-driven Q&amp;A sites" /></a>
+```
+将其用div包起来，放进公告.html即可见效。
 
 
 ## 在公告栏添加一个能旋转的rss图标
@@ -1181,7 +1206,7 @@ jQuery(document).on('copy', function(e)
 
 
 
-##  隐藏博文右下角的"反对"
+##  隐藏博文右下角的"反对"按钮
 
 只需在页面的css(设置下的第一个文本框)中加入如下代码:
 
@@ -1195,4 +1220,3 @@ jQuery(document).on('copy', function(e)
 }
 ```
 效果请见[本页面](https://www.cnblogs.com/enjoy233/p/10328361.html)右下角。
-
