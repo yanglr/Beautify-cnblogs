@@ -55,8 +55,11 @@
 宽屏模版：
 
 SimpleMemory
+
 Minyx2_Lite
+
 lessIsMore
+
 BlueSky
 
 
@@ -635,6 +638,7 @@ html部分：
 ```
 
 效果图:
+
 ![slide_words](https://files.cnblogs.com/files/enjoy233/slide_words.gif)
 
 
