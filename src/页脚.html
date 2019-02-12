@@ -6,9 +6,9 @@ function GenerateContentList()
     if(jquery_h3_list.length>0)
     {
         var content = '<a name="_labelTop"></a>';
-        content    += '<div id="navCategory">';
-        content    += '<p style="font-size:18px"><b>阅读目录</b></p>';
-        content    += '<ul>';
+        content += '<div id="navCategory">';
+        content += '<p style="font-size:18px"><b>阅读目录</b></p>';
+        content += '<ul>';
         for(var i =0;i<jquery_h3_list.length;i++)
         {
             var go_to_top = '<div style="text-align: right"><a href="#_labelTop">回到顶部</a><a name="_label' + i + '"></a></div>';
@@ -16,8 +16,8 @@ function GenerateContentList()
             var li_content = '<li><a href="#_label' + i + '">' + $(jquery_h3_list[i]).text() + '</a></li>';
             content += li_content;
         }
-        content    += '</ul>';
-        content    += '</div>';
+        content += '</ul>';
+        content += '</div>';
         if($('#cnblogs_post_body').length != 0 )
         {
             $($('#cnblogs_post_body')[0]).prepend(content);
@@ -94,6 +94,7 @@ $(document).ready(function(){
 #shwtop .dropdown-content a {
     display: block;
     color: black;
+    padding: 0px 5px;
     text-decoration:none;
 }
 #shwtop .dropdown-content a:hover {
