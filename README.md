@@ -1224,5 +1224,5 @@ jQuery(document).on('copy', function(e)
 	display: none;
 }
 ```
-效果请见本页面右下角。
+效果请见[本页面](https://www.cnblogs.com/enjoy233/p/10328361.html)右下角。
 
