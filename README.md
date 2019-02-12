@@ -35,7 +35,6 @@
 
 **<font size=6>A呦V，博客园er的自我修养是什么？第一条，别只顾收藏和偷师呀，记得点支持或关注本人喔~ </font>**
 
-
 ## 美化方法论简介
 
 一般而言，需要选一个默认的skin，然后在该基础上调整。
@@ -63,12 +62,8 @@ BlueSky
 <br>
 
 
-博客园布局的组成及其对应关系:
+博客园布局的组成及其对应关系(下方一图来自于**网络**):
 ![common_skin_layout](https://www.cnblogs.com/images/cnblogs_com/enjoy233/1389971/o_common-skin-layout.png)
-
-
-
-
 
 
 ## 准备工作
@@ -116,6 +111,7 @@ yanglr/Beautify-cnblogs: Beautify-cnblogs
 
 `JS权限申请已提交，待审核。`
 
+剩下的就是耐心等待了，一般来说挺快就会通过。如果设置页面上公告栏标题右侧不存在“申请js权限”，说明已成功开通js权限。
 
 
 
@@ -595,7 +591,11 @@ html部分：
 </div>
 ```
 
-效果图见本页面右上角。
+效果见[本页面](https://www.cnblogs.com/enjoy233/p/10328361.html)右上角。
+
+
+
+如果想对该图标进行更多颜色或位置的设置，请参考：[GitHub Ribbons - The GitHub Blog](https://github.blog/2008-12-19-github-ribbons/).
 
 
 
@@ -746,9 +746,9 @@ html部分：
 
 > onclick = "window.open()", target = popUpWindow
 
+此功能的特色在于用户搜索之后，搜索结果页面并不会影响到原博客页面，而是在弹出的独立窗口显示，而且很容易扩展出很多其他站点的搜索功能。
 
-
-公告html在贴入如下代码:
+在公告html中贴入如下代码:
 
 ```html
 <div id="sidebar_search_new" class="mySearch">
@@ -779,41 +779,6 @@ html部分：
 
 ## 页面底部添加"回到顶部" + "收藏" + "快速评论"功能
 
-js部分:
-
-```html
-<script language="javascript" type="text/javascript">
-//生成目录索引列表
-function GenerateContentList()
-{
-    var jquery_h3_list = $('#cnblogs_post_body h4');//如果你的章节标题不是h4,只需要将这里的h4换掉即可
-    if(jquery_h3_list.length>0)
-    {
-        var content = '<a name="_labelTop"></a>';
-        content    += '<div id="navCategory">';
-        content    += '<p style="font-size:18px"><b>阅读目录</b></p>';
-        content    += '<ul>';
-        for(var i =0;i<jquery_h3_list.length;i++)
-        {
-            var go_to_top = '<div style="text-align: right"><a href="#_labelTop">回到顶部</a><a name="_label' + i + '"></a></div>';
-            $(jquery_h3_list[i]).before(go_to_top);
-            var li_content = '<li><a href="#_label' + i + '">' + $(jquery_h3_list[i]).text() + '</a></li>';
-            content += li_content;
-        }
-        content    += '</ul>';
-        content    += '</div>';
-        if($('#cnblogs_post_body').length != 0 )
-        {
-            $($('#cnblogs_post_body')[0]).prepend(content);
-        }
-    }    
-}
-GenerateContentList();
-</script>
-```
-
-
-
 html部分：
 
 ```css
@@ -832,6 +797,7 @@ html部分：
     </ul>
 </div>
 ```
+
 效果图:
 
 ![custom_Tool_Bar](https://files.cnblogs.com/files/enjoy233/CustomtoolBar.gif)
@@ -977,6 +943,8 @@ html,body {
 	user-select: none;
 }
 ```
+
+综合考虑后，这种处理方式并不太友好，于是采用了后文中的"复制博客内容时自动加版权说明"。
 
 
 
@@ -1142,7 +1110,7 @@ document.getElementById("bdshell_js").src = "//static.dmzj.com/baidushare/static
 
 ## 打赏功能
 
-基于开源插件 [tctip](<https://github.com/greedying/tctip>) v1.0.3 来实现~
+本博客基于开源插件 [tctip](<https://github.com/greedying/tctip>) v1.0.3 来实现~
 
 在页脚.html中插入如下代码即可:
 
@@ -1175,9 +1143,12 @@ document.getElementById("bdshell_js").src = "//static.dmzj.com/baidushare/static
 
 ![custom-nav](https://files.cnblogs.com/files/enjoy233/reward.gif)
 
+还看到过一个不错的方法，亲测有效：[自制简易打赏功能 - EritPang](https://www.cnblogs.com/eritpang/p/7465484.html) .
 
 
-## 复制文字 自动加版权
+
+
+## 复制文字时自动加版权
 
 确保页面能成功引入JQuery.js后在页首html中加入如下代码:
 ```html
@@ -1212,7 +1183,7 @@ jQuery(document).on('copy', function(e)
 
 ##  隐藏博文右下角的"反对"
 
-只需在页面的css(设置下的第一个文本框)中加入
+只需在页面的css(设置下的第一个文本框)中加入如下代码:
 
 ```css
 .buryit {
