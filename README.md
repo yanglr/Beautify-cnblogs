@@ -838,15 +838,14 @@ html部分：
 
 ## "自动移动的目录"功能
 
-页脚html引入css文件nav.my.css。
+页脚html引入css文件nav.my.css和nav.my.js。
 
 ```html
 <link href="//blog-static.cnblogs.com/files/enjoy233/nav.my.css" rel="stylesheet">
+<script type="text/javascript" src="//files.cnblogs.com/files/enjoy233/nav.my.js"></script>
 ```
 
 然后将下方代码贴进页脚html.
-
-
 
 JS部分:
 
