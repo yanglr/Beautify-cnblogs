@@ -1,7 +1,13 @@
 @charset "utf-8";
 
-#sidebar_search{
-      display:none
+#blogTitle .title {
+      font-size: 35px;
+}
+
+#sideBar {
+	position: absolute;
+	width: 225px !important;
+	margin-left: 12px;
 }
 
 .input_my_zzk_new {
@@ -21,7 +27,7 @@
 /* 最大的根容器 */
 #home {
     width: auto;
-    margin: 0;
+    margin: 0 80px 0 0;
 }
 
 div#leftcontentcontainer {
@@ -154,7 +160,6 @@ code {
 
 #sideBar {
 	position: absolute;
-	width: 225px !important;
 	margin-left: 12px;
 }
 
@@ -426,6 +431,11 @@ code {
 /*隐藏反对*/
 .buryit {
 	display: none;
+}
+
+/* 不显示已推荐提示 */
+#digg_tips {
+    display: none;
 }
 
 .comment_bury {
