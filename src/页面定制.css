@@ -443,7 +443,7 @@ code {
 }
 /*外边距*/
 .diggit {
-	margin-left: 1px !important;
+	margin-left: 25px !important;
 }
  
 /*
@@ -623,4 +623,22 @@ em {
     bottom: 30px;
     left: 10px;
     z-index: 100;
+}
+
+/* 定制返回底部按钮 */
+#postEnd {
+    background: url(//www.cnblogs.com/images/cnblogs_com/enjoy233/1389971/o_ToBottom64p.png) no-repeat 0px top;
+    width: 64px;
+    height: 64px;
+    overflow: hidden;
+    position: fixed;
+    right: 20px;
+    top: 500px;
+    cursor: pointer;
+}
+
+#div_digg {
+    width: 100px !important;
+    border: 3px solid #55895b !important;
+    bottom: 95px;
 }
