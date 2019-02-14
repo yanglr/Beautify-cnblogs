@@ -333,3 +333,16 @@ jQuery(document).on('copy', function(e)
     <img src="//images.cnblogs.com/cnblogs_com/enjoy233/1389971/o_git-right-link.gif" alt="Fork me on github">
 </a>
 </div>
+
+<link href="https://cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+<script language="javascript" type="text/javascript">
+$(function()
+{
+    $('#Header1_HeaderTitle').addClass('bounceInRight animated');
+    $('.subtitle').addClass('bounceInLeft animated');
+    $('.cnblogs-markdown a').attr('target', '_blank'); // 所有链接新窗口打开
+
+    // 本人时显示最近评论
+    if($('#tbCommentAuthor').val() == 'Enjoy233') $('#sidebar_recentcomments ').show();
+});
+</script>
