@@ -1,13 +1,5 @@
 @charset "utf-8";
 
-#blogTitle .title {
-	height: 100px;
-	line-height: 100px;
-	font-size: 2em;
-	padding-left: 150px;
-	width: 400px;
-}
-
 #sidebar_search{
       display:none
 }
@@ -26,9 +18,10 @@
 	color: orange !important;
 }
 
-div#home {
-	max-width: 1200px;
-	margin: auto;
+/* 最大的根容器 */
+#home {
+    width: auto;
+    margin: 0;
 }
 
 div#leftcontentcontainer {
