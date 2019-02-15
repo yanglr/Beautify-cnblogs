@@ -6,9 +6,9 @@
         <li class="sB-comment">
             <a href="#blog-comments-placeholder" onclick="$('#tbCommentBody').focus();" class="ff-t" title="添加评论"></a>
         </li>
-        <li class="sB-share"><a onclick="if(cb_entryId !=undefined){AddToWz(cb_entryId)}" href="javascript:void(0);" title="收藏"></a></li>
+        <li class="sB-share"><a onclick="if(document.location.href.indexOf('/p/') > 0) {AddToWz(cb_entryId);} else { AddToWz($('.postTitle2')[0].href.substring(0, $('.postTitle2')[0].href.length-5).split('/').slice(-1)[0]); } " href="javascript:void(0);" title="收藏"></a></li>
         <li class="sB-goTop" id="goTop" style="display: list-item;">
-            <a href="#top" title="回顶部"></a>
+            <a href="#mainContent" title="回顶部"></a>
         </li>
     </ul>
 </div>
