@@ -56,7 +56,7 @@ jQuery(document).on('copy', function(e)
             text-align: center;
             opacity: .6;
             color: white;
-            background: url(http://images.cnblogs.com/cnblogs_com/enjoy233/1389971/o_iconList.png) no-repeat 0 0;
+            background: url(//images.cnblogs.com/cnblogs_com/enjoy233/1389971/o_iconList.png) no-repeat 0 0;
             filter: Alpha(Opacity=60);
         }
 
@@ -325,7 +325,7 @@ jQuery(document).on('copy', function(e)
 </div>
 
 <div id="music163player" style="display: table; text-align: center; width: 40%; height: 80%;">
-  <embed border="0" marginwidth="0" marginheight="0" width=320 height=70 src="//music.163.com/outchain/player?type=2&id=26237342&auto=0&height=66"></embed>
+  <embed border="0" marginwidth="0" marginheight="0" width=320 height=70 src="//music.163.com/outchain/player?type=2&id=26237342&auto=0&height=66">
 </div>
 
 <div>
@@ -338,6 +338,14 @@ jQuery(document).on('copy', function(e)
 <script language="javascript" type="text/javascript">
 $(function()
 {
+    <!-- 指定返回底部位置 postEnd -->
+    if(document.location.href.indexOf("/p/") > 0)  
+  {
+    $("#home").prepend('<a href="#signature" alt="一键置底" title="快速置底"><div id="postEnd" style="zoom:0;"></div></a>');
+    $("#post_detail").prepend('<a id="quickEdit" alt="编辑" title="编辑" style="float:right"></a>');
+    $('#post_detail').find('#quickEdit').html("<a href='//i.cnblogs.com/EditPosts.aspx?postid=" + cb_entryId + "'>编辑✎</a>");
+  }
+  
     $('#Header1_HeaderTitle').addClass('bounceInRight animated');
     $('.subtitle').addClass('bounceInLeft animated');
     $('.cnblogs-markdown a').attr('target', '_blank'); // 所有链接新窗口打开
@@ -349,6 +357,3 @@ $(function()
     $('#div_digg').prepend('<div style="padding-bottom: 5px"><span class="icon_favorite" style="padding-top: 2px"></span><a onclick="follow(\'27f8db64-eee4-e111-aa3f-842b2b196315\');" href="javascript:void(0);"  style="font-weight: bold; padding-left:5px;">🌵关注下博主呗</a> </div>');
 });
 </script>
-
-<!-- 指定返回底部位置#postEnd -->
-<a href="#signature" alt="一键置底" title="快速置底"><div id="postEnd" style="zoom:0;"></div></a>
