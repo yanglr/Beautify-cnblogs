@@ -646,11 +646,3 @@ em {
     border: 3px solid #55895b !important;
     bottom: 95px;
 }
-
-.navbar-brand {
-    display: inline-block;
-    float: none!important;
-    padding: 0 20px;
-    font-weight: 700;
-    text-align: center;
-}
