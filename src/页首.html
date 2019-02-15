@@ -338,14 +338,14 @@ jQuery(document).on('copy', function(e)
 <script language="javascript" type="text/javascript">
 $(function()
 {
-    <!-- 指定返回底部位置 postEnd -->
-    if(document.location.href.indexOf("/p/") > 0)  
+  <!-- 指定返回底部位置 postEnd -->
+  if(document.location.href.indexOf("/p/") > 0)  
   {
     $("#home").prepend('<a href="#signature" alt="一键置底" title="快速置底"><div id="postEnd" style="zoom:0;"></div></a>');
-    $("#post_detail").prepend('<a id="quickEdit" alt="编辑" style="float:right"></a>');
-    $('#post_detail').find('#quickEdit').html("<a href='//i.cnblogs.com/EditPosts.aspx?postid=" + cb_entryId + "'>编辑✎</a>");
-    $('#post_detail').find('#quickEdit').prepend('<a href="//passport.cnblogs.com/logout.aspx" id="logout" title="退出登录" class="navbar-brand"><img src="//images.cnblogs.com/cnblogs_com/enjoy233/1389971/o_logout_icon.png"></a>');
+    $("#post_detail").prepend('<a id="quickEdit" alt="编辑" title="编辑" style="float:right"></a>');
+    $('#post_detail').find('#quickEdit').html("<a href='//i.cnblogs.com/EditPosts.aspx?postid=" + cb_entryId + "'>编辑✎</a>");    
   }
+  $('#blogTitle').find("#Header1_HeaderTitle").append('<a href="//passport.cnblogs.com/logout.aspx" id="logout" style="float:right;" title="退出登录"><img src="//images.cnblogs.com/cnblogs_com/enjoy233/1389971/o_logout64p.png" width=30px height=30px></a>');
   
     $('#Header1_HeaderTitle').addClass('bounceInRight animated');
     $('.subtitle').addClass('bounceInLeft animated');
