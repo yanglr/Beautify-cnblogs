@@ -86,10 +86,77 @@ h3.catListTitle {
 
 /*  固定 点赞、收藏等功能 */
 #green_channel { 
-position: fixed;
-bottom: 30px;
-right: 160px;
-z-index: 100 
+    border: none !important;
+    position: fixed;
+    bottom: 30px;
+    right: 220px;
+    width: 450px;
+    z-index: 100;
+}
+
+a#green_channel_digg, a#green_channel_follow, a#green_channel_favorite, a#green_channel_weibo, a#green_channel_wechat {
+    text-decoration: none;
+    color: #fff;
+    margin: auto;
+    width: 80px;
+    display: inline-block;
+    line-height: 30px;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    transition: all 0.4s;
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    -ms-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    position: relative;
+    background-image: none;
+    margin-top: 10px;
+}
+
+a#green_channel_digg:hover, a#green_channel_follow:hover, a#green_channel_favorite:hover, a#green_channel_weibo:hover, a#green_channel_wechat:hover {
+    transform: scale(1.02,1.02);
+}
+
+a#green_channel_digg:active, a#green_channel_follow:active, a#green_channel_favorite:active, a#green_channel_weibo:active, a#green_channel_wechat:active {
+    transform: scale(0.95,0.95);
+    transition: all 0.4s -0.125s;
+}
+
+a#green_channel_digg {
+    background-color: #2daebf;
+    box-shadow: 0px 15px 18px -6px rgba(95,193,206, 0.65);
+}
+
+a#green_channel_follow {
+    background-color: #e33100 !important;
+    box-shadow: 0px 15px 18px -6px rgba(227,49,0, 0.65);
+    margin-left: 10px;
+}
+
+a#green_channel_favorite {
+    background-color: #ffb515;
+    box-shadow: 0px 15px 18px -6px rgba(255,198,75, 0.65);
+    margin-left: 10px;
+}
+
+a#green_channel_weibo {
+    padding: 3px 8px !important;
+    background-color: #FF464B !important;
+    box-shadow: 0px 15px 18px -6px rgba(255,70,75, 0.65) !important;
+    margin-left: 10px;
+    width: 35px;
+}
+
+
+a#green_channel_wechat {
+    padding: 3px 8px !important;
+    background-color: #3CB034 !important;
+    box-shadow: 0px 15px 18px -6px rgba(60,176,52, 0.65) !important;
+    margin-left: 10px;
+    width: 35px;
 }
 
 .blogStats {
@@ -99,7 +166,6 @@ z-index: 100
 
 #navigator {
 	height: auto !important;
-	/* line-height: 15px; */
 }
 
 #cnblogs_post_body h1, h2, h3, h4, h5, h6 {
@@ -421,7 +487,6 @@ code {
 	position: fixed;
 	bottom: 20px;
 	right: 100px;
-	border: silver 1px dashed;
 	padding: 5px;
 	width: 48px;
 	background-color: rgba(255,255,255,0.7);
