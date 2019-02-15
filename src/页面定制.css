@@ -636,8 +636,8 @@ em {
     height: 64px;
     overflow: hidden;
     position: fixed;
-    right: 20px;
-    top: 500px;
+    right: 10px;
+    bottom: 450px;
     cursor: pointer;
 }
 
