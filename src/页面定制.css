@@ -204,6 +204,10 @@ code {
 	background-color: #FFFFCC;
 }
 
+#div_digg .diggit {
+    animation: tada infinite 2s;
+}
+
 ::selection {		
         background: #399ab2;		
  	color: #FFFFFF;		
@@ -590,7 +594,7 @@ em {
 /* 头部 */
 #header {
 	position: relative;
-	height: 340px;
+	height: 320px;
 	margin: 0;
 	background: #020031;
 	background: -moz-linear-gradient(45deg,#020031 0,#6d3353 100%);
