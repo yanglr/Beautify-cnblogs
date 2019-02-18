@@ -1,5 +1,6 @@
 <!-- 书体坊赵九江钢笔行书 -->
 <link href='//blog-static.cnblogs.com/files/enjoy233/f556-4d963170aae_fontorg.com.css' rel='stylesheet' type='text/css' />
+<link href='//files.cnblogs.com/files/enjoy233/feedback.css' rel='stylesheet' type='text/css' />
 
 <script language="javascript" type="text/javascript">
 jQuery(document).on('copy', function(e)
@@ -342,6 +343,8 @@ jQuery(document).on('copy', function(e)
 <script language="javascript" type="text/javascript">
 $(function()
 {
+    initCommentData();
+
   <!-- 指定返回底部位置 postEnd -->
   if(document.location.href.indexOf("/p/") > 0)  
   {
@@ -360,5 +363,26 @@ $(function()
 
     //为右下角推荐推荐区域添加关注按钮
     $('#div_digg').prepend('<div style="padding-bottom: 5px"><span class="icon_favorite" style="padding-top: 2px"></span><a onclick="follow(\'27f8db64-eee4-e111-aa3f-842b2b196315\');" href="javascript:void(0);"  style="font-weight: bold; padding-left:5px;">🌵关注下博主呗</a> </div>');
+});
+
+function initCommentData()
+{
+    $('.feedbackItem').each(function() {
+        var text = $(this).find('.feedbackListSubtitle .layer').text();
+        // 将楼层信息放到data里面
+        if($(this).find('.feedbackListSubtitle .louzhu').length>0) $(this).addClass('myself');
+        var avatar = $(this).find('> .feedbackCon > span').html() || 'http://pic.cnitblog.com/face/sample_face.gif';
+        if(avatar.indexOf("pic.cnitblog.com/face/sample_face.gif") >= 0)
+            avatar = "//files.cnblogs.com/files/enjoy233/unknow-bSite.gif";
+
+        $(this).find('> .feedbackCon > .blog_comment_body').append('<img class="user-avatar" src="'+avatar+'"/>');
+    });
+}
+
+$(document).ajaxComplete(function(event, xhr, settings) {
+ // 监听获取评论ajax事件
+ if(settings.url.indexOf('/mvc/blog/GetComments.aspx') >= 0) {
+    initCommentData();
+}
 });
 </script>
