@@ -502,9 +502,9 @@ code {
 	display: none;
 }
 
-/* 不显示已推荐提示 */
+/* 隐藏已推荐提示 */
 #digg_tips {
-    display: none;
+    /* display: none; */
 }
 
 .comment_bury {
@@ -512,7 +512,7 @@ code {
 }
 /*外边距*/
 .diggit {
-	margin-left: 25px !important;
+	margin-left: 30px !important;
 }
  
 /*
@@ -707,7 +707,7 @@ em {
 }
 
 #div_digg {
-    width: 100px !important;
+    width: 110px !important;
     border: 3px solid #55895b !important;
     bottom: 95px;
 }
