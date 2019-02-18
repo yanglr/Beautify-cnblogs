@@ -90,13 +90,6 @@ $(document).ready(function(){
         $('#navList')[0].children["nav_contact"].innerHTML='<a id="nav_contact" class="menu" rel="nofollow" href="https://msg.cnblogs.com/send/Enjoy233">私信</a>';
         $('#navList')[0].children["nav_rss"].innerHTML='<a id="nav_rss" class="menu" rel="nofollow" href="https://www.cnblogs.com/enjoy233/rss">RSS订阅</a>';
 
-            //加载图片
-            var ponum1 = $(".postTitle").length;
-            var ponum2 = $(".entrylistPosttitle").length;
-            if(ponum1!=0)
-                articleimg(ponum1);
-            if(ponum2!=0)
-                entrylistarticleimg(ponum2);
         });
 </script>
 
@@ -119,6 +112,7 @@ $(document).ready(function(){
             }
         ]
     }).init()
+});
 </script>
 
 <!-- Baidu Share BEGIN -->
@@ -133,7 +127,7 @@ $(document).ready(function(){
 <a href="#" class="bds_kaixin001" data-cmd="kaixin001" title="分享到开心网"></a>
 <a href="#" class="bds_mail" data-cmd="mail" title="分享到邮件分享"></a>
 </div> 
-<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=2883522" ></script> 
+<script type="text/javascript" id="bdshare_js" data="type=tools&uid=2883522" ></script> 
 <script type="text/javascript" id="bdshell_js"></script> 
 <script type="text/javascript"> 
 document.getElementById("bdshell_js").src = "//static.dmzj.com/baidushare/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000) 
