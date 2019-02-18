@@ -152,7 +152,6 @@ a#green_channel_weibo {
     width: 35px;
 }
 
-
 a#green_channel_wechat {
     padding: 3px 8px !important;
     background-color: #3CB034 !important;
@@ -514,7 +513,11 @@ code {
 }
 /*外边距*/
 .diggit {
-	margin-left: 30px !important;
+	margin-left: 38px !important;
+        background: url(//images.cnblogs.com/cnblogs_com/enjoy233/1389971/o_vote_fb.png) no-repeat;
+        width: 33px !important;
+        height: 12px !important;
+        padding-top: 30px !important;
 }
  
 /*
@@ -630,21 +633,9 @@ em {
 	padding: 5px !important;
 }
 
-.blog_comment_body {
-	background: #B2E866;
-	float: left;
-	border-radius: 5px;
-	position: relative;
-	overflow: visible;
-	margin-left: 33px;
-	max-width: 700px;
-}
-
-.feedbackListSubtitle a.layer {
-	background: #B2E866;
-	color: #414141 !important;
-	padding: 2px 4px;
-	border-radius: 2px;
+.louzhu {
+    background: transparent url(//www.cnblogs.com/skins/BlackLowKey/images/icoLouZhu.gif) no-repeat scroll right top;
+    padding-right: 16px;
 }
 
 #feed_icon {
