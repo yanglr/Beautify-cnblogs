@@ -189,11 +189,12 @@ jQuery(document).on('copy', function(e)
 <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js" type="text/javascript"></script>
 <script type="text/javascript">
     var availableTags = [
+        "git", "Git",
         "C#", "C++", "算法",
         "ASP", "MySQL", "Oracle",
         "HTML", "CSS", "JavaScript",
         "jQuery", "AJAX", "微软系列技术",
-        "Sublime", "Git",
+        "Sublime",
         "Visual Studio Code",
         "Eclipse",
         "C#开发", "C++开发", "Java开发",
@@ -342,7 +343,7 @@ $(function()
   if(document.location.href.indexOf("/p/") > 0)  
   {
     $("#home").prepend('<a href="#signature" alt="一键置底" title="快速置底"><div id="postEnd" style="zoom:0;"></div></a>');
-    $("#post_detail").prepend('<a id="quickEdit" alt="编辑" title="编辑" style="float:right"></a>');
+    $("#post_detail").prepend('<a id="quickEdit" alt="编辑" title="快速编辑" style="float:right"></a>');
     $('#post_detail').find('#quickEdit').html("<a href='//i.cnblogs.com/EditPosts.aspx?postid=" + cb_entryId + "'>编辑✎</a>");    
   }
   $('#blogTitle').find("#Header1_HeaderTitle").append('<a href="//passport.cnblogs.com/logout.aspx" id="logout" style="float:right;" title="退出登录"><img src="//images.cnblogs.com/cnblogs_com/enjoy233/1389971/o_logout64p.png" width=30px height=30px></a>');
