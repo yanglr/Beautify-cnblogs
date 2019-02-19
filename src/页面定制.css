@@ -199,9 +199,7 @@ code {
 }
 
 .postTitle {
-	background: url('//images.cnblogs.com/cnblogs_com/IPrograming/353645/o_forward.png')
-  
-    no-repeat -2px;
+	background: url('//images.cnblogs.com/cnblogs_com/IPrograming/353645/o_forward.png') no-repeat -2px;
 	padding-left: 30px;
 	border: 1px solid #C1CDCD;
 	border-radius: 6px;
@@ -703,4 +701,15 @@ em {
     width: 110px !important;
     border: 3px solid #55895b !important;
     bottom: 95px;
+}
+
+.postTitle a:link, .postTitle a:visited, .postTitle a:active {
+    color: #390;
+    transition: all 0.4s linear 0s
+}
+
+.postTitle a:hover {
+    color: #F60;
+    text-decoration: none;
+    margin-left: 10px;
 }
