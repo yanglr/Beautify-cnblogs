@@ -352,8 +352,11 @@ $(function()
     $("#post_detail").prepend('<a id="quickEdit" alt="编辑" title="快速编辑" style="float:right"></a>');
     $('#post_detail').find('#quickEdit').html("<a href='//i.cnblogs.com/EditPosts.aspx?postid=" + cb_entryId + "'>编辑✎</a>");    
   }
-  $('#blogTitle').find("#Header1_HeaderTitle").append('<a href="//passport.cnblogs.com/logout.aspx" id="logout" style="float:right;" title="退出登录"><img src="//images.cnblogs.com/cnblogs_com/enjoy233/1389971/o_logout64p.png" width=30px height=30px></a>');
- 
+  
+  if(isLogined)  $('#blogTitle').find("#Header1_HeaderTitle").append('<a href="//passport.cnblogs.com/logout.aspx?ReturnURL=https://www.cnblogs.com/enjoy233/" id="logout" style="float:right;" title="退出登录"><img src="//images.cnblogs.com/cnblogs_com/enjoy233/1389971/o_logout64p.png" width=30px height=30px></a>');
+else 
+    $('#blogTitle').find("#Header1_HeaderTitle").append('<a href="#"  id="login" style="float:right;" title="登录"><img src="//www.cnblogs.com/images/cnblogs_com/enjoy233/1389971/o_login_blue.png" width=30px height=30px onclick="login();return false"></a>'); 
+
     $('#Header1_HeaderTitle').addClass('bounceInRight animated');
     $('.subtitle').addClass('bounceInLeft animated');
     $('.cnblogs-markdown a').attr('target', '_blank'); // 所有链接新窗口打开
