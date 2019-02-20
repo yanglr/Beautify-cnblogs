@@ -722,3 +722,20 @@ em {
 #footer a {
     color: #7DC5EB;
 }
+
+.cnblogs-markdown .hljs {
+    border: none !important;
+}
+
+.hljs-ln-numbers {
+    width: 25px;
+}
+
+.hljs-ln-line.hljs-ln-n {
+    padding-left: 5px;
+}
+
+#cnblogs_post_body th, #cnblogs_post_body td, .cnblogs-post-body th, .cnblogs-post-body td {
+    border: none !important;
+    padding: 0;
+}
