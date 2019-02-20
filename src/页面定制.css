@@ -713,3 +713,7 @@ em {
     text-decoration: none;
     margin-left: 10px;
 }
+
+#footer a {
+    color: blue;
+}
