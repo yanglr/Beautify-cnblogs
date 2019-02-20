@@ -720,7 +720,11 @@ em {
 }
 
 #footer a {
-    color: #7DC5EB;
+    color: #A989D8;
+}
+
+#footer a:hover {
+    color: palevioletred;
 }
 
 .cnblogs-markdown .hljs {
