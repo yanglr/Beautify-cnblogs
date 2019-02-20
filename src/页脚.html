@@ -6,66 +6,12 @@
         <li class="sB-comment">
             <a href="#blog-comments-placeholder" onclick="$('#tbCommentBody').focus();" class="ff-t" title="添加评论"></a>
         </li>
-        <li class="sB-share"><a onclick="if(document.location.href.indexOf('/p/') > 0 || document.location.href.indexOf('/archive/') > 0 || document.location.href.indexOf('/articles') > 0 || document.location.href.indexOf('/diary/') > 0) {AddToWz(cb_entryId);} else { AddToWz($('.postTitle2')[0].href.substring(0, $('.postTitle2')[0].href.length-5).split('/').slice(-1)[0]); } " href="javascript:void(0);" title="收藏"></a></li>
+        <li class="sB-share"><a onclick="if(document.location.href.indexOf('/p/') > 0) {AddToWz(cb_entryId);} else { AddToWz($('.postTitle2')[0].href.substring(0, $('.postTitle2')[0].href.length-5).split('/').slice(-1)[0]); } " href="javascript:void(0);" title="收藏"></a></li>
         <li class="sB-goTop" id="goTop" style="display: list-item;">
             <a href="#mainContent" title="回顶部"></a>
         </li>
     </ul>
 </div>
-
-<script type="text/javascript">  
-    var setMyBlog = {
-        setCopyrightInfoWhenCopy: function() {
-            jQuery(document).on('copy', function(e)
-            {
-              var selected = window.getSelection();
-              var copyFooter = '<br>---------------------<br>著作权归作者所有。<br>' 
-                                    + '商业转载请联系作者获得授权，非商业转载请注明出处。<br>'
-                                    + '作者：Bravo Yeung<br> 源地址：' + document.location.href
-                                    + '<br>来源：博客园cnblogs<br>© 版权声明：本文为博主原创文章，转载请附上博文链接！';
-              var copyHolder = $('<div>', {html: selected + copyFooter, style: {position: 'absolute', left: '-99999px'}});
-
-              $('body').append(copyHolder);
-              selected.selectAllChildren( copyHolder[0] );
-              window.setTimeout(function() {
-                  copyHolder.remove();
-              },0);
-            });
-        },
-        setCodeRowWithLineNum: function(){
-            // 代码行号显示
-            var pre = $(".cnblogs-markdown pre"); //选中需要更改的代码块
-            if(pre && pre.length){
-                pre.each(function() {
-                    var item = $(this);
-                    var lang = item.attr("class").split(" ")[1]; //判断高亮的语言
-                    item.html(item.html().replace(/<[^>]+>/g, "")); //将<pre>标签中的html标签去掉
-                    item.removeClass().addClass("brush: " + lang +"; "); //根据语言添加笔刷
-                    SyntaxHighlighter.all();
-                })
-            }
-        },
-        setAllLinkTarget: function() {
-            // $('.cnblogs-markdown a').attr('target', '_blank');  // 所有markdown模式下的链接在新窗口打开
-
-            // 博客内的链接在新窗口打开
-            $("#cnblogs_post_body a").each(function(){
-                this.target = "_blank";
-            }) 
-        },
-        runAll: function() {
-            /* 运行所有方法
-             * setAllLinkTarget() 博客园内标签新窗口打开
-             * setCopyright() 设置版权信息
-             * setCodeRowWithLineNum() 代码行号显示
-             */ 
-            this.setAllLinkTarget(); 
-            this.setCopyrightInfoWhenCopy();
-            // this.setCodeRowWithLineNum();
-        }
-    }
-    setMyBlog.runAll();
-</script>
 
 <script type="text/javascript" src="//apps.bdimg.com/libs/bootstrap/3.2.0/js/bootstrap.min.js?ver=5.2"></script>
 
@@ -134,15 +80,16 @@ $(document).ready(function(){
 </style>
 
 <script src="//files.cnblogs.com/files/enjoy233/highlightjs-line-numbers.min-v2.6.js"></script>
-<script language="javascript" type="text/javascript">
-     <!-- 调用markdown代码加行号插件 -->
-    hljs.initHighlightingOnLoad();
-    hljs.initLineNumbersOnLoad();
 
-    $(function(){         
-        $('#footer').append('<div id="customFooter">            Powered By             <a href="https://www.cnblogs.com" target="_blank">Cnblogs</a> |             <a href="https://github.com/yanglr/cnblogs-theme-xSimple" target="_blank" title="Fork theme on github">Extremely Simple</a>  Theme By             <a href="https://www.cnblogs.com/enjoy233" target="_blank">Enjoy233</a>, Basic skin - <a href="//www.cnblogs.com/SkinUser.aspx?SkinName=LessIsMore" target="_blank">Less is More</a>.</div><br>');        
+<script>
+    $(function(){
+     // markdown模式下为代码加入行号, 调用插件highlightjs-line-numbers.js
+     hljs.initHighlightingOnLoad();
+     hljs.initLineNumbersOnLoad();
+         
+      $('#footer').append('<div id="customFooter">            Powered By             <a href="https://www.cnblogs.com" target="_blank">Cnblogs</a> |             <a href="https://github.com/yanglr/cnblogs-theme-xSimple" target="_blank" title="Fork theme on github">Extremely Simple</a>  Theme By             <a href="https://www.cnblogs.com/enjoy233" target="_blank">Enjoy233</a>, Basic skin - <a href="//www.cnblogs.com/SkinUser.aspx?SkinName=LessIsMore" target="_blank">Less is More</a>.</div><br>');        
 
-        });
+     });
 </script>
 
 <!-- tctip 支付赞赏/打赏 -->
@@ -164,7 +111,6 @@ $(document).ready(function(){
             }
         ]
     }).init()
-});
 </script>
 
 <!-- Baidu Share BEGIN -->
@@ -179,9 +125,9 @@ $(document).ready(function(){
 <a href="#" class="bds_kaixin001" data-cmd="kaixin001" title="分享到开心网"></a>
 <a href="#" class="bds_mail" data-cmd="mail" title="分享到邮件分享"></a>
 </div> 
-<script type="text/javascript" id="bdshare_js" data="type=tools&uid=2883522" ></script> 
+<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=2883522" ></script> 
 <script type="text/javascript" id="bdshell_js"></script> 
 <script type="text/javascript"> 
-document.getElementById("bdshell_js").src = "//static.dmzj.com/baidushare/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000); 
+document.getElementById("bdshell_js").src = "//static.dmzj.com/baidushare/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000) 
 </script> 
 <!-- Baidu Share END -->
