@@ -91,7 +91,7 @@ h3.catListTitle {
     border: none !important;
     position: fixed;
     bottom: 30px;
-    right: 220px;
+    right: 230px;
     width: 450px;
     z-index: 100;
 }
@@ -509,6 +509,11 @@ code {
 .comment_bury {
 	display: none;
 }
+
+#comment_nav {
+     margin-right: 135px !important;
+}
+
 /*外边距*/
 .diggit {
 	margin-left: 38px !important;
@@ -715,5 +720,5 @@ em {
 }
 
 #footer a {
-    color: blue;
+    color: #7DC5EB;
 }
