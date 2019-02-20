@@ -739,3 +739,16 @@ em {
     border: none !important;
     padding: 0;
 }
+
+.postCon {
+    font-size: 15px;
+}
+
+.cnblogs-markdown .hljs, .cnblogs-post-body .hljs {
+    font-family: "Consolas",sans-serif !important;
+    font-size: 15px! important;
+}
+
+#cnblogs_post_body table {
+    border: none !important;
+}
