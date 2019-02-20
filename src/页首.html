@@ -346,7 +346,7 @@ $(function()
     initCommentData();
 
   <!-- 指定返回底部位置 postEnd -->
-  if(document.location.href.indexOf("/p/") > 0)  
+  if(document.location.href.indexOf('/p/') > 0 || document.location.href.indexOf('/archive/') > 0 || document.location.href.indexOf('/articles') > 0 || document.location.href.indexOf('/diary/') > 0)  
   {
     $("#home").prepend('<a href="#signature" alt="一键置底" title="快速置底"><div id="postEnd" style="zoom:0;"></div></a>');
     $("#post_detail").prepend('<a id="quickEdit" alt="编辑" title="快速编辑" style="float:right"></a>');
