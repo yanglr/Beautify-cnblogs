@@ -102,13 +102,13 @@ $(window).on("load", function(){
      });
 
     function setCodeRowWithLang() {
-    var pre = $(".cnblogs-markdown pre"); //选中需要更改的代码块
+    var pre = $(".cnblogs-markdown pre"); // 选中需要处理的代码块
     if (pre && pre.length) {
        pre.each(function() {
            var item = $(this);
            var lang = item[0].className; //判断高亮的语言
            // console.log(lang);
-           item.find('.hljs').prepend('<div align="right" top="0px" right="10px" position="relative" title="当前Code所用语言"><a>' + lang + '</a></div>');
+           item.find('.hljs').prepend('<div align="right" top="0px" right="10px" position="relative" title="当前Code所用语言"><a href="#">' + lang + '</a></div>');
        });
    };
 }
