@@ -737,8 +737,11 @@ em {
     color: gray;
 }
 
-#cnblogs_post_body th, #cnblogs_post_body td, .cnblogs-post-body th, .cnblogs-post-body td {
+td.hljs-ln-code {
     border: none !important;
+}
+
+#cnblogs_post_body th, #cnblogs_post_body td, .cnblogs-post-body th, .cnblogs-post-body td {
     padding: 0;
 }
 
@@ -771,13 +774,25 @@ em {
 
 #cnblogs_post_body td.hljs-ln-numbers {
     color: #ccc;
-    border-right: 2px solid #ddd !important;
+    border-right: 1px solid LightSteelBlue !important;
+    border-left: none;
+    border-bottom: none;
+    border-top: none;
     vertical-align: bottom;
-    padding-right: 5px;    
+    padding-right: 5px;
     user-select: none;
 }
 
-<!-- 修复 部分代码的颜色被 ./bundles/blog-common.css 设置 -->
+.cnblogs-markdown .hljs {		
+     border: none !important;
+    background-color: #e0dfcc !important;     		
+ }
+
+#cnblogs_post_body td:not(.hljs-ln-numbers):not(.hljs-ln-code):not(.CalOtherMonthDay) {
+    border: 2px solid LightSteelBlue !important;
+}
+
+<!-- 修复 部分代码的颜色被 "./bundles/blog-common.css" 设置 -->
 .hljs-deletion, .hljs-selector-attr, .hljs-selector-pseudo, .hljs-meta {
     all: unset;
 }
