@@ -108,7 +108,7 @@ $(window).on("load", function(){
            var item = $(this);
            var lang = item[0].className; //判断高亮的语言
            // console.log(lang);
-           item.find('.hljs').prepend('<div align="right" top="0px" right="10px" position="relative" title="当前Code所用语言"><a href="#">' + lang + '</a></div>');
+           item.find('.hljs').prepend('<div align="right" top="0px" right="10px" position="relative" title="当前Code所用语言"><a href="javascript:void(0);">' + lang + '</a></div>');
        });
    };
 }
