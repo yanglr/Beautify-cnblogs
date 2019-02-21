@@ -763,3 +763,20 @@ em {
     font-weight: bolder;
     font-family: "Segoe Print", "Segoe Script";
 }
+
+.hljs-ln td.hljs-ln-code {
+    width: 100% !important;
+    padding-left: 10px !important;
+}
+
+.hljs-ln-numbers.hljs-ln-line {
+    padding-left: 8px;
+}
+
+#cnblogs_post_body td.hljs-ln-numbers {
+    color: #ccc;
+    border-right: 2px solid #6ce26c !important;
+    vertical-align: top;
+    padding-right: 5px;    
+    user-select: none;
+}
