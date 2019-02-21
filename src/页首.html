@@ -357,7 +357,7 @@ else
          });     
 
     // 本人时显示最近评论
-    if($('#profile_block').find('#p_b_follow')[0].innerText.indexOf("关注") != -1) $('.catListComment').hide();  // indexOf == -1时是自己，关注/已关注
+    if($('#profile_block').find('#p_b_follow')[0].innerHTML.indexOf("关注") != -1) $('.catListComment').hide();  // indexOf == -1时是自己，关注/已关注
 
     //为右下角推荐推荐区域添加关注按钮
     $('#div_digg').prepend('<div style="padding-bottom: 5px"><span class="icon_favorite" style="padding-top: 2px"></span><a onclick="follow(\'27f8db64-eee4-e111-aa3f-842b2b196315\');" href="javascript:void(0);"  style="font-weight: bold; padding-left:5px;">🌵关注下博主呗</a> </div>');
@@ -372,7 +372,9 @@ function initCommentData()
         var avatar = $(this).find('> .feedbackCon > span').html() || 'http://pic.cnitblog.com/face/sample_face.gif';
         if(avatar.indexOf("pic.cnitblog.com/face/sample_face.gif") >= 0)
             avatar = "//files.cnblogs.com/files/enjoy233/unknow-bSite.gif";
-        $(this).find('> .feedbackCon > .blog_comment_body').append('<img class="user-avatar" src="'+avatar+'"/>');
+        var nodeComment = $(this).find('> .feedbackCon > .blog_comment_body');
+        if(nodeComment.html().indexOf(avatar) == -1)
+            nodeComment.append('<img class="user-avatar" src="'+avatar+'"/>');
     });
 }
 $(document).ajaxComplete(function(event, xhr, settings) {
