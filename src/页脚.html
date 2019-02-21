@@ -83,6 +83,8 @@ $(document).ready(function(){
 
 <script>
     $(function(){
+     setCodeRowWithLang();
+     
      // markdown模式下为代码加入行号, 调用插件highlightjs-line-numbers.js
      hljs.initHighlightingOnLoad();
      hljs.initLineNumbersOnLoad();
@@ -90,6 +92,18 @@ $(document).ready(function(){
       $('#footer').append('<div id="customFooter">            Powered By             <a href="https://www.cnblogs.com" target="_blank">Cnblogs</a> |             <a href="https://github.com/yanglr/cnblogs-theme-xSimple" target="_blank" title="Fork theme on github" class="enjoyFont">Extremely Simple</a>  Theme By             <a href="https://www.cnblogs.com/enjoy233" target="_blank"  class="enjoyFont">Enjoy233</a>, Basic skin - <a href="//www.cnblogs.com/SkinUser.aspx?SkinName=LessIsMore" target="_blank">Less is More</a>.</div><br>');        
 
      });
+
+    function setCodeRowWithLang() {
+    var pre = $(".cnblogs-markdown pre"); //选中需要更改的代码块
+    if (pre && pre.length) {
+       pre.each(function() {
+           var item = $(this);
+           var lang = item[0].className; //判断高亮的语言
+           // console.log(lang);
+           item.find('.hljs').prepend('<div align=right top=0px right=10px position=relative><a>' + lang + '</a></div>');
+       });
+   };
+}
 </script>
 
 <!-- tctip 支付赞赏/打赏 -->
