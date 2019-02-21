@@ -727,10 +727,6 @@ em {
     color: palevioletred;
 }
 
-.cnblogs-markdown .hljs {
-    border: none !important;
-}
-
 .hljs-ln-numbers {
     width: 60px;
 }
@@ -775,13 +771,13 @@ em {
 
 #cnblogs_post_body td.hljs-ln-numbers {
     color: #ccc;
-    border-right: 2px solid #6ce26c !important;
-    vertical-align: top;
+    border-right: 2px solid #ddd !important;
+    vertical-align: bottom;
     padding-right: 5px;    
     user-select: none;
 }
 
-// 修复 部分代码的颜色被 ./bundles/blog-common.css 设置
+<!-- 修复 部分代码的颜色被 ./bundles/blog-common.css 设置 -->
 .hljs-deletion, .hljs-selector-attr, .hljs-selector-pseudo, .hljs-meta {
     all: unset;
 }
