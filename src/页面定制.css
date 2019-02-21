@@ -796,3 +796,8 @@ td.hljs-ln-code {
 .hljs-deletion, .hljs-selector-attr, .hljs-selector-pseudo, .hljs-meta {
     all: unset;
 }
+
+#sideBar li, .divRecentCommentAticle {
+    text-indent: 0 !important;
+    margin-left: 0 !important;
+}
