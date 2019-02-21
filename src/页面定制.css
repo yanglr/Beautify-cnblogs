@@ -780,3 +780,8 @@ em {
     padding-right: 5px;    
     user-select: none;
 }
+
+// 修复 部分代码的颜色被 ./bundles/blog-common.css 设置
+.hljs-deletion, .hljs-selector-attr, .hljs-selector-pseudo, .hljs-meta {
+    all: unset;
+}
