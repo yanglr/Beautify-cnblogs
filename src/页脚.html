@@ -82,6 +82,14 @@ $(document).ready(function(){
 <script src="//files.cnblogs.com/files/enjoy233/highlightjs-line-numbers.min-v2.6.js"></script>
 
 <script>
+$(window).on("load", function(){
+  $.ready.then(function(){  // 以下3个语句人选一个即可
+   // $(".cnblogs-markdown pre").find(".hljs-meta").removeClass("hljs-meta");
+   // $(".hljs-meta").css({ 'color' : 'none !important' });
+   $(".hljs-meta").css({ 'all' : 'unset' });
+  });
+})
+
     $(function(){
      setCodeRowWithLang();
      
@@ -100,7 +108,7 @@ $(document).ready(function(){
            var item = $(this);
            var lang = item[0].className; //判断高亮的语言
            // console.log(lang);
-           item.find('.hljs').prepend('<div align=right top=0px right=10px position=relative><a>' + lang + '</a></div>');
+           item.find('.hljs').prepend('<div align="right" top="0px" right="10px" position="relative" title="当前Code所用语言"><a>' + lang + '</a></div>');
        });
    };
 }
