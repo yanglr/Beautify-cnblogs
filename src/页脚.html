@@ -1,4 +1,7 @@
-<div class="scrollBtn" id="scrollBtn">
+<script type="text/javascript" src="//apps.bdimg.com/libs/bootstrap/3.2.0/js/bootstrap.min.js?ver=5.2"></script>
+<link href="//cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+div class="scrollBtn" id="scrollBtn">
     <ul class="clearfix">
         <li class="sB-home">
             <a href="http://www.cnblogs.com/enjoy233" class="ff-t" title="首页"></a>
@@ -17,7 +20,6 @@
 
 <!-- 添加文章目录 -->
 <link href="//blog-static.cnblogs.com/files/enjoy233/nav.my-right.css" rel="stylesheet">
-<script type="text/javascript" src="//files.cnblogs.com/files/enjoy233/nav.my.js"></script>
 <!-- 添加文章目录 -->
 
 <script type="text/javascript">
@@ -81,9 +83,29 @@ $(document).ready(function(){
 
 <script src="//files.cnblogs.com/files/enjoy233/highlightjs-line-numbers.min-v2.6.js"></script>
 
+<script src="//cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+
+    <script>
+     $('#cnblogs_post_body').addClass("js-toc-content");
+         tocbot.init({
+            // Where to render the table of contents.
+            tocSelector: '.js-toc',
+            // Where to grab the headings to build the table of contents.
+            contentSelector: '.js-toc-content',
+            // Which headings to grab inside of the contentSelector element.
+            headingSelector: 'h1, h2, h3, h4',
+            collapseDepth: 6,
+            headingsOffset: 1,
+            orderedList: true
+            /* last parameter must NOT have commas */
+        });
+    </script>
+
 <script>
 $(window).on("load", function(){
-  $.ready.then(function(){  // 以下3个语句人选一个即可
+  $.ready.then(function(){  
+    /* 以下3个语句任选一个即可 */
    // $(".cnblogs-markdown pre").find(".hljs-meta").removeClass("hljs-meta");
    // $(".hljs-meta").css({ 'color' : 'none !important' });
    $(".hljs-meta").css({ 'all' : 'unset' });
@@ -91,6 +113,10 @@ $(window).on("load", function(){
 })
 
     $(function(){
+   if ($(".cnblogs-markdown pre").length == 0) {
+       $.getScript("//files.cnblogs.com/files/enjoy233/nav.my.js");
+   }
+
      setCodeRowWithLang();
      
      // markdown模式下为代码加入行号, 调用插件highlightjs-line-numbers.js
@@ -107,8 +133,12 @@ $(window).on("load", function(){
        pre.each(function() {
            var item = $(this);
            var lang = item[0].className; //判断高亮的语言
+           var langMap = {"html":"HTML","xml":"XML","svg":"SVG","mathml":"MathML","css":"CSS","clike":"C-like","js":"JavaScript","abap":"ABAP","apacheconf":"Apache Configuration","apl":"APL","arff":"ARFF","asciidoc":"AsciiDoc","adoc":"AsciiDoc","asm6502":"6502 Assembly","aspnet":"ASP.NET (C#)","autohotkey":"AutoHotkey","autoit":"AutoIt","shell":"Bash","basic":"BASIC","csharp":"C#","dotnet":"C#","cpp":"C++","cil":"CIL","csp":"Content-Security-Policy","css-extras":"CSS Extras","django":"Django/Jinja2","jinja2":"Django/Jinja2","dockerfile":"Docker","erb":"ERB","fsharp":"F#","gcode":"G-code","gedcom":"GEDCOM","glsl":"GLSL","gml":"GameMaker Language","gamemakerlanguage":"GameMaker Language","graphql":"GraphQL","hcl":"HCL","http":"HTTP","hpkp":"HTTP Public-Key-Pins","hsts":"HTTP Strict-Transport-Security","ichigojam":"IchigoJam","inform7":"Inform 7","javastacktrace":"Java stack trace","json":"JSON","jsonp":"JSONP","latex":"LaTeX","emacs":"Lisp","elisp":"Lisp","emacs-lisp":"Lisp","lolcode":"LOLCODE","markup-templating":"Markup templating","matlab":"MATLAB","mel":"MEL","n1ql":"N1QL","n4js":"N4JS","n4jsd":"N4JS","nand2tetris-hdl":"Nand To Tetris HDL","nasm":"NASM","nginx":"nginx","nsis":"NSIS","objectivec":"Objective-C","ocaml":"OCaml","opencl":"OpenCL","parigp":"PARI/GP","objectpascal":"Object Pascal","php":"PHP","php-extras":"PHP Extras","plsql":"PL/SQL","powershell":"PowerShell","properties":".properties","protobuf":"Protocol Buffers","q":"Q (kdb+ database)","jsx":"React JSX","tsx":"React TSX","renpy":"Ren'py","rest":"reST (reStructuredText)","sas":"SAS","sass":"Sass (Sass)","scss":"Sass (Scss)","sql":"SQL","soy":"Soy (Closure Template)","tap":"TAP","toml":"TOML","tt2":"Template Toolkit 2","ts":"TypeScript","vbnet":"VB.Net","vhdl":"VHDL","vim":"vim","visual-basic":"Visual Basic","vb":"Visual Basic","wasm":"WebAssembly","wiki":"Wiki markup","xeoracube":"XeoraCube","xojo":"Xojo (REALbasic)","xquery":"XQuery","yaml":"YAML"};
+           var displayLangText = "";
+           if(lang in langMap) displayLangText = langMap[lang];
+            else displayLangText = lang;
            // console.log(lang);
-           item.find('.hljs').prepend('<div align="right" top="0px" right="10px" position="relative" title="当前Code所用语言"><a href="javascript:void(0);">' + lang + '</a></div>');
+           item.find('.hljs').prepend('<div align="right" top="0px" right="10px" position="relative"><a href="javascript:void(0);"></a> <font class="codeLang"  title="当前Code所用语言">'+ displayLangText + '</font></div>');
        });
    };
 }
