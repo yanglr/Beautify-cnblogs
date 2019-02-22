@@ -209,13 +209,13 @@ code {
 }
 
 #cnblogs_post_body blockquote {
-	margin: 10px 0;
+        font-size: 15px;
+    	margin: 18px 35px;
 	padding: 15px 20px 15px 60px;
-	background: #FFFFCC;
-	url('//images.cnblogs.com/cnblogs_com/IPrograming/353645/o_png_pin.png')  no-repeat 9px 0px;
-    font-size: 15px;
-	box-shadow: 0 0 8px #aaa;
-	clear: both;
+	background: #FFFFCC url(//images.cnblogs.com/cnblogs_com/IPrograming/353645/o_png_pin.png) no-repeat 9px 0px;
+        font-family: 'Microsoft Yahei';
+        box-shadow: 0 0 8px #aaa;
+        clear: both;
 }
 
 #sideBar h3 {
@@ -536,7 +536,7 @@ code {
  
 /* 普通文字样式 */
 #cnblogs_post_body p {
-	margin: 18px auto;
+	margin: 18px 35px;
 	color: #000;
 	font-family: Georgia,Times New Roman,Times,sans-serif, monospace !important;
 	font-size: 16px;
@@ -611,6 +611,7 @@ em {
 	border-left: 5px solid #f6b73c;
 	margin: 0;
 	padding-left: 10px;
+        background: #FFFFCC url(//images.cnblogs.com/cnblogs_com/IPrograming/353645/o_png_pin.png) no-repeat 9px 0px;
 }
  
 /* 单行代码 */
@@ -800,4 +801,14 @@ td.hljs-ln-code {
 #sideBar li, .divRecentCommentAticle {
     text-indent: 0 !important;
     margin-left: 0 !important;
+}
+
+.codeLang {
+    font-family: 'Segoe Print', 'Helvetica Neue', Helvetica, Arial, serif;
+    color: #0084FF;
+    font-size: 15px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 0px 0px;
+    padding: 0px 0.5em;
+    background: rgba(224, 224, 224, 0.2);
+    border-radius: 0.5em;
 }
