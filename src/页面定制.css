@@ -199,7 +199,7 @@ code {
 }
 
 .postTitle {
-	background: url('//images.cnblogs.com/cnblogs_com/IPrograming/353645/o_forward.png') no-repeat -2px;
+	background: url('//www.cnblogs.com/images/cnblogs_com/enjoy233/1389971/o_forward.png') no-repeat -2px;
 	padding-left: 30px;
 	border: 1px solid #C1CDCD;
 	border-radius: 6px;
@@ -212,7 +212,7 @@ code {
         font-size: 15px;
     	margin: 18px 35px;
 	padding: 15px 20px 15px 60px;
-	background: #FFFFCC url(//images.cnblogs.com/cnblogs_com/IPrograming/353645/o_png_pin.png) no-repeat 9px 0px;
+	background: #FFFFCC url(//images.cnblogs.com/cnblogs_com/enjoy233/1389971/o_cnblogs_pin.png) no-repeat 9px 0px;
         font-family: 'Microsoft Yahei';
         box-shadow: 0 0 8px #aaa;
         clear: both;
@@ -451,7 +451,7 @@ code {
 }
 
 #scrollTop .level-2 {
-	background: url(//images2015.cnblogs.com/blog/894443/201707/894443-20170716165243785-2122236756.png) no-repeat scroll -149px 0 transparent;
+	background: url(//images.cnblogs.com/cnblogs_com/enjoy233/1389971/o_ToTop_rocket.png) no-repeat scroll -149px 0 transparent;
 	display: none;
 	height: 250px;
 	opacity: 0;
@@ -467,7 +467,7 @@ code {
 }
 
 #scrollTop {
-	background: url(//images2015.cnblogs.com/blog/894443/201707/894443-20170716165243785-2122236756.png) no-repeat scroll 0 0 transparent;
+	background: url(//images.cnblogs.com/cnblogs_com/enjoy233/1389971/o_ToTop_rocket.png) no-repeat scroll 0 0 transparent;
 	cursor: default;
 	display: block;
 	height: 180px;
@@ -611,7 +611,7 @@ em {
 	border-left: 5px solid #f6b73c;
 	margin: 0;
 	padding-left: 10px;
-        background: #FFFFCC url(//images.cnblogs.com/cnblogs_com/IPrograming/353645/o_png_pin.png) no-repeat 9px 0px;
+        background: #FFFFCC url(//images.cnblogs.com/cnblogs_com/enjoy233/1389971/o_cnblogs_pin.png) no-repeat 9px 0px;
 }
  
 /* 单行代码 */
@@ -638,7 +638,7 @@ em {
 }
 
 .louzhu {
-    background: transparent url(//www.cnblogs.com/skins/BlackLowKey/images/icoLouZhu.gif) no-repeat scroll right top;
+    background: transparent url(//files.cnblogs.com/files/enjoy233/icoLouZhu.gif) no-repeat scroll right top;
     padding-right: 16px;
 }
 
@@ -762,6 +762,7 @@ td.hljs-ln-code {
 .enjoyFont {
     font-weight: bolder;
     font-family: "Segoe Print", "Segoe Script";
+    border-bottom: 1px dotted #333;
 }
 
 .hljs-ln td.hljs-ln-code {
