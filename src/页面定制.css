@@ -813,3 +813,240 @@ td.hljs-ln-code {
     background: rgba(224, 224, 224, 0.2);
     border-radius: 0.5em;
 }
+
+.col {
+    float: right;
+    background: #eee;
+    margin: 2em 0 0 0.5em;
+    padding: 3px;
+}
+
+@media screen and (max-width: 1000px) {
+    #main {
+        width: 100%;
+    }
+}
+
+/* 定制自己导航栏的样式 */
+#shwtop ul {
+    margin: 0;
+    width: 60px;
+    padding: 0;
+    list-style-type: none; /*去除li前的标注*/
+    background-color: #55895B;
+    overflow: hidden; /*隐藏溢出的部分，保持一行*/
+}
+
+#shwtop li {
+    float: left; /*左浮动*/
+}
+
+    #shwtop li a, .dropbtn {
+        display: inline-block; /*设置成块*/
+        color: white;
+        text-align: center;
+        text-decoration: none;
+    }
+        /*鼠标移上去，改变背景颜色*/
+        #shwtop li a:hover, .dropdown:hover .dropbtn {
+            /* 当然颜色你可以自己改成自己喜欢的，我还是挺喜欢蓝色的 */
+            background-color: blue;
+        }
+
+#shwtop .dropdown {
+    /*
+display:inline-block将对象呈递为内联对象，
+但是对象的内容作为块对象呈递。
+旁边的内联对象会被呈递在同一行内，允许空格。
+*/
+    display: inline-block;
+}
+
+#shwtop .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+    #shwtop .dropdown-content a {
+        display: block;
+        color: black;
+        padding: 0px 5px;
+        text-decoration: none;
+    }
+
+        #shwtop .dropdown-content a:hover {
+            background-color: #a1a1a1;
+        }
+
+#shwtop .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+    .clearfix:before, .clearfix:after {
+        display: table;
+        content: '';
+    }
+
+    .clearfix:after {
+        clear: both;
+    }
+
+    .clearfix {
+        zoom: 1;
+    }
+
+    .ff-t {
+        font-family: Tahoma;
+    }
+
+    .scrollBtn {
+        position: fixed;
+        right: 15px;
+        bottom: 45px;
+        width: 54px;
+        _position: absolute;
+    }
+
+        .scrollBtn a {
+            display: inline-block;
+            overflow: hidden;
+            width: 54px;
+            height: 54px;
+            -webkit-transition: opacity .5s ease;
+            -moz-transition: opacity .5s ease;
+            -o-transition: opacity .5s ease;
+            transition: opacity .5s ease;
+            text-align: center;
+            opacity: .6;
+            color: white;
+            background: url(//images.cnblogs.com/cnblogs_com/enjoy233/1389971/o_iconList.png) no-repeat 0 0;
+            filter: Alpha(Opacity=60);
+        }
+
+        .scrollBtn li {
+            float: left;
+            overflow: hidden;
+            height: 54px;
+            margin-bottom: 5px;
+        }
+
+        .scrollBtn a:hover {
+            opacity: 1;
+            filter: Alpha(Opacity=100);
+        }
+
+    .sB-comment a {
+        height: 17px;
+        padding-top: 34px;
+        padding-bottom: 3px;
+        background-position: 0 -59px;
+    }
+
+    .sB-share a {
+        background-position: 0 -118px;
+    }
+
+    .sB-goTop a {
+        background-position: 0 -177px;
+    }
+
+    #auto_div {
+        display: none;
+        width: 257px;
+        border: 1px #74c0f9 solid;
+        background: #FFF;
+        position: absolute;
+        top: 24px;
+        left: 0;
+        margin-top: 15px;
+        color: #323232;
+        /*设置显示在当前页面的上一层*/
+        z-index: 1;
+    }
+
+    .side_search {
+        float: left;
+        position: relative;
+        height: 31px;
+        margin-left: 25px;
+        display: inline-block;
+    }
+
+    .side_search:hover {
+        -webkit-box-shadow: 0 0 3px #999;
+        -moz-box-shadow: 0 0 3px #999
+    }
+
+    .search_input {
+        width: 210px;
+        vertical-align: middle;
+        height: 30px;
+        line-height: 30px;
+        border: 1px solid #999;
+        border-radius: 2px 0 0 2px;
+        padding: 4px 7px;
+        background-color: #fbfbfb;
+    }
+
+    .delete_btn {
+        background: #fbfbfb;
+        margin-left: -6px;
+        border: 1px solid #fbfbfb;
+        border-radius: 0 3px 3px 0;
+        cursor: pointer;
+        display: inline-block;
+        vertical-align: middle;
+        color: red;
+        font-weight: bold;
+        width: 38px;
+        font-size: 25px;
+        height: 38px;
+        padding-bottom: inherit;
+    }
+
+    .search_btn {
+        border-radius: 3px 3px 3px 3px;
+        background: #4d90fe;
+        margin-left: -7px;
+        border: 1px solid #4d90fe;
+        cursor: pointer;
+        display: inline-block;
+        vertical-align: middle;
+        color: #f3f7fc;
+        font-weight: bold;
+        width: 100px;
+        font-size: 18px;
+        height: 41px;
+    }
+
+    .search_btn:hover {
+        background: #1874CD
+    }
+
+    .search_btn2 {
+        border-radius: 3px 3px 3px 3px;
+        background: #F0CB85;
+        border: 1px solid #F0CB85;
+        cursor: pointer;
+        display: inline-block;
+        vertical-align: middle;
+        color: #DC143C;
+        font-weight: bold;
+        width: 100px;
+        font-size: 18px;
+        height: 41px;
+    }
+
+    .search_btn2:hover {
+        background: #DEB887
+    }
+
+    input, button, textarea, select, optgroup, option {
+        font-family: inherit;
+        font-size: inherit;
+        font-style: inherit;
+        font-weight: inherit;
+    }
