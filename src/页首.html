@@ -1,6 +1,7 @@
 <!-- 书体坊赵九江钢笔行书 -->
 <link href='//blog-static.cnblogs.com/files/enjoy233/f556-4d963170aae_fontorg.com.css' rel='stylesheet' type='text/css' />
 <link href='//files.cnblogs.com/files/enjoy233/feedback.css' rel='stylesheet' type='text/css' />
+
 <script language="javascript" type="text/javascript">
     jQuery(document).on('copy', function (e) {
         var selected = window.getSelection();
@@ -163,7 +164,7 @@
 <link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
 <script language="javascript" type="text/javascript">
     $(function () {
-     < !--更新导航栏的菜单-->
+     <!-- 更新导航栏的菜单 -->
             $("#navigator").append('<div id="shwtop" >    <ul style="margin-left:5px;margin-right: 5px;">       <div class="dropdown">            <a href="#" class="dropbtn">后台管理</a>            <div class="dropdown-content">                <!-- <a class="menu" href="这里是你文章或随笔分类的链接地址，自己修改下面同理"> 这里更改下拉具体内容 </a> -->                <a class="menu" href="//i.cnblogs.com/Configure.aspx"  target="_blank">GUI配置</a>                <a class="menu" href="//i.cnblogs.com/posts" target="_blank">博文列表</a>                <a class="menu" href="//wz.cnblogs.com/" target="_blank">网摘夹</a>                               <a class="menu" href="//i.cnblogs.com/Files.aspx" target="_blank">文件</a>   <a class="menu" href="//i.cnblogs.com/EditGalleries.aspx" target="_blank">相册</a>          </div>        </div>    </ul></div>');
         $("#navList").append('<li id="nav_home"><a id="enjoy233" rel="nofollow" href="//ing.cnblogs.com/" target="_blank" title="进入我的闪存">闪存</a></li>');
         $("#navList").append('<li id="nav_follow"><a id="enjoy233" rel="nofollow" href="//home.cnblogs.com/followees/" target="_blank" title="进入我的关注">我关注</a></li>');
@@ -171,7 +172,7 @@
         $('#navList')[0].children["nav_rss"].innerHTML = '<a id="nav_rss" class="menu" rel="nofollow" href="//www.cnblogs.com/enjoy233/rss">RSS订阅</a>';
 
         initCommentData();
-  < !--指定返回底部位置 postEnd-- >
+  <!-- 指定返回底部位置 postEnd -->
   if (document.location.href.indexOf('/p/') > 0 || document.location.href.indexOf('/archive/') > 0 || document.location.href.indexOf('/articles') > 0 || document.location.href.indexOf('/diary/') > 0) {
             $("#home").prepend('<a href="#signature" alt="一键置底" title="快速置底"><div id="postEnd" style="zoom:0;"></div></a>');
             $("#post_detail").prepend('<a id="quickEdit" alt="编辑" title="快速编辑" style="float:right"></a>');
