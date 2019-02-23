@@ -351,10 +351,12 @@ else
     $('.subtitle').addClass('bounceInLeft animated');
     
        // $('.cnblogs-markdown a').attr('target', '_blank');  // 所有markdown模式下的链接在新窗口打开
-       // 博客内的链接在新窗口打开
+       // 除了目录，博客内的链接在新窗口打开
        $("#cnblogs_post_body a").each(function(){
                 this.target = "_blank";
          });     
+
+     $('.toc-list').find('a').attr('target', '_self');
 
     // 本人时显示最近评论
     if($('#profile_block').find('#p_b_follow')[0].innerHTML.indexOf("关注") != -1) $('.catListComment').hide();  // indexOf == -1时是自己，关注/已关注
