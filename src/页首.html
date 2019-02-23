@@ -1,7 +1,6 @@
 <!-- 书体坊赵九江钢笔行书 -->
 <link href='//blog-static.cnblogs.com/files/enjoy233/f556-4d963170aae_fontorg.com.css' rel='stylesheet' type='text/css' />
 <link href='//files.cnblogs.com/files/enjoy233/feedback.css' rel='stylesheet' type='text/css' />
-
 <script language="javascript" type="text/javascript">
     jQuery(document).on('copy', function (e) {
         var selected = window.getSelection();
@@ -17,7 +16,6 @@
         }, 0);
     });
 </script>
-
 <script language="JavaScript" type="text/javascript" src="//files.cnblogs.com/files/enjoy233/swfobject.js"></script>
 
 <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js" type="text/javascript"></script>
@@ -154,17 +152,14 @@
     <input onclick="zzk_go()" type="button" class="search_btn" value="本博搜索">
     <input onclick="zzk_go2()" type="button" class="search_btn2" value="园内搜索">
 </div>
-
 <div id="music163player" style="display: table; text-align: center; width: 40%; height: 80%;">
     <embed border="0" marginwidth="0" marginheight="0" width=320 height=70 src="//music.163.com/outchain/player?type=2&id=26237342&auto=0&height=66">
 </div>
-
 <div>
     <a href="//github.com/yanglr" target="_blank" style="position: absolute;right: 0;  top: 0; z-index: 100;">
         <img src="//images.cnblogs.com/cnblogs_com/enjoy233/1389971/o_git-right-link.gif" alt="Fork me on github">
     </a>
 </div>
-
 <link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
 <script language="javascript" type="text/javascript">
     $(function () {
@@ -198,7 +193,7 @@
         $('.toc-list').find('a').attr('target', '_self');
 
         // 本人时显示最近评论
-        if ($('#profile_block').find('#p_b_follow')[0].innerHTML.indexOf("关注") != -1) $('.catListComment').hide();  // indexOf == -1时是自己，关注/已关注
+        if ($('#profile_block').find('#p_b_follow')[0].innerHTML == "") $('.catListComment').hide();  // indexOf == -1时是自己，关注/已关注
 
         //为右下角推荐推荐区域添加关注按钮
         $('#div_digg').prepend('<div style="padding-bottom: 5px"><span class="icon_favorite" style="padding-top: 2px"></span><a onclick="follow(\'27f8db64-eee4-e111-aa3f-842b2b196315\');" href="javascript:void(0);"  style="font-weight: bold; padding-left:5px;">🌵关注下博主呗</a> </div>');
