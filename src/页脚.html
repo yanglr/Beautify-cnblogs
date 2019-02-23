@@ -1,7 +1,4 @@
-<script type="text/javascript" src="//apps.bdimg.com/libs/bootstrap/3.2.0/js/bootstrap.min.js?ver=5.2"></script>
-<link href="//cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-
-div class="scrollBtn" id="scrollBtn">
+<div class="scrollBtn" id="scrollBtn">
     <ul class="clearfix">
         <li class="sB-home">
             <a href="http://www.cnblogs.com/enjoy233" class="ff-t" title="首页"></a>
@@ -83,32 +80,17 @@ $(document).ready(function(){
 
 <script src="//files.cnblogs.com/files/enjoy233/highlightjs-line-numbers.min-v2.6.js"></script>
 
-<script src="//cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
-
-    <script>
-     $('#cnblogs_post_body').addClass("js-toc-content");
-         tocbot.init({
-            // Where to render the table of contents.
-            tocSelector: '.js-toc',
-            // Where to grab the headings to build the table of contents.
-            contentSelector: '.js-toc-content',
-            // Which headings to grab inside of the contentSelector element.
-            headingSelector: 'h1, h2, h3, h4',
-            collapseDepth: 6,
-            headingsOffset: 1,
-            orderedList: true
-            /* last parameter must NOT have commas */
-        });
-    </script>
-
 <script>
 $(window).on("load", function(){
   $.ready.then(function(){  
-    /* 以下3个语句任选一个即可 */
+ $('#cnblogs_post_body').addClass("js-toc-content");
+ // tocbot.refresh();
+
+    // 以下3个语句人选一个即可
    // $(".cnblogs-markdown pre").find(".hljs-meta").removeClass("hljs-meta");
    // $(".hljs-meta").css({ 'color' : 'none !important' });
    $(".hljs-meta").css({ 'all' : 'unset' });
+
   });
 })
 
@@ -183,3 +165,25 @@ $(window).on("load", function(){
 document.getElementById("bdshell_js").src = "//static.dmzj.com/baidushare/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000) 
 </script> 
 <!-- Baidu Share END -->
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+
+    <script>
+        var captions = $("#cnblogs_post_body h2, #cnblogs_post_body h3").clone(),
+        content = $('<div class="col"><p>目录</p><p class="js-toc"></p></div>');
+        $("#cnblogs_post_body").prepend(content.append(captions));
+        captions.replaceWith(function(){
+        var self = this;
+        if(!(self.tagName == "H2" || self.tagName == "h2")){
+            return self.innerHTML + "<br>";
+        }
+    });
+
+        tocbot.init({
+           tocSelector: '.js-toc',
+           contentSelector: '#cnblogs_post_body',
+           headingSelector: 'h1, h2, #cnblogs_post_body > h3'
+       });
+
+    </script>
