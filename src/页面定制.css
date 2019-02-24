@@ -213,7 +213,7 @@ code {
     	margin: 18px 35px;
 	padding: 15px 20px 15px 60px;
 	background: #FFFFCC url(//images.cnblogs.com/cnblogs_com/enjoy233/1389971/o_cnblogs_pin.png) no-repeat 9px 0px;
-        font-family: 'Microsoft Yahei';
+        font-family: Georgia, 'Microsoft Yahei';
         box-shadow: 0 0 8px #aaa;
         clear: both;
 }
@@ -794,7 +794,6 @@ td.hljs-ln-code {
     border: 2px solid LightSteelBlue !important;
 }
 
-/* 修复 部分代码的颜色被 "./bundles/blog-common.css" 设置 */
 .hljs-deletion, .hljs-selector-attr, .hljs-selector-pseudo, .hljs-meta {
     all: unset;
 }
@@ -824,24 +823,91 @@ td.hljs-ln-code {
 a.toc-link {
     color: #2ca6cb !important;
 }
+a.toc-link:hover {
+    color: orange !important;
+}
 
-   @media screen and (max-width: 1000px) {
-    #main {width: 100%;}
-   }
+@media screen and (max-width: 1000px) {
+    #main {
+        width: 100%;
+    }
+}
+
+/* 定制自己导航栏的样式 */
+#shwtop ul {
+    margin: 0;
+    width: 60px;
+    padding: 0;
+    list-style-type: none; /*去除li前的标注*/
+    background-color: #55895B;
+    overflow: hidden; /*隐藏溢出的部分，保持一行*/
+}
+
+#shwtop li {
+    float: left; /*左浮动*/
+}
+
+    #shwtop li a, .dropbtn {
+        display: inline-block; /*设置成块*/
+        color: white;
+        text-align: center;
+        text-decoration: none;
+    }
+        /*鼠标移上去，改变背景颜色*/
+        #shwtop li a:hover, .dropdown:hover .dropbtn {
+            /* 当然颜色你可以自己改成自己喜欢的，我还是挺喜欢蓝色的 */
+            background-color: blue;
+        }
+
+#shwtop .dropdown {
+    /*
+display:inline-block将对象呈递为内联对象，
+但是对象的内容作为块对象呈递。
+旁边的内联对象会被呈递在同一行内，允许空格。
+*/
+    display: inline-block;
+}
+
+#shwtop .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+    #shwtop .dropdown-content a {
+        display: block;
+        color: black;
+        padding: 0px 5px;
+        text-decoration: none;
+    }
+
+        #shwtop .dropdown-content a:hover {
+            background-color: #a1a1a1;
+        }
+
+#shwtop .dropdown:hover .dropdown-content {
+    display: block;
+}
 
     .clearfix:before, .clearfix:after {
         display: table;
         content: '';
     }
+
     .clearfix:after {
         clear: both;
     }
+
     .clearfix {
         zoom: 1;
     }
+
     .ff-t {
         font-family: Tahoma;
     }
+
     .scrollBtn {
         position: fixed;
         right: 15px;
@@ -849,6 +915,7 @@ a.toc-link {
         width: 54px;
         _position: absolute;
     }
+
         .scrollBtn a {
             display: inline-block;
             overflow: hidden;
@@ -864,25 +931,30 @@ a.toc-link {
             background: url(//images.cnblogs.com/cnblogs_com/enjoy233/1389971/o_iconList.png) no-repeat 0 0;
             filter: Alpha(Opacity=60);
         }
+
         .scrollBtn li {
             float: left;
             overflow: hidden;
             height: 54px;
             margin-bottom: 5px;
         }
+
         .scrollBtn a:hover {
             opacity: 1;
             filter: Alpha(Opacity=100);
         }
+
     .sB-comment a {
         height: 17px;
         padding-top: 34px;
         padding-bottom: 3px;
         background-position: 0 -59px;
     }
+
     .sB-share a {
         background-position: 0 -118px;
     }
+
     .sB-goTop a {
         background-position: 0 -177px;
     }
@@ -897,10 +969,10 @@ a.toc-link {
         left: 0;
         margin-top: 15px;
         color: #323232;
-        /* 设置显示在当前页面的上一层 */
+        /*设置显示在当前页面的上一层*/
         z-index: 1;
     }
- 
+
     .side_search {
         float: left;
         position: relative;
@@ -908,12 +980,12 @@ a.toc-link {
         margin-left: 25px;
         display: inline-block;
     }
- 
-        .side_search:hover {
-            -webkit-box-shadow: 0 0 3px #999;
-            -moz-box-shadow: 0 0 3px #999
-        }
- 
+
+    .side_search:hover {
+        -webkit-box-shadow: 0 0 3px #999;
+        -moz-box-shadow: 0 0 3px #999
+    }
+
     .search_input {
         width: 210px;
         vertical-align: middle;
@@ -924,7 +996,7 @@ a.toc-link {
         padding: 4px 7px;
         background-color: #fbfbfb;
     }
- 
+
     .delete_btn {
         background: #fbfbfb;
         margin-left: -6px;
@@ -940,7 +1012,7 @@ a.toc-link {
         height: 38px;
         padding-bottom: inherit;
     }
- 
+
     .search_btn {
         border-radius: 3px 3px 3px 3px;
         background: #4d90fe;
@@ -955,11 +1027,11 @@ a.toc-link {
         font-size: 18px;
         height: 41px;
     }
- 
-        .search_btn:hover {
-            background: #1874CD
-        }
- 
+
+    .search_btn:hover {
+        background: #1874CD
+    }
+
     .search_btn2 {
         border-radius: 3px 3px 3px 3px;
         background: #F0CB85;
@@ -973,11 +1045,11 @@ a.toc-link {
         font-size: 18px;
         height: 41px;
     }
- 
-        .search_btn2:hover {
-            background: #DEB887
-        }
- 
+
+    .search_btn2:hover {
+        background: #DEB887
+    }
+
     input, button, textarea, select, optgroup, option {
         font-family: inherit;
         font-size: inherit;
@@ -985,53 +1057,77 @@ a.toc-link {
         font-weight: inherit;
     }
 
-/* 修改导航栏后自定义导航栏的样式 */
-#shwtop ul {
-    margin: 0;
-    width: 60px;
-    padding: 0;
-    list-style-type: none; /*去除li前的标注*/
-    background-color: #55895B;
-    overflow: hidden; /*隐藏溢出的部分，保持一行*/
+.asideMdContents {
+    width: 20vw;
+    max-height: 50vh;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    font-family: Georgia, 'Microsoft Yahei' !important;
+    font-weight: bold;
+    top: 56%;
+    right: 0;
+    position: fixed;
+    z-index: 1;
+    background-color: lightgray;
+    opacity: 0.9;
+    transition: 1s all ease;
 }
-#shwtop li {
-    float: left; /*左浮动*/
-}
-#shwtop li a, .dropbtn {
-    display: inline-block; /*设置成块*/
-    color: white;
+
+.fa {
+    width: 50px;
+    height: 50px;
+    background: #ccc;
     text-align: center;
-    text-decoration: none;
+    line-height: 50px !important;
+    color: white;
+    font-size: 2em;
+    cursor: pointer;
 }
-/*鼠标移上去，改变背景颜色*/
-#shwtop li a:hover, .dropdown:hover .dropbtn { 
-    /* 当然颜色你可以自己改成自己喜欢的，我还是挺喜欢蓝色的 */
-    background-color: blue;
+
+.close {
+   height: 9vh;
+   width: 38px;
+   /* margin-right: 0.5%; */
+   /* transition: 1s all ease; */
+   float: right;
+
+   transition: 1s all ease;
 }
-#shwtop .dropdown {
-    /*
-    display:inline-block将对象呈递为内联对象，
-    但是对象的内容作为块对象呈递。
-    旁边的内联对象会被呈递在同一行内，允许空格。
-    */
-    display: inline-block;
+
+.x {
+   height: 2px;
+   background-color: black;
+   width: 20px;
+   transform: rotate(45deg);
+   position: absolute;
+   top: 15px;
+   right: 10px;
 }
-#shwtop .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+
+.x2 {
+   height: 2px;
+   background-color: black;
+   width: 20px;
+   transform: rotate(-45deg);
+   position: absolute;
+   right: 10px;
+   top: 15px;
 }
-#shwtop .dropdown-content a {
-    display: block;
-    color: black;
-    padding: 0px 5px;
-    text-decoration:none;
+
+.o1 {
+    position: fixed;
+    top: 56%;
+    right: 0;
 }
-#shwtop .dropdown-content a:hover {
-    background-color: #a1a1a1;
-}
-#shwtop .dropdown:hover .dropdown-content{
-    display: block;
+
+.o2 {
+   height: 13px;
+   width: 13px;
+   border-radius: 100%;
+   border: 1px solid #3a3a3a;
+   position: absolute;
+   left: 51%;
+   top: 51%;
+   transform: translate(-50%, -50%);
+   transition: 1s all ease;
 }
