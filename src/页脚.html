@@ -41,7 +41,9 @@
         });
     })
 
-    $(function () {         
+    $(function () {
+    $('#footer').append('<div id="customFooter">            Powered By             <a href="//www.cnblogs.com" target="_blank">Cnblogs</a> |             <a href="//github.com/yanglr/cnblogs-theme-xSimple" target="_blank" title="Fork theme on github" class="enjoyFont">Extremely Simple</a>  Theme By             <a href="//www.cnblogs.com/enjoy233" target="_blank"  class="enjoyFont">Enjoy233</a>, Basic skin - <a href="//www.cnblogs.com/SkinUser.aspx?SkinName=LessIsMore" target="_blank">Less is More</a>.</div><br>');   
+      
         if ($(".cnblogs-markdown pre").length == 0) {
             $.getScript("//files.cnblogs.com/files/enjoy233/nav.my.js");
         }
@@ -52,8 +54,7 @@
         hljs.initHighlightingOnLoad();
         // hljs.initCopyButtonOnLoad();
         hljs.initLineNumbersOnLoad();
-
-        $('#footer').append('<div id="customFooter">            Powered By             <a href="//www.cnblogs.com" target="_blank">Cnblogs</a> |             <a href="//github.com/yanglr/cnblogs-theme-xSimple" target="_blank" title="Fork theme on github" class="enjoyFont">Extremely Simple</a>  Theme By             <a href="//www.cnblogs.com/enjoy233" target="_blank"  class="enjoyFont">Enjoy233</a>, Basic skin - <a href="//www.cnblogs.com/SkinUser.aspx?SkinName=LessIsMore" target="_blank">Less is More</a>.</div><br>');
+        
     });
 
     function setCodeRowWithLang(pre) {
@@ -120,7 +121,8 @@
     if ($(".cnblogs-markdown pre").length > 0) {
         // content = $('<div class="col"><p>目录</p><p class="js-toc"></p></div>');
 
-       $("#home").prepend('<div class="o1">   <i class="fa fa-list-ul" style="font-size: 40px; margin-left:5px;"></i></div><div class="asideMdContents">  <div class="close">       <div class="x"></div>       <div class="x2"></div>   </div>  <p class="js-toc"></p></div>'); 
+       if($("h1, h2, h3, h4, h5, h6").length > 0) 
+       $("#home").prepend('<div class="o1">   <i class="fa fa-list-ul" style="font-size: 40px;"></i></div><div class="asideMdContents">  <div class="close">       <div class="x"></div>       <div class="x2"></div>   </div>  <p class="js-toc"></p></div>'); 
 
         tocbot.init({
             // css选择器，用于指定将要生成自动目录的位置
@@ -137,9 +139,8 @@
 
     }
 
-$(function())
-{
-   $('.o1').click(function() {
+$(function () {
+$('.o1').click(function() {
       $('.asideMdContents').fadeIn(400);
    });
 
