@@ -1059,7 +1059,8 @@ display:inline-block将对象呈递为内联对象，
 
 .asideMdContents {
     width: 20vw;
-    max-height: 50vh;
+    min-height: 22%;
+    max-height: 40vh;
     overflow-x: hidden;
     overflow-y: scroll;
     font-family: Georgia, 'Microsoft Yahei' !important;
