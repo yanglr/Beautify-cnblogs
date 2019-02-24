@@ -19,7 +19,6 @@
 
 <!-- 添加文章目录 -->
 <link href="//blog-static.cnblogs.com/files/enjoy233/nav.my-right.css" rel="stylesheet">
-<!-- 添加文章目录 -->
 
 <script type="text/javascript">
     $(document).ready(function () {
@@ -31,30 +30,34 @@
 
 <script>
     $(window).on("load", function () {
-        $.ready.then(function () {
+        $.ready.then(function () {        
               // $('#cnblogs_post_body').addClass("js-toc-content");
              // tocbot.refresh();
 
             /* 以下3个语句任选一个即可 */
             // $(".cnblogs-markdown pre").find(".hljs-meta").removeClass("hljs-meta");
             // $(".hljs-meta").css({ 'color' : 'none !important' });
-            $(".hljs-meta").css({ 'all': 'unset' });
+            $(".hljs-meta").css({ 'all': 'unset' });     
         });
     })
-    $(function () {
+
+    $(function () {         
         if ($(".cnblogs-markdown pre").length == 0) {
             $.getScript("//files.cnblogs.com/files/enjoy233/nav.my.js");
         }
-        setCodeRowWithLang();
+        if($(".cnblogs-post-body pre > code").length > 0)  setCodeRowWithLang($(".cnblogs-post-body pre"));
+        else setCodeRowWithLang($(".cnblogs-markdown pre"));
 
         // markdown模式下为代码加入行号, 调用插件highlightjs-line-numbers.js
         hljs.initHighlightingOnLoad();
+        // hljs.initCopyButtonOnLoad();
         hljs.initLineNumbersOnLoad();
 
         $('#footer').append('<div id="customFooter">            Powered By             <a href="//www.cnblogs.com" target="_blank">Cnblogs</a> |             <a href="//github.com/yanglr/cnblogs-theme-xSimple" target="_blank" title="Fork theme on github" class="enjoyFont">Extremely Simple</a>  Theme By             <a href="//www.cnblogs.com/enjoy233" target="_blank"  class="enjoyFont">Enjoy233</a>, Basic skin - <a href="//www.cnblogs.com/SkinUser.aspx?SkinName=LessIsMore" target="_blank">Less is More</a>.</div><br>');
     });
-    function setCodeRowWithLang() {
-        var pre = $(".cnblogs-markdown pre"); // 选中需要处理的代码块
+
+    function setCodeRowWithLang(pre) {
+        // var pre = $(".cnblogs-post-body pre"); // 选中需要处理的代码块, 如果不是首页，选择器为 .cnblogs-markdown pre
         if (pre && pre.length) {
             pre.each(function () {
                 var item = $(this);
@@ -114,10 +117,10 @@
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
 
 <script>
-
     if ($(".cnblogs-markdown pre").length > 0) {
-        content = $('<div class="col"><p>目录</p><p class="js-toc"></p></div>');
-        $("#cnblogs_post_body").prepend(content);
+        // content = $('<div class="col"><p>目录</p><p class="js-toc"></p></div>');
+
+       $("#home").prepend('<div class="o1">   <i class="fa fa-list-ul" style="font-size: 40px; margin-left:5px;"></i></div><div class="asideMdContents">  <div class="close">       <div class="x"></div>       <div class="x2"></div>   </div>  <p class="js-toc"></p></div>'); 
 
         tocbot.init({
             // css选择器，用于指定将要生成自动目录的位置
@@ -133,4 +136,17 @@
         });
 
     }
+
+$(function())
+{
+   $('.o1').click(function() {
+      $('.asideMdContents').fadeIn(400);
+   });
+
+   $('.close').click(function() {
+      $('.asideMdContents').fadeOut(100);
+   });
+});
+
+$('<p style="color:blue;">目录</p>').prependTo('.js-toc');
 </script>
