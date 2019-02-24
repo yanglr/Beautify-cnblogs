@@ -1,5 +1,74 @@
 @charset "utf-8";
 
+a:link {
+    color:black;
+    text-decoration:none;
+}
+a:visited {
+    color:#111;
+    text-decoration: none;
+}
+a:hover {
+    color: #7B68EE;
+    -moz-border-radius: 9px;
+    -khtml-border-radius: 9px;
+    -webkit-border-radius: 9px;
+    border-radius: 9px;
+    transition: all 0.4s linear 0s;
+}
+a:active {
+    color: black;
+    text-decoration: none;
+}
+
+#navigator {
+    clear:both;
+    -moz-border-radius: 11px;
+    -khtml-border-radius: 11px;
+    -webkit-border-radius: 11px;
+    border-radius: 11px;
+    -webkit-box-shadow:5px 2px 6px #000;-moz-box-shadow:5px 2px 6px #000;padding:4px 10px;
+    background:#FFF;
+    opacity: 0.60;
+    margin: 13px;
+    padding: 0;
+    border-radius: 6px 6px 6px 6px;
+    background: none repeat scroll 0 0 #04A292;
+    font-weight: bold;
+    border: 1px solid #04A292;
+}
+
+#navList {
+    min-height: 1.5em;
+    float: left;
+}
+#navList li {
+    float: left;
+}
+#navList a {
+    font-size: 1.2em;
+    display: block;
+    padding-left:0.5em;
+    padding-right:0.5em;
+    line-height:2em;
+    float: left;
+    text-align: center;
+    border-right: 1px solid #999;
+}
+
+#navList > li a {
+    color: #FFFFFF;
+}
+
+#navList a:link, #navList a:visited, #navList a:active {
+/*    color: #ccc;*/
+}
+#navList a:hover {
+    color: #7B68EE;
+    padding-left:0.8em;
+    padding-right:0.8em;
+}
+
 #blogTitle .title {
       font-size: 35px;
 }
@@ -71,20 +140,6 @@ h3.catListTitle {
 	padding: 5px;
 }
 
-#navList li {
-	float: left;
-	font-size: 1.3em;
-	margin-right: 0;
-	text-align: center;
-	width: 90px;
-}
-
-#navigator {
-	margin: 13px;
-	padding: 0;
-	border-radius: 6px 6px 6px 6px;
-        line-height: auto !important;
-}
 
 /*  固定 点赞、收藏等功能 */
 #green_channel { 
@@ -165,30 +220,12 @@ a#green_channel_wechat {
 	margin-right: 10px;
 }
 
-#navigator {
-	height: auto !important;
-}
-
 #cnblogs_post_body h1, h2, h3, h4, h5, h6 {
 	color: blue;
 	margin-top: 25px;
 	margin-bottom: 10px;
 	padding: 5px;
 	padding-left: 0;
-}
-
-#navigator {
-	background: none repeat scroll 0 0 #04A292;
-	font-weight: bold;
-	border: 1px solid #04A292;
-}
-
-#navList > li a {
-	color: #FFFFFF;
-}
-
-#navList li:hover {
-	background-color: #20B2AA;
 }
 
 code {
@@ -856,7 +893,7 @@ a.toc-link:hover {
         /*鼠标移上去，改变背景颜色*/
         #shwtop li a:hover, .dropdown:hover .dropbtn {
             /* 当然颜色你可以自己改成自己喜欢的，我还是挺喜欢蓝色的 */
-            background-color: blue;
+            background-color: #FFFFCC;
         }
 
 #shwtop .dropdown {
