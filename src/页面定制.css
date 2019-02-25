@@ -592,8 +592,25 @@ code {
     /* display: none; */
 }
 
+#tbCommentBody {
+    padding: 10px 120px 10px 10px;
+    border: 2px solid lightsteelblue;
+    height: 225px; /* 根据实际图片高度调整 */
+    min-height: 120px;
+    max-height: 500px;
+    width: 80%;
+    background-size: cover;
+    background: url(//files-cdn.cnblogs.com/files/enjoy233/kuawo1.gif) no-repeat right bottom;
+}
+
 .comment_bury {
 	display: none;
+}
+
+.comment_btn {
+    font-size: 12px;
+    line-height: 1.5 !important;
+    border-radius: 4px;
 }
 
 #comment_nav {
