@@ -899,13 +899,6 @@ td.hljs-ln-code {
     border-radius: 0.5em;
 }
 
-#tocCol {
-    float: right;
-    background: #eee;
-    margin: 2em 0 0 0.5em;
-    padding: 3px;
-}
-
 a.toc-link {
     color: #2ca6cb !important;
 }
