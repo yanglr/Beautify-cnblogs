@@ -1,5 +1,41 @@
 @charset "utf-8";
 
+#header {
+     display: none;
+}
+
+#customH1 {
+   color: #85C2F2 !important;
+   font-size: 45px;
+   text-align:center;
+   -vendor-animation-duration: 3s;
+   -vendor-animation-delay: 2s;
+   -vendor-animation-iteration-count: infinite;
+}
+
+#customH2 {
+   text-align:center;
+   -vendor-animation-duration: 3s;
+   -vendor-animation-delay: 2s;
+   -vendor-animation-iteration-count: infinite;
+}
+
+a#myH1 {
+    color: #85C2F2 !important; 
+}
+
+a#myH1:hover {
+    color: orange !important; 
+}
+
+#customNav {
+    position: absolute;
+    background: gray;
+    top: 43%;
+    left: 10px;
+    z-index: 1;
+}
+
 a:link {
     color:black;
     text-decoration:none;
@@ -38,14 +74,30 @@ a:active {
     border: 1px solid #04A292;
 }
 
-#navList {
+.customNavigator {
+    clear:both;
+    -moz-border-radius: 11px;
+    -khtml-border-radius: 11px;
+    -webkit-border-radius: 11px;
+    border-radius: 11px;
+    -webkit-box-shadow:5px 2px 6px #000;-moz-box-shadow:5px 2px 6px #000;padding:4px 10px;
+    opacity: 0.60;
+    margin: 13px;
+    padding: 0;
+    border-radius: 6px 6px 6px 6px;
+    background: none repeat scroll 0 0 #04A292;
+    font-weight: bold;
+    border: 1px solid #04A292;
+}
+
+.customNavList {
     min-height: 1.5em;
     float: left;
 }
-#navList li {
+.customNavList li {
     float: left;
 }
-#navList a {
+.customNavList a {
     font-size: 1.2em;
     display: block;
     padding-left:0.5em;
@@ -56,21 +108,17 @@ a:active {
     border-right: 1px solid #999;
 }
 
-#navList > li a {
+.customNavList > li a {
     color: #FFFFFF;
 }
 
-#navList a:link, #navList a:visited, #navList a:active {
-/*    color: #ccc;*/
+.customNavList a:link, .customNavList a:visited, .customNavList a:active {
+    color: #ccc;
 }
-#navList a:hover {
+.customNavList a:hover {
     color: #7B68EE;
     padding-left:0.8em;
     padding-right:0.8em;
-}
-
-#blogTitle .title {
-      font-size: 35px;
 }
 
 #sideBar {
@@ -87,7 +135,7 @@ a:active {
 
 #Header1_HeaderTitle.headermaintitle {
 	color: #85C2F2 !important;
-        font-family:'Segoe Print', 'Segoe Script', 'stfzjjgangbixin17c2fb7ee61f271';
+        font-family: f556-4d963170aae,"Segoe Print", "Segoe Script";
         font-size: 45px;
 }
 
@@ -119,6 +167,7 @@ display:none; !important
 #mainContent {
 	padding-left: 13px;
     /**margin-right: 15px;**/
+        margin-left: 0;
 	float: right;
 	position: relative;
 	width: 100%;
@@ -612,7 +661,7 @@ code {
 	margin: 10px 0;
 }
 /* 标题样式设置结束 */
- 
+
 /* 去除双下划线斜体样式 */
 em {
 	font-style: normal;
@@ -850,7 +899,7 @@ td.hljs-ln-code {
     border-radius: 0.5em;
 }
 
-.col {
+#tocCol {
     float: right;
     background: #eee;
     margin: 2em 0 0 0.5em;
@@ -864,39 +913,75 @@ a.toc-link:hover {
     color: orange !important;
 }
 
+/* 兼容移动端 */
 @media screen and (max-width: 1000px) {
     #main {
         width: 100%;
     }
 }
 
-/* 定制自己导航栏的样式 */
-#shwtop ul {
+/* 设置新导航栏的样式 */
+#topNav {
+    min-height: 1em;
+    padding-top: 20px;
+}
+
+#topNav li {
+    float: left;
+}
+
+#topNav a {
+    display: block;
+    font-size: 18px;
+    padding-left:0.5em;
+    padding-right:0.5em;
+    line-height:2em;
+    text-align: left;
+    border-right: 1px solid #999;
+}
+
+#topNav > li a {
+    color: #FFFFFF;
+}
+
+#topNav a:link, #topNav a:visited, #topNav a:active {
+    color: #ccc;
+}
+#topNav a:hover {
+    color: #7B68EE;
+    padding-left:0.8em;
+    padding-right:0.8em;
+}
+
+#topNav ul {
     margin: 0;
-    width: 60px;
     padding: 0;
-    list-style-type: none; /*去除li前的标注*/
-    background-color: #55895B;
+    background-color: #04A292;
     overflow: hidden; /*隐藏溢出的部分，保持一行*/
+    border-radius: 6px 6px 6px 6px;
 }
 
-#shwtop li {
-    float: left; /*左浮动*/
+#topNav li {
+    font-size: 1.2em;
+    font-weight: bold;
+    float: left;  /*左浮动*/
+    margin-left: 5px;
 }
 
-    #shwtop li a, .dropbtn {
+    #topNav li a, .dropbtn {
         display: inline-block; /*设置成块*/
         color: white;
         text-align: center;
         text-decoration: none;
     }
-        /*鼠标移上去，改变背景颜色*/
-        #shwtop li a:hover, .dropdown:hover .dropbtn {
-            /* 当然颜色你可以自己改成自己喜欢的，我还是挺喜欢蓝色的 */
-            background-color: #FFFFCC;
-        }
 
-#shwtop .dropdown {
+ /*鼠标移上去，改变背景颜色*/
+#topNav li a:hover, .dropdown:hover .dropbtn {
+      background-color: #ede9e7f0;
+      opacity: 0.5;
+}
+
+#topNav .dropdown {
     /*
 display:inline-block将对象呈递为内联对象，
 但是对象的内容作为块对象呈递。
@@ -905,7 +990,7 @@ display:inline-block将对象呈递为内联对象，
     display: inline-block;
 }
 
-#shwtop .dropdown-content {
+#topNav .dropdown-content {
     display: none;
     position: absolute;
     background-color: #f9f9f9;
@@ -913,18 +998,19 @@ display:inline-block将对象呈递为内联对象，
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
 
-    #shwtop .dropdown-content a {
+    #topNav .dropdown-content a {
         display: block;
         color: black;
+        font-size: 14px;
         padding: 0px 5px;
         text-decoration: none;
     }
 
-        #shwtop .dropdown-content a:hover {
-            background-color: #a1a1a1;
-        }
+#topNav .dropdown-content a:hover {
+    background-color: #a1a1a1;
+}
 
-#shwtop .dropdown:hover .dropdown-content {
+#topNav .dropdown:hover .dropdown-content {
     display: block;
 }
 
@@ -1014,13 +1100,9 @@ display:inline-block将对象呈递为内联对象，
         float: left;
         position: relative;
         height: 31px;
+        margin-top: 15px;
         margin-left: 25px;
         display: inline-block;
-    }
-
-    .side_search:hover {
-        -webkit-box-shadow: 0 0 3px #999;
-        -moz-box-shadow: 0 0 3px #999
     }
 
     .search_input {
@@ -1034,21 +1116,18 @@ display:inline-block将对象呈递为内联对象，
         background-color: #fbfbfb;
     }
 
-    .delete_btn {
-        background: #fbfbfb;
-        margin-left: -6px;
-        border: 1px solid #fbfbfb;
-        border-radius: 0 3px 3px 0;
-        cursor: pointer;
-        display: inline-block;
-        vertical-align: middle;
-        color: red;
-        font-weight: bold;
-        width: 38px;
-        font-size: 25px;
-        height: 38px;
-        padding-bottom: inherit;
-    }
+.delete_btn {
+    background: transparent;
+    margin-left: -3px;
+    border: none;
+    cursor: pointer;
+    vertical-align: middle;
+    color: #000;
+    font-weight: bold;
+    width: 35px;
+    font-size: 25px;
+    height: 35px;
+}
 
     .search_btn {
         border-radius: 3px 3px 3px 3px;
@@ -1085,13 +1164,6 @@ display:inline-block将对象呈递为内联对象，
 
     .search_btn2:hover {
         background: #DEB887
-    }
-
-    input, button, textarea, select, optgroup, option {
-        font-family: inherit;
-        font-size: inherit;
-        font-style: inherit;
-        font-weight: inherit;
     }
 
 .asideMdContents {
@@ -1169,3 +1241,54 @@ display:inline-block将对象呈递为内联对象，
    transform: translate(-50%, -50%);
    transition: 1s all ease;
 }
+
+div#cat1 {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+#customHeader {
+    height: 320px;
+    margin-top:20px; 
+    margin-right: 5%;
+    background: #020031;
+    background: -moz-linear-gradient(45deg,#020031 0,#6d3353 100%);
+    background: -webkit-gradient(linear,left bottom,right top,color-stop(0%,#020031),color-stop(100%,#6d3353));
+    background: -webkit-linear-gradient(45deg,#020031 0,#6d3353 100%);
+    background: -o-linear-gradient(45deg,#020031 0,#6d3353 100%);
+    background: -ms-linear-gradient(45deg,#020031 0,#6d3353 100%);
+    background: linear-gradient(45deg,#020031 0,#6d3353 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#020031', endColorstr='#6d3353', GradientType=1);
+    -webkit-box-shadow: inset 0 3px 7px rgba(0,0,0,.2), inset 0 -3px 7px rgba(0,0,0,.2);
+    -moz-box-shadow: inset 0 3px 7px rgba(0,0,0,.2),inset 0 -3px 7px rgba(0,0,0,.2);
+    box-shadow: inset 0 3px 7px rgba(0,0,0,.2), inset 0 -3px 7px rgba(0,0,0,.2);
+}
+
+a:link {
+	color: black;
+	text-decoration: none;
+}
+a:visited {
+	color: black;
+	text-decoration: none;
+}
+a:hover {
+	color: #F60;
+	/* text-decoration: underline; */
+}
+a:active {
+	color: black;
+	text-decoration: none;
+}
+
+/* 不显示日历中的下划线 */
+u {
+    text-decoration: none;
+}
+
+.tocCol {
+     float: right;
+     background: #eee;
+     margin: 2em 0 0 0.5em;
+     padding: 3px;
+ }
