@@ -1,7 +1,10 @@
 <!-- 书体坊赵九江钢笔行书 -->
 <link href='//files.cnblogs.com/files/enjoy233/youziku.com_stfzjjgangbixin17c2fb7ee61f271.css' rel='stylesheet' type='text/css' />
+<link rel="stylesheet" href="//cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css">
 <!-- 评论特效 -->
 <link href="//files.cnblogs.com/files/enjoy233/feedback.css" rel="stylesheet">  
+<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+<link href="//files.cnblogs.com/files/enjoy233/ic-write_IconFont.css" rel="stylesheet">
 
 <script language="javascript" type="text/javascript">
     jQuery(document).on('copy', function (e) {
@@ -145,51 +148,75 @@
     }
 </script>
 
-<h1 style="margin-left: 570px;padding-top:15px;padding-bottom: 15px; color: #337ab7;font-size: 3em;font-weight: bold;font-style: italic;text-shadow: 1px 0px 0px #1E90FF;">  </h1>
 <div class="side_search">
     <input type="text" id="zzk_q" class="search_input" onkeydown="return zzk_go_enter(event);" placeholder="输入 回车搜索" tabindex="1" autofocus x-webkit-speech>
     <div id="auto_div">
-    </div>&nbsp;
-    <input onclick="quickdelete()" type="button" class="delete_btn" value="×" title="清空">
-     <!-- <input class="close" onclick="quickdelete()"  title="清空">       <div class="x"></div>       <div class="x2"></div>   </input>  -->
-
+    </div>
+    <input onclick="quickdelete()" type="button" class="delete_btn" value="×" title="清空">    
+    <!-- <button id="clearAll" onclick="quickdelete()"><i class="fa fa-times"></i></button> -->
     <input onclick="zzk_go()" type="button" class="search_btn" value="本博搜索">
     <input onclick="zzk_go2()" type="button" class="search_btn2" value="园内搜索">
 </div>
-<div id="music163player" style="display: table; text-align: center; width: 40%; height: 80%;">
+<div id="music163player" style="display: table; text-align: center; width: 40%; height: 55%;">
     <embed border="0" marginwidth="0" marginheight="0" width=320 height=70 src="//music.163.com/outchain/player?type=2&id=26237342&auto=0&height=66">
 </div>
+
+<div id="customHeader">
+<div id="customH1">
+<a id="myH1" href="javascript:void(0);" style="font-family:'Segoe Print', 'Segoe Script', 'stfzjjgangbixin17c2fb7ee61f271';">Bravo Yeung 技术自留地</a>
+</div>
+<div id="customH2">
+<font style="color:gray;font-family:微软雅黑;font-size: 15px;font-weight: bold; margin-bottom: 10px;">极简编程：IT人实践之路</font>
+</div>
+
 <div>
     <a href="//github.com/yanglr" target="_blank" style="position: absolute;right: 0;  top: 0; z-index: 100;">
         <img src="//images.cnblogs.com/cnblogs_com/enjoy233/1389971/o_git-right-link.gif" alt="Fork me on github">
     </a>
 </div>
-<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
 
-<link rel="stylesheet" href="//cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css">
+    <div id="topNav" >
+    <ul style="margin-left:0px;margin-right: 0px;">
+        <li id="cus_nav_sitehome"><a id="blog_nav_sitehome" class="menu" href="//www.cnblogs.com/" target="_blank" >博客园</a></li>
+        <li id="cus_nav_myhome"><a id="blog_nav_myhome" class="menu" href="//home.cnblogs.com/u/enjoy233" target="_blank" >我的首页</a></li>
+        <li id="cus_nav_newpost"><a id="blog_nav_newpost" class="menu" rel="nofollow" href="https://i.cnblogs.com/EditPosts.aspx?opt=1" target="_blank">写博客</li>
+        <li id="cus_nav_contact"><a id="nav_contact" class="menu" rel="nofollow" href="//msg.cnblogs.com/send/Enjoy233" target="_blank">私信我</a></li>
+        <li id="cus_nav_rss"><a id="nav_rss" class="menu" rel="nofollow" href="//www.cnblogs.com/enjoy233/rss" target="_blank" >RSS订阅</a></li>
+        <li id="cus_nav_ing"><a id="enjoy233" rel="nofollow" href="//ing.cnblogs.com/u/enjoy233" target="_blank" title="进入我的闪存">闪存</a></li><li id="nav_follow"><a id="enjoy233" rel="nofollow" href="//home.cnblogs.com/u/enjoy233/followees/" target="_blank" title="进入我的关注">我关注</a></li>                                 
+    
+       <div class="dropdown" id="cat1">
+      <a href="#" class="dropbtn">后台管理</a>
+        <div class="dropdown-content">
+            <a class="menu" href="//i.cnblogs.com/Configure.aspx" target="_blank">GUI配置</a>         
+           <a class="menu" href="//i.cnblogs.com/posts" target="_blank">博文列表</a>   
+           <a class="menu" href="//wz.cnblogs.com/" target="_blank">网摘夹</a>      
+           <a class="menu" href="//i.cnblogs.com/Files.aspx" target="_blank">文件</a>
+            <a class="menu" href="//i.cnblogs.com/EditGalleries.aspx" target="_blank">相册</a>
+        </div>
+      </div> 
+    </ul>
+</div> 
+
+</div>
+
 <script language="javascript" type="text/javascript">
     $(function () {
-     <!-- 更新导航栏的菜单 -->
-            $("#navigator").append('<div id="shwtop" >    <ul style="margin-left:5px;margin-right: 5px;">       <div class="dropdown">            <a href="#" class="dropbtn">后台管理</a>            <div class="dropdown-content">                <!-- <a class="menu" href="这里是你文章或随笔分类的链接地址，自己修改下面同理"> 这里更改下拉具体内容 </a> -->                <a class="menu" href="//i.cnblogs.com/Configure.aspx"  target="_blank">GUI配置</a>                <a class="menu" href="//i.cnblogs.com/posts" target="_blank">博文列表</a>                <a class="menu" href="//wz.cnblogs.com/" target="_blank">网摘夹</a>                               <a class="menu" href="//i.cnblogs.com/Files.aspx" target="_blank">文件</a>   <a class="menu" href="//i.cnblogs.com/EditGalleries.aspx" target="_blank">相册</a>          </div>        </div>    </ul></div>');
-        $("#navList").append('<li id="nav_home"><a id="enjoy233" rel="nofollow" href="//ing.cnblogs.com/" target="_blank" title="进入我的闪存">闪存</a></li>');
-        $("#navList").append('<li id="nav_follow"><a id="enjoy233" rel="nofollow" href="//home.cnblogs.com/followees/" target="_blank" title="进入我的关注">我关注</a></li>');
-        $('#navList')[0].children["nav_contact"].innerHTML = '<a id="nav_contact" class="menu" rel="nofollow" href="//msg.cnblogs.com/send/Enjoy233">私信</a>';
-        $('#navList')[0].children["nav_rss"].innerHTML = '<a id="nav_rss" class="menu" rel="nofollow" href="//www.cnblogs.com/enjoy233/rss">RSS订阅</a>';
+        $('#customHeader').append('<div id="customBlogStat" style="color:white; font-weight:bold; margin-top: 10px;">' + $('#blog_stats').html() + '</div>');
 
         initCommentData();
-  <!-- 指定返回底部位置 postEnd -->
-  if (document.location.href.indexOf('/p/') > 0 || document.location.href.indexOf('/archive/') > 0 || document.location.href.indexOf('/articles') > 0 || document.location.href.indexOf('/diary/') > 0) {
+       <!-- 指定返回底部位置 postEnd -->
+       if (document.location.href.indexOf('/p/') > 0 || document.location.href.indexOf('/archive/') > 0 || document.location.href.indexOf('/articles') > 0 || document.location.href.indexOf('/diary/') > 0) {
             $("#home").prepend('<a href="#signature" alt="一键置底" title="快速置底"><div id="postEnd" style="zoom:0;"></div></a>');
             $("#post_detail").prepend('<a id="quickEdit" alt="编辑" title="快速编辑" style="float:right"></a>');
             $('#post_detail').find('#quickEdit').html("<a href='//i.cnblogs.com/EditPosts.aspx?postid=" + cb_entryId + "'>编辑✎</a>");
 
         }
 
-        if (isLogined) $('#blogTitle').find("#Header1_HeaderTitle").append('<a href="//passport.cnblogs.com/logout.aspx?ReturnURL=//www.cnblogs.com/enjoy233/" id="logout" style="float:right;" title="退出登录"><img src="//images.cnblogs.com/cnblogs_com/enjoy233/1389971/o_logout64p.png" width=30px height=30px></a>');
+        if (isLogined) $('#customHeader').append('<a href="//passport.cnblogs.com/logout.aspx?ReturnURL=//www.cnblogs.com/enjoy233/" id="logout" style="float:right;margin-top: 32px;margin-right: 20px;" title="退出登录"><img src="//images.cnblogs.com/cnblogs_com/enjoy233/1389971/o_logout64p.png" width="30px" height="30px"></a>');
         else
-            $('#blogTitle').find("#Header1_HeaderTitle").append('<a href="#"  id="login" style="float:right;" title="登录"><img src="//www.cnblogs.com/images/cnblogs_com/enjoy233/1389971/o_login_blue.png" width=30px height=30px onclick="login();return false"></a>');
-        $('#Header1_HeaderTitle').addClass('bounceInRight animated');
-        $('.subtitle').addClass('bounceInLeft animated');
+            $("#customHeader").append('<a href="#"  id="login" style="float:right;margin-top: 32px;margin-right: 20px;" title="登录"><img src="//www.cnblogs.com/images/cnblogs_com/enjoy233/1389971/o_login_blue.png" width=30px height=30px onclick="login();return false"></a>');
+          $('#customH1').addClass('animated bounceInLeft');
+          $('#customH2').addClass('animated bounceInRight');
 
         // $('.cnblogs-markdown a').attr('target', '_blank');  // 所有markdown模式下的链接在新窗口打开
         // 除了目录，博客内的链接在新窗口打开
