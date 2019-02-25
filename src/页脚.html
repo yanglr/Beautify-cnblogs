@@ -119,10 +119,10 @@
 
 <script>
     if ($(".cnblogs-markdown pre").length > 0) {
-        // content = $('<div class="col"><p>目录</p><p class="js-toc"></p></div>');
+        // content = $('<div class="tocCol"><p>目录</p><p class="js-toc"></p></div>');
 
        if($("h1, h2, h3, h4, h5, h6").length > 0) 
-       $("#home").prepend('<div class="o1">   <i class="fa fa-list-ul" style="font-size: 40px;"></i></div><div class="asideMdContents">  <div class="close">       <div class="x"></div>       <div class="x2"></div>   </div>  <p class="js-toc"></p></div>'); 
+       $("#home").prepend('<div class="o1">   <i class="fa fa-list-ul" style="font-size: 40px;"></i></div><div class="asideMdContents">  <div class="close">       <div class="x"></div>       <div class="x2"></div>   </div>  <p>目录</p><p class="js-toc"></p> </div>'); 
 
         tocbot.init({
             // css选择器，用于指定将要生成自动目录的位置
@@ -149,5 +149,11 @@ $('.o1').click(function() {
    });
 });
 
-$('<p style="color:blue;">目录</p>').prependTo('.js-toc');
+    //Setting ico for blog
+　　var linkObject = document.createElement('link');
+　　linkObject.rel = "shortcut icon";
+　　linkObject.href = "//files.cnblogs.com/files/enjoy233/favicon.ico";
+　　document.getElementsByTagName("head")[0].appendChild(linkObject);
+
+// $('<p style="color:blue;">目录</p>').prependTo('.js-toc');
 </script>
