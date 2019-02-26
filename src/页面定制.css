@@ -613,22 +613,6 @@ code {
     border-radius: 4px;
 }
 
-#tip_comment {
-   display: none;
-}
-
-div.commentform p:not(#commentbox_opt) {
-    margin-top: 10px;
-    line-height: 20px;
-    display: none;
-}
-
-/*
-#tip_comment2>p {
-    visibility: visible;
-}
-*/
-
 #comment_nav {
      margin-right: 135px !important;
 }
