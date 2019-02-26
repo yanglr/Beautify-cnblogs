@@ -4,6 +4,39 @@
      display: none;
 }
 
+.day {
+    margin-left: 32px;
+}
+
+#main #mainContent .dayTitle {
+    background-color: #0078b6;
+    display: block;
+    left: 275px;
+    min-width: 140px;
+    padding: 4px 4px;
+    position: absolute;
+    text-align: center;
+    top: -26px;
+}
+
+#main #mainContent .dayTitle:before {
+    border-color: #0078b6 blue #ff0 transparent;
+    border-style: solid;
+    border-width: 20px 0 0 40px;
+    content: " ";
+    display: block;
+    left: 0;
+    position: absolute;
+    top: 100%;
+}
+
+#main #mainContent .dayTitle a {
+    color: #fff;
+    font-family: Arvo,Cambria,Georgia,Times,serif;
+    font-size: 18px;
+    vertical-align: middle;
+}
+
 #customH1 {
    color: #85C2F2 !important;
    font-size: 45px;
@@ -174,7 +207,7 @@ display:none; !important
 }
 
 body {
-	font-family: Georgia,Times New Roman,Times,sans-serif, monospace !important;
+	font-family: Helvetica,Verdana,Arial,sans-serif !important;
 	font-size: 0.9em;
 }
 
