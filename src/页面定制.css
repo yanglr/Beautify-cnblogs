@@ -617,6 +617,10 @@ code {
      margin-right: 135px !important;
 }
 
+#comment_form_container > p:nth-child(4) {
+     display: none;
+}
+
 /*外边距*/
 .diggit {
 	margin-left: 38px !important;
