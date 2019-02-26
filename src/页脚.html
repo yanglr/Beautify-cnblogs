@@ -42,6 +42,20 @@
     })
 
     $(function () {
+    if(isLogined)
+    {
+      var author = $('#tbCommentAuthor');
+      author.hide();
+      $('#comment_form_container p').before(author);
+      $("#comment_form_container p").first().html("<br/>Hi, <font style='font-weight:bold;color:#2ca6cb;'>" + author.val() + "</b>~");
+      $('#tip_comment+p').show();
+      $('#btn_comment_submit').attr('value', '写完，加上去');
+      $('#btn_comment_submit').css(
+      {
+         'width':'90px'
+      }); 
+    }
+
     $('#footer').append('<div id="customFooter">            Powered By             <a href="//www.cnblogs.com" target="_blank">Cnblogs</a> |             <a href="//github.com/yanglr/cnblogs-theme-xSimple" target="_blank" title="Fork theme on github" class="enjoyFont">Extremely Simple</a>  Theme By             <a href="//www.cnblogs.com/enjoy233" target="_blank"  class="enjoyFont">Enjoy233</a>, Basic skin - <a href="//www.cnblogs.com/SkinUser.aspx?SkinName=LessIsMore" target="_blank">Less is More</a>.</div><br>');   
       
         if ($(".cnblogs-markdown pre").length == 0) {
@@ -149,7 +163,7 @@ $('.o1').click(function() {
    });
 });
 
-    //Setting ico for blog
+        //Setting ico for blog
 　　var linkObject = document.createElement('link');
 　　linkObject.rel = "shortcut icon";
 　　linkObject.href = "//files.cnblogs.com/files/enjoy233/favicon.ico";
