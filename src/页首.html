@@ -7,21 +7,23 @@
 <link href="//files.cnblogs.com/files/enjoy233/ic-write_IconFont.css" rel="stylesheet">
 
 <script language="javascript" type="text/javascript">
-    jQuery(document).on('copy', function (e) {
-        var selected = window.getSelection();
-        var copyFooter = '<br>---------------------<br>著作权归作者所有。<br>'
-            + '商业转载请联系作者获得授权，非商业转载请注明出处。<br>'
-            + '作者：Bravo Yeung<br> 源地址：' + document.location.href
-            + '<br>来源：博客园cnblogs<br>© 版权声明：本文为博主原创文章，转载请附上博文链接！';
-        var copyHolder = $('<div>', { html: selected + copyFooter, style: { position: 'absolute', left: '-99999px' } });
-        $('body').append(copyHolder);
-        selected.selectAllChildren(copyHolder[0]);
-        window.setTimeout(function () {
-            copyHolder.remove();
-        }, 0);
-    });
+jQuery(document).on('copy', function(e)
+	{
+	  var selected = window.getSelection();
+	  var selectedText = selected.toString().replace(/\n/g, '<br>');  // Solve the line breaks convertion issue
+	  var copyFooter = '<br>---------------------<br>著作权归作者所有。<br>' 
+	                        + '商业转载请联系作者获得授权，非商业转载请注明出处。<br>'
+	                        + '作者：Bravo Yeung<br> 源地址：' + document.location.href
+	                        + '<br>来源：博客园cnblogs<br>© 版权声明：本文为博主原创文章，转载请附上博文链接！';
+	  var copyHolder = $('<div>', {id: 'temp', html: selectedText + copyFooter, style: {position: 'absolute', left: '-99999px'}});
+	    
+	  $('body').append(copyHolder);
+	  selected.selectAllChildren( copyHolder[0] );
+	  window.setTimeout(function() {
+	      copyHolder.remove();
+	  },0);
+	});
 </script>
-<script language="JavaScript" type="text/javascript" src="//files.cnblogs.com/files/enjoy233/swfobject.js"></script>
 
 <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js" type="text/javascript"></script>
 <script type="text/javascript">
@@ -163,7 +165,7 @@
 
 <div id="customHeader">
 <div id="customH1">
-<a id="myH1" href="javascript:void(0);" style="font-family:'Segoe Print', 'Segoe Script', 'stfzjjgangbixin17c2fb7ee61f271';">Bravo Yeung 技术自留地</a>
+<a id="myH1" href="//www.cnblogs.com/enjoy233" style="font-family:'Segoe Print', 'Segoe Script', 'stfzjjgangbixin17c2fb7ee61f271';">Bravo Yeung 技术自留地</a>
 </div>
 <div id="customH2">
 <font style="color:gray;font-family:微软雅黑;font-size: 15px;font-weight: bold; margin-bottom: 10px;">极简编程：IT人实践之路</font>
