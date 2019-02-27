@@ -4,6 +4,11 @@
      display: none;
 }
 
+pre .line {
+     position:  relative;
+     left: -4px;
+}
+
 #customH1 {
    color: #85C2F2 !important;
    font-size: 45px;
