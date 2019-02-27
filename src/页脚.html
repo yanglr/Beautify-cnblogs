@@ -36,8 +36,8 @@
 
             /* 以下3个语句任选一个即可 */
             // $(".cnblogs-markdown pre").find(".hljs-meta").removeClass("hljs-meta");
-            // $(".hljs-meta").css({ 'color' : 'none !important' });
-            $(".hljs-meta").css({ 'all': 'unset' });     
+            $(".hljs-meta").css({ 'color' : 'none !important' });
+            // $(".hljs-meta").css({ 'all': 'unset' });     
         });
     })
 
@@ -61,31 +61,131 @@
         if ($(".cnblogs-markdown pre").length == 0) {
             $.getScript("//files.cnblogs.com/files/enjoy233/nav.my.js");
         }
-        if($(".cnblogs-post-body pre > code").length > 0)  setCodeRowWithLang($(".cnblogs-post-body pre"));
-        else setCodeRowWithLang($(".cnblogs-markdown pre"));
 
-        // markdown模式下为代码加入行号, 调用插件highlightjs-line-numbers.js
-        hljs.initHighlightingOnLoad();
-        // hljs.initCopyButtonOnLoad();
-        hljs.initLineNumbersOnLoad();
-        
-    });
+    if ($(".cnblogs-post-body pre > code").length > 0) setCodeRowWithLang($(".cnblogs-post-body pre"));
+    else setCodeRowWithLang($(".cnblogs-markdown pre"));
 
-    function setCodeRowWithLang(pre) {
-        // var pre = $(".cnblogs-post-body pre"); // 选中需要处理的代码块, 如果不是首页，选择器为 .cnblogs-markdown pre
-        if (pre && pre.length) {
-            pre.each(function () {
-                var item = $(this);
-                var lang = item[0].className; //判断高亮的语言
-                var langMap = { "html": "HTML", "xml": "XML", "svg": "SVG", "mathml": "MathML", "css": "CSS", "clike": "C-like", "js": "JavaScript", "abap": "ABAP", "apacheconf": "Apache Configuration", "apl": "APL", "arff": "ARFF", "asciidoc": "AsciiDoc", "adoc": "AsciiDoc", "asm6502": "6502 Assembly", "aspnet": "ASP.NET (C#)", "autohotkey": "AutoHotkey", "autoit": "AutoIt", "shell": "Bash", "basic": "BASIC", "csharp": "C#", "dotnet": "C#", "cpp": "C++", "cil": "CIL", "csp": "Content-Security-Policy", "css-extras": "CSS Extras", "django": "Django/Jinja2", "jinja2": "Django/Jinja2", "dockerfile": "Docker", "erb": "ERB", "fsharp": "F#", "gcode": "G-code", "gedcom": "GEDCOM", "glsl": "GLSL", "gml": "GameMaker Language", "gamemakerlanguage": "GameMaker Language", "graphql": "GraphQL", "hcl": "HCL", "http": "HTTP", "hpkp": "HTTP Public-Key-Pins", "hsts": "HTTP Strict-Transport-Security", "ichigojam": "IchigoJam", "inform7": "Inform 7", "javastacktrace": "Java stack trace", "json": "JSON", "jsonp": "JSONP", "latex": "LaTeX", "emacs": "Lisp", "elisp": "Lisp", "emacs-lisp": "Lisp", "lolcode": "LOLCODE", "markup-templating": "Markup templating", "matlab": "MATLAB", "mel": "MEL", "n1ql": "N1QL", "n4js": "N4JS", "n4jsd": "N4JS", "nand2tetris-hdl": "Nand To Tetris HDL", "nasm": "NASM", "nginx": "nginx", "nsis": "NSIS", "objectivec": "Objective-C", "ocaml": "OCaml", "opencl": "OpenCL", "parigp": "PARI/GP", "objectpascal": "Object Pascal", "php": "PHP", "php-extras": "PHP Extras", "plsql": "PL/SQL", "powershell": "PowerShell", "properties": ".properties", "protobuf": "Protocol Buffers", "q": "Q (kdb+ database)", "jsx": "React JSX", "tsx": "React TSX", "renpy": "Ren'py", "rest": "reST (reStructuredText)", "sas": "SAS", "sass": "Sass (Sass)", "scss": "Sass (Scss)", "sql": "SQL", "soy": "Soy (Closure Template)", "tap": "TAP", "toml": "TOML", "tt2": "Template Toolkit 2", "ts": "TypeScript", "vbnet": "VB.Net", "vhdl": "VHDL", "vim": "vim", "visual-basic": "Visual Basic", "vb": "Visual Basic", "wasm": "WebAssembly", "wiki": "Wiki markup", "xeoracube": "XeoraCube", "xojo": "Xojo (REALbasic)", "xquery": "XQuery", "yaml": "YAML" };
-                var displayLangText = "";
-                if (lang in langMap) displayLangText = langMap[lang];
-                else displayLangText = lang;
-                // console.log(lang);
-                item.find('.hljs').prepend('<div align="right" top="0px" right="10px" position="relative"><a href="javascript:void(0);"></a> <font class="codeLang"  title="当前Code所用语言">' + displayLangText + '</font></div>');
-            });
-        };
-    }
+    /* markdown模式下为代码加入行号, 调用插件highlightjs-line-numbers.js */
+    hljs.initHighlightingOnLoad();
+    hljs.initLineNumbersOnLoad();
+});
+
+function setCodeRowWithLang(pre) {
+    /* var pre = $(".cnblogs-post-body pre");  选中需要处理的代码块, 如果不是首页，选择器为 .cnblogs-markdown pre  */
+    if (pre && pre.length) {
+        pre.each(function () {
+            var item = $(this);
+            var lang = item[0].className;  /*  获取高亮的语言，得到javascript/html/cpp等全小写的语言名，下面进行一个转换  */
+            var langMap = {
+                "html": "HTML",
+                "xml": "XML",
+                "svg": "SVG",
+                "mathml": "MathML",
+                "css": "CSS",
+                "clike": "C-like",
+                "js": "JavaScript",
+                "abap": "ABAP",
+                "apacheconf": "Apache Configuration",
+                "apl": "APL",
+                "arff": "ARFF",
+                "asciidoc": "AsciiDoc",
+                "adoc": "AsciiDoc",
+                "asm6502": "6502 Assembly",
+                "aspnet": "ASP.NET (C#)",
+                "autohotkey": "AutoHotkey",
+                "autoit": "AutoIt",
+                "shell": "Bash",
+                "basic": "BASIC",
+                "csharp": "C#",
+                "dotnet": "C#",
+                "cpp": "C++",
+                "cil": "CIL",
+                "csp": "Content-Security-Policy",
+                "css-extras": "CSS Extras",
+                "django": "Django/Jinja2",
+                "jinja2": "Django/Jinja2",
+                "dockerfile": "Docker",
+                "erb": "ERB",
+                "fsharp": "F#",
+                "gcode": "G-code",
+                "gedcom": "GEDCOM",
+                "glsl": "GLSL",
+                "gml": "GameMaker Language",
+                "gamemakerlanguage": "GameMaker Language",
+                "graphql": "GraphQL",
+                "hcl": "HCL",
+                "http": "HTTP",
+                "hpkp": "HTTP Public-Key-Pins",
+                "hsts": "HTTP Strict-Transport-Security",
+                "ichigojam": "IchigoJam",
+                "inform7": "Inform 7",
+                "javastacktrace": "Java stack trace",
+                "json": "JSON",
+                "jsonp": "JSONP",
+                "latex": "LaTeX",
+                "emacs": "Lisp",
+                "elisp": "Lisp",
+                "emacs-lisp": "Lisp",
+                "lolcode": "LOLCODE",
+                "markup-templating": "Markup templating",
+                "matlab": "MATLAB",
+                "mel": "MEL",
+                "n1ql": "N1QL",
+                "n4js": "N4JS",
+                "n4jsd": "N4JS",
+                "nand2tetris-hdl": "Nand To Tetris HDL",
+                "nasm": "NASM",
+                "nginx": "nginx",
+                "nsis": "NSIS",
+                "objectivec": "Objective-C",
+                "ocaml": "OCaml",
+                "opencl": "OpenCL",
+                "parigp": "PARI/GP",
+                "objectpascal": "Object Pascal",
+                "php": "PHP",
+                "php-extras": "PHP Extras",
+                "plsql": "PL/SQL",
+                "powershell": "PowerShell",
+                "properties": ".properties",
+                "protobuf": "Protocol Buffers",
+                "q": "Q (kdb+ database)",
+                "jsx": "React JSX",
+                "tsx": "React TSX",
+                "renpy": "Ren'py",
+                "rest": "reST (reStructuredText)",
+                "sas": "SAS",
+                "sass": "Sass (Sass)",
+                "scss": "Sass (Scss)",
+                "sql": "SQL",
+                "soy": "Soy (Closure Template)",
+                "tap": "TAP",
+                "toml": "TOML",
+                "tt2": "Template Toolkit 2",
+                "ts": "TypeScript",
+                "vbnet": "VB.Net",
+                "vhdl": "VHDL",
+                "vim": "vim",
+                "visual-basic": "Visual Basic",
+                "vb": "Visual Basic",
+                "wasm": "WebAssembly",
+                "wiki": "Wiki markup",
+                "xeoracube": "XeoraCube",
+                "xojo": "Xojo (REALbasic)",
+                "xquery": "XQuery",
+                "yaml": "YAML"
+            };
+
+            var displayLangText = "";
+            if (lang in langMap) displayLangText = langMap[lang];
+            else displayLangText = lang;
+            item.find('.hljs')
+                .prepend(
+                    '<div align="right" top="0px" right="10px" position="relative"><a href="javascript:void(0);"></a> <font class="codeLang"  title="当前Code所用语言">' +
+                    displayLangText +
+                    '</font></div>');
+        });
+    };
+}
 </script>
 
 <!-- tctip 支付赞赏/打赏 -->
@@ -163,7 +263,7 @@ $('.o1').click(function() {
    });
 });
 
-        //Setting ico for blog
+    //Setting ico for blog
 　　var linkObject = document.createElement('link');
 　　linkObject.rel = "shortcut icon";
 　　linkObject.href = "//files.cnblogs.com/files/enjoy233/favicon.ico";
