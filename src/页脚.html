@@ -62,13 +62,35 @@
             $.getScript("//files.cnblogs.com/files/enjoy233/nav.my.js");
         }
 
-    if ($(".cnblogs-post-body pre > code").length > 0) setCodeRowWithLang($(".cnblogs-post-body pre"));
-    else setCodeRowWithLang($(".cnblogs-markdown pre"));
+    if ($(".cnblogs-post-body pre > code").length > 0) 
+    {
+      var code = $(".cnblogs-post-body pre").find(".hljs");
+      code.each(addSourceLineNumbers);
 
-    /* markdown模式下为代码加入行号, 调用插件highlightjs-line-numbers.js */
-    hljs.initHighlightingOnLoad();
-    hljs.initLineNumbersOnLoad();
+      setCodeRowWithLang($(".cnblogs-post-body pre"));
+    }
+    else {
+     /* markdown模式下为代码加入行号, 调用插件highlightjs-line-numbers.js */
+     hljs.initHighlightingOnLoad();
+     hljs.initLineNumbersOnLoad();
+
+      setCodeRowWithLang($(".cnblogs-markdown pre"));    // markdown模式
+   }
 });
+
+   function addSourceLineNumbers()
+   {
+   var
+       name = 'name',
+       num = 1,
+       result = this.innerHTML.replace(/\n/g, function() {
+           num++;
+           return "\n" + '<a class="line" name="' + name + num + '">' + num + '</a>';
+       });  
+       //console.log(result);
+       this.innerHTML = '<a class="line" name="' + name + '0">1&nbsp;' + result + '</a>';
+       //console.log(this.innerHTML);
+   }
 
 function setCodeRowWithLang(pre) {
     /* var pre = $(".cnblogs-post-body pre");  选中需要处理的代码块, 如果不是首页，选择器为 .cnblogs-markdown pre  */
@@ -184,7 +206,10 @@ function setCodeRowWithLang(pre) {
                     displayLangText +
                     '</font></div>');
         });
+
     };
+
+
 }
 </script>
 
@@ -263,7 +288,7 @@ $('.o1').click(function() {
    });
 });
 
-    //Setting ico for blog
+        //Setting ico for blog
 　　var linkObject = document.createElement('link');
 　　linkObject.rel = "shortcut icon";
 　　linkObject.href = "//files.cnblogs.com/files/enjoy233/favicon.ico";
