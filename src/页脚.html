@@ -16,6 +16,8 @@
 </div>
 
 <script type="text/javascript" src="//apps.bdimg.com/libs/bootstrap/3.2.0/js/bootstrap.min.js?ver=5.2"></script>
+<link type="text/css" rel="stylesheet" media="screen" href="//files.cnblogs.com/files/enjoy233/avatarAnimate.css" />
+<script type="text/javascript" src="//files.cnblogs.com/files/enjoy233/jquery.easing.min.js"></script>
 
 <!-- 添加文章目录 -->
 <link href="//blog-static.cnblogs.com/files/enjoy233/nav.my-right.css" rel="stylesheet">
@@ -42,6 +44,27 @@
     })
 
     $(function () {
+
+    $("#picLsy li").hover(function(){
+        $(this).find('.text:not(:animated)').animate({
+            top:"0px"
+        },
+            {
+                easing:"easeInOutExpo"
+            }, 
+            50, 
+            function(){});
+    },function () {
+        $(this).find('.text').animate({
+            top:"176px"
+        },
+            {
+                easing:"easeInOutExpo"
+            }, 
+            50, 
+            function(){});
+    });
+
     if(isLogined)
     {
       var author = $('#tbCommentAuthor');
