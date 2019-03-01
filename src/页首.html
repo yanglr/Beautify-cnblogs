@@ -25,34 +25,7 @@ jQuery(document).on('copy', function(e)
 	});
 </script>
 
-<link type="text/css" rel="stylesheet" media="screen" href="//files.cnblogs.com/files/enjoy233/avatarAnimate.css" />
 <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js" type="text/javascript"></script>
-<script type="text/javascript" src="//files.cnblogs.com/files/enjoy233/jquery.easing.min.js"></script>
-<script type="text/javascript">
-$(document).ready(function(){
-
-    $("#picLsy li").hover(function(){
-        $(this).find('.text:not(:animated)').animate({
-            top:"0px"
-        },
-            {
-                easing:"easeInOutExpo"
-            }, 
-            50, 
-            function(){});
-    },function () {
-        $(this).find('.text').animate({
-            top:"176px"
-        },
-            {
-                easing:"easeInOutExpo"
-            }, 
-            50, 
-            function(){});
-    });
-
-});
-</script>
 
 <script type="text/javascript">
     var availableTags = [
@@ -234,6 +207,10 @@ $(document).ready(function(){
 </div>
 
 <script language="javascript" type="text/javascript">
+        if (isLogined) $('#customH2').append('<a href="//passport.cnblogs.com/logout.aspx?ReturnURL=//www.cnblogs.com/enjoy233/" id="logout" style="float:right;margin-top: 32px;margin-right: 20px;" title="退出登录"><img src="//images.cnblogs.com/cnblogs_com/enjoy233/1389971/o_logout64p.png" width="30px" height="30px"></a>');
+        else
+            $("#customH2").append('<a href="#"  id="login" style="float:right;margin-top: 32px;margin-right: 20px;" title="登录"><img src="//www.cnblogs.com/images/cnblogs_com/enjoy233/1389971/o_login_blue.png" width=30px height=30px onclick="login();return false"></a>');
+
     $(function () {
         $('#customHeader').append('<div id="customBlogStat" style="color:white; font-weight:bold; margin-top: 10px; margin-left: 8px;">' + $('#blog_stats').html() + '</div>');
 
@@ -246,9 +223,6 @@ $(document).ready(function(){
 
         }
 
-        if (isLogined) $('#customHeader').append('<a href="//passport.cnblogs.com/logout.aspx?ReturnURL=//www.cnblogs.com/enjoy233/" id="logout" style="float:right;margin-top: 32px;margin-right: 20px;" title="退出登录"><img src="//images.cnblogs.com/cnblogs_com/enjoy233/1389971/o_logout64p.png" width="30px" height="30px"></a>');
-        else
-            $("#customHeader").append('<a href="#"  id="login" style="float:right;margin-top: 32px;margin-right: 20px;" title="登录"><img src="//www.cnblogs.com/images/cnblogs_com/enjoy233/1389971/o_login_blue.png" width=30px height=30px onclick="login();return false"></a>');
           $('#customH1').addClass('animated bounceInLeft');
           $('#customH2').addClass('animated bounceInRight');
 
