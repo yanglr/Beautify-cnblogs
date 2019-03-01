@@ -130,7 +130,7 @@ a:active {
 #sideBar {
 	position: absolute;
 	width: 225px !important;
-	margin-left: 12px;
+        padding: 0 0px 40px 12px;
 }
 
 .input_my_zzk_new {
@@ -317,11 +317,6 @@ code {
 #sideBar h3 {
 	padding: 0 10px;
 	margin-bottom: 10px;
-}
-
-#sideBar {
-	position: absolute;
-	margin-left: 12px;
 }
 
 .cnblogs_code {
