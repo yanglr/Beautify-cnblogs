@@ -26,6 +26,24 @@ pre .line {
    -vendor-animation-iteration-count: infinite;
 }
 
+a#myH2 {
+    color: #666;
+    display: inline-block;
+    margin: 0;
+}
+
+a#myH2:after {
+    border-bottom: solid 2px #2D8CF0;  /* 原背景色: #019fb6 */
+    content: '';
+    display: block;
+    transform: scaleX(0);
+    transition: transform 250ms ease-in-out;
+}
+
+a#myH2:hover:after { 
+    transform: scaleX(1); 
+}
+
 a#myH1 {
     color: #85C2F2 !important; 
 }
