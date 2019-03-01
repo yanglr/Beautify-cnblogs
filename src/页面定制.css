@@ -20,6 +20,7 @@ pre .line {
 
 #customH2 {
    text-align:center;
+   margin-bottom: 25px;
    -vendor-animation-duration: 3s;
    -vendor-animation-delay: 2s;
    -vendor-animation-iteration-count: infinite;
@@ -178,8 +179,8 @@ display:none; !important
 	width: 100%;
 }
 
-.forFlow {
-    margin: 0 15px 0 290px !important;
+.day, #post_detail {
+    margin-left: 20px;
 }
 
 body {
@@ -1193,7 +1194,7 @@ display:inline-block将对象呈递为内联对象，
     }
 
 .asideMdContents {
-    width: 20vw;
+    /* width: 20vw; */
     min-height: 22%;
     max-height: 40vh;
     overflow-x: hidden;
