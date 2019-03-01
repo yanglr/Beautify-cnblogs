@@ -25,7 +25,35 @@ jQuery(document).on('copy', function(e)
 	});
 </script>
 
+<link type="text/css" rel="stylesheet" media="screen" href="//files.cnblogs.com/files/enjoy233/avatarAnimate.css" />
 <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="//files.cnblogs.com/files/enjoy233/jquery.easing.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+
+    $("#picLsy li").hover(function(){
+        $(this).find('.text:not(:animated)').animate({
+            top:"0px"
+        },
+            {
+                easing:"easeInOutExpo"
+            }, 
+            50, 
+            function(){});
+    },function () {
+        $(this).find('.text').animate({
+            top:"176px"
+        },
+            {
+                easing:"easeInOutExpo"
+            }, 
+            50, 
+            function(){});
+    });
+
+});
+</script>
+
 <script type="text/javascript">
     var availableTags = [
         "git", "Git",
@@ -171,9 +199,13 @@ jQuery(document).on('copy', function(e)
 <font style="color:gray;font-family:微软雅黑;font-size: 15px;font-weight: bold; margin-bottom: 10px;">极简编程：IT人实践之路</font>
 </div>
 
-<div>
+<div class="newPostInRight">    
+       <a href="//i.cnblogs.com/EditPosts.aspx?opt=1" class="aa" target="_blank">写文章</a> 
+</div>
+
+<div id='forkMe'>
     <a href="//github.com/yanglr" target="_blank" style="position: absolute;right: 0;  top: 0; z-index: 100;">
-        <img src="//images.cnblogs.com/cnblogs_com/enjoy233/1389971/o_git-right-link.gif" alt="Fork me on github">
+        <img src="//images.cnblogs.com/cnblogs_com/enjoy233/1389971/o_git-right-link.gif" alt="Fork me on github" width=100px height=100px>
     </a>
 </div>
 
