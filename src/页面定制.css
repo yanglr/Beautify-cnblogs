@@ -436,6 +436,7 @@ code {
 	border: 2px solid #04A292;
 	position: fixed;
 	background-color: #FFFFCC;
+        z-index: 100;
 }
 
 #div_digg .diggit {
