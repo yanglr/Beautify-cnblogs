@@ -10,12 +10,71 @@ pre .line {
 }
 
 #customH1 {
-   color: #85C2F2 !important;
    font-size: 45px;
    text-align:center;
    -vendor-animation-duration: 3s;
    -vendor-animation-delay: 2s;
    -vendor-animation-iteration-count: infinite;
+}
+
+.animateTitle {
+    display: block;
+    text-align: center;
+    font-family: "Microsoft Yahei"!important;
+    display: inline-block;
+    cursor: pointer;
+    font-weight: 100;
+}
+
+.animateTitle a {
+  text-decoration: none;
+}
+
+.animateTitle span {
+        font-size: 40px;
+	display: inline-block;
+	cursor: pointer;
+	font-family: "Microsoft Yahei",arial,sans-serif;
+	font-weight: 100
+}
+
+.eng {
+    font-size: 20px;
+    letter-spacing: -2px;
+    position: relative;
+    color: #fff;
+    font-size: 54px;
+    text-shadow: 0 0 1px rgba(94,255,216,.8);
+    margin: 0;
+    padding: 0;
+    z-index: 0;
+    transition: all .1s ease-out;
+}
+
+.chi {
+    position: relative;
+    color: #85C2F2;
+    font-weight: 400;
+    font-size: 24px;
+    text-shadow: 0 0 1px rgba(94,255,216,.8);
+    margin-left: 5px;
+    letter-spacing: 1px;
+    padding: 0;
+    z-index: 2;
+    -webkit-transition: all .5s ease-out;
+    -moz-transition: all .5s ease-out;
+    -o-transition: all .5s ease-out;
+    -ms-transition: all .5s ease-out;
+    transition: all .5s ease-out;
+}
+
+.animateTitle:hover .eng {
+	letter-spacing: 5px
+}
+
+.animateTitle:hover .chi {
+	left: 26px;
+	opacity: .2
 }
 
 #customH2 {
@@ -862,6 +921,12 @@ em {
     color: palevioletred;
 }
 
+#customFooter {
+    text-align: center;
+    padding-left: 12.6%;
+    /* margin-left: 240px; */
+}
+
 .hljs-ln-numbers {
     width: 60px;
 }
@@ -964,7 +1029,7 @@ a.toc-link:hover {
 /* 设置新导航栏的样式 */
 #topNav {
     min-height: 1em;
-    padding-top: 20px;
+    padding-top: 5px;
 }
 
 #topNav li {
