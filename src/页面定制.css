@@ -69,7 +69,8 @@ pre .line {
 }
 
 .animateTitle:hover .eng {
-	letter-spacing: 5px
+	letter-spacing: 5px;
+        color: orange;
 }
 
 .animateTitle:hover .chi {
