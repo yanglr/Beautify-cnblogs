@@ -7,6 +7,10 @@
 <link href="//files.cnblogs.com/files/enjoy233/ic-write_IconFont.css" rel="stylesheet">
 
 <script language="javascript" type="text/javascript">
+if (!(document.location.href.indexOf('/p/') > 0 || document.location.href.indexOf('/archive/') > 0 || document.location.href.indexOf('/articles') > 0 || document.location.href.indexOf('/diary/') > 0)) {
+        $.getScript("//cdn.bootcss.com/jquery/3.2.1/jquery.min.js");  // 只为首页引用
+}
+
 jQuery(document).on('copy', function(e)
 	{
 	  var selected = window.getSelection();
@@ -63,7 +67,6 @@ jQuery(document).on('copy', function(e)
             var carlist = new Array();
             var n = 0;
             old_value = $("#" + search).val();
-
             for (i in mylist) {
                 if (mylist[i].indexOf(old_value) >= 0) {
                     carlist[n++] = mylist[i];
@@ -78,7 +81,6 @@ jQuery(document).on('copy', function(e)
                 var wordNode = carlist[i];   //弹出框里的每一条内容
                 var newDivNode = $("<div>").attr("id", i);    //设置每个节点的id值
                 newDivNode.attr("style", "font:14px/25px arial;height:25px;padding:0 8px;cursor: pointer;");
-
                 newDivNode.html(wordNode).appendTo(autoNode);  //追加到弹出框
                 //鼠标移入高亮，移开不高亮
                 newDivNode.mouseover(function () {
@@ -92,7 +94,6 @@ jQuery(document).on('copy', function(e)
                 newDivNode.mouseout(function () {
                     $(this).css("background-color", "white");
                 });
-
                 //鼠标点击文字上屏
                 newDivNode.click(function () {
                     //取出高亮节点的文本内容
@@ -110,7 +111,6 @@ jQuery(document).on('copy', function(e)
                 }
             }
         }
-
         //点击页面隐藏自动补全提示框
         document.onclick = function (e) {
             var e = e ? e : window.event;
@@ -121,20 +121,16 @@ jQuery(document).on('copy', function(e)
                 }
             }
         }
-
     }
-
     $(function () {
         old_value = $("#zzk_q").val();
         $("#zzk_q").keyup(function () {
             AutoComplete("auto_div", "zzk_q", availableTags);
         });
     });
-
     function quickdelete() {
         document.getElementById("zzk_q").value = "";
     }
-
     function zzk_go() {
         var n = encodeURIComponent(document.getElementById("zzk_q").value);
         window.location = "//zzk.cnblogs.com/s?w=blog%3AEnjoy233+" + n + "&t="
@@ -216,34 +212,31 @@ jQuery(document).on('copy', function(e)
 
     $(function () {
         $('#customHeader').append('<div id="customBlogStat" style="color:white; font-weight:bold; margin-top: 10px; margin-left: 8px;">' + $('#blog_stats').html() + '</div>');
-
         initCommentData();
        <!-- 指定返回底部位置 postEnd -->
        if (document.location.href.indexOf('/p/') > 0 || document.location.href.indexOf('/archive/') > 0 || document.location.href.indexOf('/articles') > 0 || document.location.href.indexOf('/diary/') > 0) {
             $("#home").prepend('<a href="#signature" alt="一键置底" title="快速置底"><div id="postEnd" style="zoom:0;"></div></a>');
             $("#post_detail").prepend('<a id="quickEdit" alt="编辑" title="快速编辑" style="float:right"></a>');
             $('#post_detail').find('#quickEdit').html("<a href='//i.cnblogs.com/EditPosts.aspx?postid=" + cb_entryId + "'>编辑✎</a>");
-
         }
-
           $('#customH1').addClass('animated bounceInLeft');
           $('#customH2').addClass('animated bounceInRight');
-
         // $('.cnblogs-markdown a').attr('target', '_blank');  // 所有markdown模式下的链接在新窗口打开
         // 除了目录，博客内的链接在新窗口打开
         $("#cnblogs_post_body a").each(function () {
             this.target = "_blank";
         });
-
         $('.toc-list').find('a').attr('target', '_self');
-
         // 本人时显示最近评论
-        if ($('#profile_block').find('#p_b_follow')[0].innerHTML == "") $('.catListComment').hide();  // indexOf == -1时是自己，关注/已关注
+        var follow = $('#profile_block').find('#p_b_follow');
+        var block = follow.length >= 1 ? follow[0] : "";
+        var followText = (block != null && block != undefined) ? block.innerHTML : "";
+        if(followText != "")  $('.catListComment').hide();  // followText == ""时是自己，是别人时，含有子串 关注/已关注
+        // if($('#tbCommentAuthor').val() == 'Enjoy233') $('#sidebar_recentcomments ').show();  // 只对正文页有用，对首页无效
 
         //为右下角推荐推荐区域添加关注按钮
         $('#div_digg').prepend('<div style="padding-bottom: 5px"><span class="icon_favorite" style="padding-top: 2px"></span><a onclick="follow(\'27f8db64-eee4-e111-aa3f-842b2b196315\');" href="javascript:void(0);"  style="font-weight: bold; padding-left:5px;">🌵关注下博主呗</a> </div>');
     });
-
     function initCommentData() {
         $('.feedbackItem').each(function () {
             var text = $(this).find('.feedbackListSubtitle .layer').text();
