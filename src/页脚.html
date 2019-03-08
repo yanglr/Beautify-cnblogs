@@ -1,4 +1,5 @@
 <script type="text/javascript" src="//apps.bdimg.com/libs/bootstrap/3.2.0/js/bootstrap.min.js?ver=5.2"></script>
+<script src="//cdn.jsdelivr.net/clipboard.js/1.5.12/clipboard.min.js"></script>
 
 <div class="scrollBtn" id="scrollBtn">
     <ul class="clearfix">
@@ -308,4 +309,27 @@
     document.getElementsByTagName("head")[0].appendChild(linkObject);
 
 // $('<p style="color:blue;">目录</p>').prependTo('.js-toc');
+</script>
+
+<script  type="text/javascript">
+    var pageInfo = '\r\n---------------------\r\n著作权归作者所有。\r\n'
+        + '商业转载请联系作者获得授权，非商业转载请注明出处。\r\n'
+        + '作者：Bravo Yeung\r\n源地址：' + document.location.href
+        + '\r\n来源：博客园cnblogs\r\n© 版权声明：本文为博主原创文章，转载请附上博文链接！';
+
+    document.addEventListener('copy', function (ev) {
+        var targetHTML = $.trim($(ev.target).html());
+        console.log("targetHTML:" + targetHTML)
+        if (targetHTML == "") return;
+        if (!(targetHTML.startsWith('<table class="hljs-ln"') && targetHTML.endsWith('</table>')) || targetHTML.indexOf('版权声明') > -1)  // isLogined
+        {
+            var selected = window.getSelection();
+            var selectedText = selected.toString().replace(/\n/g, '<br|>');  // Solve the line breaks conversion issue
+
+            let copyRightStr = (selectedText + pageInfo).replace(/<br\|>/g, '\r\n');  // 排除code中的<br>
+            ev.clipboardData.setData('text/plain', `${copyRightStr}`);
+
+            ev.preventDefault();
+        }
+    });
 </script>
