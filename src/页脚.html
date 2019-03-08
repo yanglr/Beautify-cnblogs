@@ -1,5 +1,4 @@
 <script type="text/javascript" src="//apps.bdimg.com/libs/bootstrap/3.2.0/js/bootstrap.min.js?ver=5.2"></script>
-<script src="//cdn.jsdelivr.net/clipboard.js/1.5.12/clipboard.min.js"></script>
 
 <div class="scrollBtn" id="scrollBtn">
     <ul class="clearfix">
@@ -267,8 +266,8 @@
 </script>
 <!-- Baidu Share END -->
 
-<script src="//cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+<script src="//files.cnblogs.com/files/enjoy233/tocbot.min-v4.4.2.js"></script>
+<link rel="stylesheet" href="//files.cnblogs.com/files/enjoy233/tocbot-v4.4.2.css">
 
 <script>
     if ($(".cnblogs-markdown pre").length > 0) {
@@ -312,6 +311,12 @@
 </script>
 
 <script  type="text/javascript">
+    var selfLogin = false;
+    var follow = $('#profile_block').find('#p_b_follow');
+    var block = follow.length >= 1 ? follow[0] : "";
+    var followText = (block != null && block != undefined) ? block.innerHTML : "";
+    if(followText == "") selfLogin = true;
+
     var pageInfo = '\r\n---------------------\r\n著作权归作者所有。\r\n'
         + '商业转载请联系作者获得授权，非商业转载请注明出处。\r\n'
         + '作者：Bravo Yeung\r\n源地址：' + document.location.href
@@ -319,17 +324,20 @@
 
     document.addEventListener('copy', function (ev) {
         var targetHTML = $.trim($(ev.target).html());
-        console.log("targetHTML:" + targetHTML)
+        // console.log("targetHTML:" + targetHTML)
         if (targetHTML == "") return;
-        if (!(targetHTML.startsWith('<table class="hljs-ln"') && targetHTML.endsWith('</table>')) || targetHTML.indexOf('版权声明') > -1)  // isLogined
+        if (!(targetHTML.startsWith('<table class="hljs-ln"') && targetHTML.endsWith('</table>')) || !selfLogin)  // isLogined
         {
             var selected = window.getSelection();
             var selectedText = selected.toString().replace(/\n/g, '<br|>');  // Solve the line breaks conversion issue
 
-            let copyRightStr = (selectedText + pageInfo).replace(/<br\|>/g, '\r\n');  // 排除code中的<br>
+            var copyRightStr = (selectedText + (selfLogin? '' : pageInfo)).replace(/<br\|>/g, '\r\n');  // 排除code中的<br>
             ev.clipboardData.setData('text/plain', `${copyRightStr}`);
 
             ev.preventDefault();
         }
     });
 </script>
+
+<script src="//cdn.jsdelivr.net/clipboard.js/1.5.12/clipboard.min.js"></script>
+<script src="//files.cnblogs.com/files/enjoy233/addCopyCodeButton.js" async></script>
