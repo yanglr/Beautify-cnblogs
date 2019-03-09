@@ -77,6 +77,29 @@
                 });
         }
 
+       if (document.location.href.indexOf('/p/') > 0 || document.location.href.indexOf('/archive/') > 0 || document.location.href.indexOf('/articles') > 0 || document.location.href.indexOf('/diary/') > 0) {
+            $('#ubb_quote')[0].src = "//www.cnblogs.com/images/cnblogs_com/enjoy233/1389971/o_quoteIcon.png";
+            $('#ubb_quote').css({
+            'width': '20px',
+            'height': '20px'
+            })
+            $('#ubb_url')[0].src = "//www.cnblogs.com/images/cnblogs_com/enjoy233/1389971/o_linkIcon.png";
+            $('#ubb_url').css({
+            'width': '18px',
+            'height': '18px'
+            })
+            $('#ubb_code')[0].src = "//www.cnblogs.com/images/cnblogs_com/enjoy233/1389971/o_codeIcon.png";
+            $('#ubb_code').css({
+            'width': '18px',
+            'height': '18px'
+            })
+            $('#ubb_img')[0].src = "//www.cnblogs.com/images/cnblogs_com/enjoy233/1389971/o_imageUploadIcon.png";
+            $('#ubb_img').css({
+            'width': '20px',
+            'height': '20px'
+            })
+         }
+
         $('#footer').append('<div id="customFooter">            Powered By             <a href="//www.cnblogs.com" target="_blank">Cnblogs</a> |             <a href="//github.com/yanglr/cnblogs-theme-xSimple" target="_blank" title="Fork theme on github" class="enjoyFont">Extremely Simple</a>  Theme By             <a href="//www.cnblogs.com/enjoy233" target="_blank"  class="enjoyFont">Enjoy233</a>, Basic skin - <a href="//www.cnblogs.com/SkinUser.aspx?SkinName=LessIsMore" target="_blank">Less is More</a>.</div><br>');
 
         if ($(".cnblogs-markdown pre").length == 0) {
