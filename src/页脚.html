@@ -329,11 +329,10 @@
         if (!(targetHTML.startsWith('<table class="hljs-ln"') && targetHTML.endsWith('</table>')) || !selfLogin)  // isLogined
         {
             var selected = window.getSelection();
-            var selectedText = selected.toString().replace(/\n/g, '<br|>');  // Solve the line breaks conversion issue
+            var selectedText = selected.toString();  
+            let copyRightStr = (selectedText + pageInfo).replace(/\n/g, '\r\n'); // Solve the line breaks conversion issue
 
-            var copyRightStr = (selectedText + (selfLogin? '' : pageInfo)).replace(/<br\|>/g, '\r\n');  // 排除code中的<br>
             ev.clipboardData.setData('text/plain', `${copyRightStr}`);
-
             ev.preventDefault();
         }
     });
