@@ -33,6 +33,16 @@
 <script>
     /* jquery 仅在页面所有资源都加载完成后加行号、显示代码所用的语言 */
     document.onreadystatechange = function () {
+        if (document.readyState === 'interactive') {
+                    if ($(".cnblogs-post-body pre > code").length == 0 && $(".cnblogs-markdown pre").length > 0) {
+                    /* markdown模式下为代码加入行号, 调用插件highlightjs-line-numbers.js */
+                    hljs.initHighlightingOnLoad();
+                    hljs.initLineNumbersOnLoad();
+
+                    setCodeRowWithLang($(".cnblogs-markdown pre"));    // markdown模式
+                }
+        }
+
         if (document.readyState === 'complete') {
             if ($(".cnblogs-post-body pre > code").length > 0) {
                 var code = $(".cnblogs-post-body pre").find(".hljs");
@@ -104,14 +114,6 @@
 
         if ($(".cnblogs-markdown pre").length == 0) {
             $.getScript("//files.cnblogs.com/files/enjoy233/nav.my.js");
-        }
-
-        if ($(".cnblogs-post-body pre > code").length == 0 && $(".cnblogs-markdown pre").length > 0) {
-            /* markdown模式下为代码加入行号, 调用插件highlightjs-line-numbers.js */
-            hljs.initHighlightingOnLoad();
-            hljs.initLineNumbersOnLoad();
-
-            setCodeRowWithLang($(".cnblogs-markdown pre"));    // markdown模式
         }
     });
 
@@ -314,7 +316,6 @@
 
     }
 
-    $(function () {
         $('.o1').click(function () {
             $('.asideMdContents').fadeIn(400);
         });
@@ -322,7 +323,7 @@
         $('.close').click(function () {
             $('.asideMdContents').fadeOut(100);
         });
-    });
+
 
     //Setting ico for blog
     var linkObject = document.createElement('link');
