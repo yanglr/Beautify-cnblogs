@@ -17,6 +17,11 @@ pre .line {
    -vendor-animation-iteration-count: infinite;
 }
 
+a#customEdit {
+    background: lightgray;
+    padding: 2px;
+}
+
 .animateTitle {
     display: block;
     text-align: center;
@@ -509,7 +514,7 @@ code {
 .pace .pace-progress {
 	background: #43CD80;
 	position: fixed;
-	z-index: 2000;
+	z-index: 2001;
 	top: 0;
 	left: 0;
 	height: 2px;
@@ -1043,8 +1048,8 @@ a.toc-link:hover {
 #topNav a {
     display: block;
     font-size: 18px;
-    padding-left:0.5em;
-    padding-right:0.5em;
+    padding-left:0.2em;
+    padding-right:0.4em;
     line-height:2em;
     text-align: left;
     border-right: 1px solid #999;
@@ -1286,7 +1291,7 @@ display:inline-block将对象呈递为内联对象，
     top: 56%;
     right: 0;
     position: fixed;
-    z-index: 1;
+    z-index: 10005;
     background-color: lightgray;
     opacity: 0.9;
     transition: 1s all ease;
