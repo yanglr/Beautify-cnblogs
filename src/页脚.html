@@ -1,4 +1,6 @@
 <script type="text/javascript" src="//apps.bdimg.com/libs/bootstrap/3.2.0/js/bootstrap.min.js?ver=5.2"></script>
+<script src="//files.cnblogs.com/files/enjoy233/clipboard.min-v2.0.4.js"></script>
+<link rel="stylesheet" href="//files.cnblogs.com/files/enjoy233/copyCodeButton.css">
 
 <div class="scrollBtn" id="scrollBtn">
     <ul class="clearfix">
@@ -34,6 +36,10 @@
     /* jquery 仅在页面所有资源都加载完成后加行号、显示代码所用的语言 */
     document.onreadystatechange = function () {
         if (document.readyState === 'interactive') {
+                    $.getScript('//files.cnblogs.com/files/enjoy233/addCopyCodeButton-new.js');
+
+                    $('#footer').append('<div id="customFooter">            Powered By             <a href="//www.cnblogs.com" target="_blank">Cnblogs</a> |             <a href="//github.com/yanglr/cnblogs-theme-xSimple" target="_blank" title="Fork theme on github" class="enjoyFont">Extremely Simple</a>  Theme By             <a href="//www.cnblogs.com/enjoy233" target="_blank"  class="enjoyFont">Enjoy233</a>, Basic skin - <a href="//www.cnblogs.com/SkinUser.aspx?SkinName=LessIsMore" target="_blank">Less is More</a>.</div><br>');
+
                     if ($(".cnblogs-post-body pre > code").length == 0 && $(".cnblogs-markdown pre").length > 0) {
                     /* markdown模式下为代码加入行号, 调用插件highlightjs-line-numbers.js */
                     hljs.initHighlightingOnLoad();
@@ -109,8 +115,6 @@
             'height': '20px'
             })
          }
-
-        $('#footer').append('<div id="customFooter">            Powered By             <a href="//www.cnblogs.com" target="_blank">Cnblogs</a> |             <a href="//github.com/yanglr/cnblogs-theme-xSimple" target="_blank" title="Fork theme on github" class="enjoyFont">Extremely Simple</a>  Theme By             <a href="//www.cnblogs.com/enjoy233" target="_blank"  class="enjoyFont">Enjoy233</a>, Basic skin - <a href="//www.cnblogs.com/SkinUser.aspx?SkinName=LessIsMore" target="_blank">Less is More</a>.</div><br>');
 
         if ($(".cnblogs-markdown pre").length == 0) {
             $.getScript("//files.cnblogs.com/files/enjoy233/nav.my.js");
@@ -361,6 +365,3 @@
         }
     });
 </script>
-
-<script src="//cdn.jsdelivr.net/clipboard.js/1.5.12/clipboard.min.js"></script>
-<script src="//files.cnblogs.com/files/enjoy233/addCopyCodeButton.js" async></script>
