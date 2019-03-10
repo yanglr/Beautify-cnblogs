@@ -7,6 +7,13 @@
 pre .line {
      position:  relative;
      left: -4px;
+    moz-user-select: -moz-none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 #customH1 {
@@ -1453,13 +1460,4 @@ height: 35px;
   text-indent: 10px;
   background-position: 64px center;
   background-repeat: no-repeat;
-}
-
-.copyBtn {
-    font-size: 12px;
-    cursor: pointer;
-    color: #5e6687;
-    border-radius: 5px;
-    box-shadow: 2px 2px 5px darkgrey;
-    max-height: 24px;
 }
