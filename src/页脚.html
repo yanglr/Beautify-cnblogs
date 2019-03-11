@@ -26,7 +26,7 @@
 
 <script type="text/javascript">
     $(document).ready(function () {
-        $("#cnblogs_post_body").append('<br/><hr/><div id="signature" style="background: url(//www.cnblogs.com/images/cnblogs_com/enjoy233/1389971/o_user_warning.png) #e5f1f4 no-repeat 1% 50%; border-top: #e0e0e0 1px dashed;    border-right: #e0e0e0 1px dashed;    border-bottom: #e0e0e0 1px dashed;    border-left: #e0e0e0 1px dashed;    padding-top: 10px;    padding-right: 10px;    padding-bottom: 10px;    padding-left: 70px; font-size: 13.5px;">   作者：<a href="//www.cnblogs.com/enjoy233/" target="_blank" title="Enjoy233的博客" style="color: brown">Bravo Yeung</a><br>    出处：<a href="//www.cnblogs.com/Enjoy233/" target="_blank" title="//www.cnblogs.com/Enjoy233/" style="color: blue">//www.cnblogs.com/Enjoy233/</a>    <br>如果您觉得阅读本文对您有帮助，请点击一下右下方的<b style="color: blue; font-size: 16px">推荐</b>按钮，您的<b style="color: blue; font-size: 16px">推荐</b>将是我写作的最大动力！    <br>版权声明：本文为博主原创或转载文章，欢迎转载，<b>但转载文章之后必须在文章页面明显位置注明出处</b>，否则保留追究法律责任的权利。</div>');
+        $("#cnblogs_post_body").append('<br/><hr/><div id="signature" style="background: url(//www.cnblogs.com/images/cnblogs_com/enjoy233/1389971/o_user_warning.png) #e5f1f4 no-repeat 1% 50%; border-top: #e0e0e0 1px dashed;    border-right: #e0e0e0 1px dashed;    border-bottom: #e0e0e0 1px dashed;    border-left: #e0e0e0 1px dashed;    padding-top: 10px;    padding-right: 10px;    padding-bottom: 10px;    padding-left: 70px; font-size: 13.5px;">   作者：<a href="//www.cnblogs.com/enjoy233/" target="_blank" title="Enjoy233的博客" style="color: brown">Bravo Yeung</a><br>    出处：<a href="//enjoy233.cnblogs.com" target="_blank" title="https://enjoy233.cnblogs.com/" style="color: blue">//www.cnblogs.com/Enjoy233/</a>    <br>如果您觉得阅读本文对您有帮助，请点击一下右下方的<b style="color: blue; font-size: 16px">推荐</b>按钮，您的<b style="color: blue; font-size: 16px">推荐</b>将是我写作的最大动力！    <br>版权声明：本文为博主原创或转载文章，欢迎转载，<b>但转载文章之后必须在文章页面明显位置注明出处</b>，否则保留追究法律责任的权利。</div>');
 
         if (isLogined) {
             var author = $('#tbCommentAuthor');
@@ -40,28 +40,6 @@
                     'width': '90px'
                 });
         }
-       if (document.location.href.indexOf('/p/') > 0 || document.location.href.indexOf('/archive/') > 0 || document.location.href.indexOf('/articles') > 0 || document.location.href.indexOf('/diary/') > 0) {
-            $('#ubb_quote')[0].src = "//www.cnblogs.com/images/cnblogs_com/enjoy233/1389971/o_quoteIcon.png";
-            $('#ubb_quote').css({
-            'width': '20px',
-            'height': '20px'
-            })
-            $('#ubb_url')[0].src = "//www.cnblogs.com/images/cnblogs_com/enjoy233/1389971/o_linkIcon.png";
-            $('#ubb_url').css({
-            'width': '18px',
-            'height': '18px'
-            })
-            $('#ubb_code')[0].src = "//www.cnblogs.com/images/cnblogs_com/enjoy233/1389971/o_codeIcon.png";
-            $('#ubb_code').css({
-            'width': '18px',
-            'height': '18px'
-            })
-            $('#ubb_img')[0].src = "//www.cnblogs.com/images/cnblogs_com/enjoy233/1389971/o_imageUploadIcon.png";
-            $('#ubb_img').css({
-            'width': '20px',
-            'height': '20px'
-            })
-         }
          
     });
 </script>
@@ -88,6 +66,29 @@
                 code.each(addSourceLineNumbers);
                 setCodeRowWithLang($(".cnblogs-post-body pre"));
             }
+
+            if (document.location.href.indexOf('/p/') > 0 || document.location.href.indexOf('/archive/') > 0 || document.location.href.indexOf('/articles') > 0 || document.location.href.indexOf('/diary/') > 0) {
+            $('#ubb_quote')[0].src = "//www.cnblogs.com/images/cnblogs_com/enjoy233/1389971/o_quoteIcon.png";
+            $('#ubb_quote').css({
+            'width': '20px',
+            'height': '20px'
+            });
+            $('#ubb_url')[0].src = "//www.cnblogs.com/images/cnblogs_com/enjoy233/1389971/o_linkIcon.png";
+            $('#ubb_url').css({
+            'width': '18px',
+            'height': '18px'
+            });
+            $('#ubb_code')[0].src = "//www.cnblogs.com/images/cnblogs_com/enjoy233/1389971/o_codeIcon.png";
+            $('#ubb_code').css({
+            'width': '18px',
+            'height': '18px'
+            });
+            $('#ubb_img')[0].src = "//www.cnblogs.com/images/cnblogs_com/enjoy233/1389971/o_imageUploadIcon.png";
+            $('#ubb_img').css({
+            'width': '20px',
+            'height': '20px'
+            });
+         }
         }
     }
     $(function () {
