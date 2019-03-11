@@ -1,0 +1,20 @@
+<html>
+    <link rel="stylesheet" href="https://static.segmentfault.com/v-5c78d357/global/css/global.css">
+    <link rel="stylesheet" href="https://static.segmentfault.com/v-5c78d357/user/css/user.css">
+
+<style>
+.profile__heading--desc-heading {
+    padding: 6px 12px !important;
+}
+</style>
+
+<body>
+    <header class="profile__heading"><div class="container"><div class="row" style="position: relative;"><div class="profile__heading--desc col-md-5 col-sm-12 col-xs-12"><div class="profile__heading--desc-heading"><span class="profile__heading--desc-heading-dot-warp"><span class="profile__heading-dot profile__heading-dot--red"></span><span class="profile__heading-dot profile__heading-dot--yellow"></span><span class="profile__heading-dot profile__heading-dot--green"></span></span><div class="pull-right"><span data-type="desc" class="profile__heading-edit   btn btn-xs profile__heading--desc-heading-edit"><i class="fa fa-pencil" aria-hidden="true"></i>编辑</span></div></div><div class="profile__heading--desc-body"><script type="text/template" class="tpl__desc--form"><form class="form form--profile form__desc"
+        data-action="/api/user/homepage/description/edit"><div class="form-group"><textarea class="form-control" name="description" rows="4"><%= description %></textarea></div><div class="text-right"><button type="button" class="btn btn-default js-cancel mr10">取消</button><button type="button" class="btn btn-primary js-submit">保存</button></div></form></script><script type="text/template" class="tpl__desc--content"><% if(parsedText){ %><%= parsedText %><% }else{ %><div style="white-space: pre"> _
+
+暂时没有个人简介，
+          <a data-type="desc" href="javascript:;"
+             class="profile__heading-edit">立即添加</a></div><% } %></script><div class="profile__desc"><p>远见攻城狮，羊较瘦~</p></div></div></div></div></div></header>
+</body>
+
+</html>
