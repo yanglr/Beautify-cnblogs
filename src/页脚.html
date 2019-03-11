@@ -36,46 +36,16 @@
     /* jquery 仅在页面所有资源都加载完成后加行号、显示代码所用的语言 */
     document.onreadystatechange = function () {
         if (document.readyState === 'interactive') {
-                    $.getScript('//files.cnblogs.com/files/enjoy233/addCopyCodeButton-new.js');
-
-                    if (document.location.href.indexOf('/p/') > 0 || document.location.href.indexOf('/archive/') > 0 || document.location.href.indexOf('/articles') > 0 || document.location.href.indexOf('/diary/') > 0) {
-                        $('#ubb_quote')[0].src = "//www.cnblogs.com/images/cnblogs_com/enjoy233/1389971/o_quoteIcon.png";
-                        $('#ubb_quote').css({
-                            'width': '20px',
-                            'height': '20px'
-                        })
-                        $('#ubb_url')[0].src = "//www.cnblogs.com/images/cnblogs_com/enjoy233/1389971/o_linkIcon.png";
-                        $('#ubb_url').css({
-                            'width': '18px',
-                            'height': '18px'
-                        })
-                        $('#ubb_code')[0].src = "//www.cnblogs.com/images/cnblogs_com/enjoy233/1389971/o_codeIcon.png";
-                        $('#ubb_code').css({
-                            'width': '18px',
-                            'height': '18px'
-                        })
-                        $('#ubb_img')[0].src = "//www.cnblogs.com/images/cnblogs_com/enjoy233/1389971/o_imageUploadIcon.png";
-                        $('#ubb_img').css({
-                            'width': '20px',
-                            'height': '20px'
-                        })
-                    }
-
-                    if ($(".cnblogs-markdown pre").length == 0) {
-                        $.getScript("//files.cnblogs.com/files/enjoy233/nav.my.js");
-                    }
+                    $.getScript('//files.cnblogs.com/files/enjoy233/addCopyCodeButton.js');
 
                     $('#footer').append('<div id="customFooter">            Powered By             <a href="//www.cnblogs.com" target="_blank">Cnblogs</a> |             <a href="//github.com/yanglr/cnblogs-theme-xSimple" target="_blank" title="Fork theme on github" class="enjoyFont">Extremely Simple</a>  Theme By             <a href="//www.cnblogs.com/enjoy233" target="_blank"  class="enjoyFont">Enjoy233</a>, Basic skin - <a href="//www.cnblogs.com/SkinUser.aspx?SkinName=LessIsMore" target="_blank">Less is More</a>.</div><br>');
-
                     if ($(".cnblogs-post-body pre > code").length == 0 && $(".cnblogs-markdown pre").length > 0) {
                     /* markdown模式下为代码加入行号, 调用插件highlightjs-line-numbers.js */
                     hljs.initHighlightingOnLoad();
                     hljs.initLineNumbersOnLoad();
-
                     setCodeRowWithLang($(".cnblogs-markdown pre"));    // markdown模式
                 }
         }
-
         if (document.readyState === 'complete') {
             if ($(".cnblogs-post-body pre > code").length > 0) {
                 var code = $(".cnblogs-post-body pre").find(".hljs");
@@ -84,9 +54,7 @@
             }
         }
     }
-
     $(function () {
-
         $("#picLsy li").hover(function () {
             $(this).find('.text:not(:animated)').animate({
                     top: "0px"
@@ -106,7 +74,6 @@
                 50,
                 function () { });
         });
-
         if (isLogined) {
             var author = $('#tbCommentAuthor');
             author.hide();
@@ -119,9 +86,32 @@
                     'width': '90px'
                 });
         }
-
+       if (document.location.href.indexOf('/p/') > 0 || document.location.href.indexOf('/archive/') > 0 || document.location.href.indexOf('/articles') > 0 || document.location.href.indexOf('/diary/') > 0) {
+            $('#ubb_quote')[0].src = "//www.cnblogs.com/images/cnblogs_com/enjoy233/1389971/o_quoteIcon.png";
+            $('#ubb_quote').css({
+            'width': '20px',
+            'height': '20px'
+            })
+            $('#ubb_url')[0].src = "//www.cnblogs.com/images/cnblogs_com/enjoy233/1389971/o_linkIcon.png";
+            $('#ubb_url').css({
+            'width': '18px',
+            'height': '18px'
+            })
+            $('#ubb_code')[0].src = "//www.cnblogs.com/images/cnblogs_com/enjoy233/1389971/o_codeIcon.png";
+            $('#ubb_code').css({
+            'width': '18px',
+            'height': '18px'
+            })
+            $('#ubb_img')[0].src = "//www.cnblogs.com/images/cnblogs_com/enjoy233/1389971/o_imageUploadIcon.png";
+            $('#ubb_img').css({
+            'width': '20px',
+            'height': '20px'
+            })
+         }
+        if ($(".cnblogs-markdown pre").length == 0) {
+            $.getScript("//files.cnblogs.com/files/enjoy233/nav.my.js");
+        }
     });
-
     function addSourceLineNumbers() {
         var
             name = 'name',
@@ -134,7 +124,6 @@
         this.innerHTML = '<a class="line" name="' + name + '0">1&nbsp;' + result + '</a>';
         //console.log(this.innerHTML);
     }
-
     function setCodeRowWithLang(pre) {
         /* var pre = $(".cnblogs-post-body pre");  选中需要处理的代码块, 如果不是首页，选择器为 .cnblogs-markdown pre  */
         if (pre && pre.length) {
@@ -239,7 +228,6 @@
                     "xquery": "XQuery",
                     "yaml": "YAML"
                 };
-
                 var displayLangText = "";
                 if (lang in langMap) displayLangText = langMap[lang];
                 else displayLangText = lang;
@@ -249,10 +237,7 @@
                         displayLangText +
                         '</font></div>');
             });
-
         };
-
-
     }
 </script>
 
@@ -302,10 +287,8 @@
 <script>
     if ($(".cnblogs-markdown pre").length > 0) {
         // content = $('<div class="tocCol"><p>目录</p><p class="js-toc"></p></div>');
-
         if ($("h1, h2, h3, h4, h5, h6").length > 0)
             $("#home").prepend('<div class="o1" title="显示/隐藏目录">   <i class="fa fa-list-ul" style="font-size: 40px;"></i></div><div class="asideMdContents">  <div class="close">       <div class="x"></div>       <div class="x2"></div>   </div>  <p>目录</p><p class="js-toc"></p> </div>');
-
         tocbot.init({
             // css选择器，用于指定将要生成自动目录的位置
             tocSelector: '.js-toc',
@@ -318,24 +301,18 @@
             orderedList: true
             /* 温馨提醒: 最后一个参数不能有逗号 */
         });
-
     }
-
         $('.o1').click(function () {
             $('.asideMdContents').fadeIn(400);
         });
-
         $('.close').click(function () {
             $('.asideMdContents').fadeOut(100);
         });
-
-
     //Setting ico for blog
     var linkObject = document.createElement('link');
     linkObject.rel = "shortcut icon";
     linkObject.href = "//files.cnblogs.com/files/enjoy233/favicon.ico";
     document.getElementsByTagName("head")[0].appendChild(linkObject);
-
 // $('<p style="color:blue;">目录</p>').prependTo('.js-toc');
 </script>
 
@@ -345,12 +322,10 @@
     var block = follow.length >= 1 ? follow[0] : "";
     var followText = (block != null && block != undefined) ? block.innerHTML : "";
     if(followText == "") selfLogin = true;
-
     var pageInfo = '\r\n---------------------\r\n著作权归作者所有。\r\n'
         + '商业转载请联系作者获得授权，非商业转载请注明出处。\r\n'
         + '作者：Bravo Yeung\r\n源地址：' + document.location.href
         + '\r\n来源：博客园cnblogs\r\n© 版权声明：本文为博主原创文章，转载请附上博文链接！';
-
     document.addEventListener('copy', function (ev) {
         var targetHTML = $.trim($(ev.target).html());
         // console.log("targetHTML:" + targetHTML)
@@ -359,8 +334,7 @@
         {
             var selected = window.getSelection();
             var selectedText = selected.toString();  
-            let copyRightStr = (selectedText + pageInfo).replace(/\n/g, '\r\n'); // Solve the line breaks conversion issue
-
+            var copyRightStr = (selectedText + pageInfo).replace(/\n/g, '\r\n'); // Solve the line breaks conversion issue
             ev.clipboardData.setData('text/plain', `${copyRightStr}`);
             ev.preventDefault();
         }
