@@ -1461,3 +1461,13 @@ height: 35px;
   background-position: 64px center;
   background-repeat: no-repeat;
 }
+
+.copyBtn {		
+     font-size: 12px;		
+     cursor: pointer;		
+     color: #5e6687 !important;		
+     border-radius: 5px !important;		
+     box-shadow: 2px 2px 5px darkgrey !important;
+     margin-bottom: 4px  !important;	
+     max-height: 24px;
+}
