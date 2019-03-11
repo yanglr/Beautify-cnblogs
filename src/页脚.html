@@ -55,8 +55,14 @@
                     $('#footer').append('<div id="customFooter">            Powered By             <a href="//www.cnblogs.com" target="_blank">Cnblogs</a> |             <a href="//github.com/yanglr/cnblogs-theme-xSimple" target="_blank" title="Fork theme on github" class="enjoyFont">Extremely Simple</a>  Theme By             <a href="//www.cnblogs.com/enjoy233" target="_blank"  class="enjoyFont">Enjoy233</a>, Basic skin - <a href="//www.cnblogs.com/SkinUser.aspx?SkinName=LessIsMore" target="_blank">Less is More</a>.</div><br>');
                     if ($(".cnblogs-post-body pre > code").length == 0 && $(".cnblogs-markdown pre").length > 0) {
                     /* markdown模式下为代码加入行号, 调用插件highlightjs-line-numbers.js */
-                    hljs.initHighlightingOnLoad();
-                    hljs.initLineNumbersOnLoad();
+
+                    // hljs.initHighlightingOnLoad();		
+                    // hljs.initLineNumbersOnLoad();
+
+                    $('code.hljs').each(function(i, block) {
+                        hljs.lineNumbersBlock(block);
+                    });
+
                     setCodeRowWithLang($(".cnblogs-markdown pre"));    // markdown模式
                 }
         }
@@ -246,25 +252,35 @@
 </script>
 
 <!-- tctip 支付赞赏/打赏 -->
-<script type="text/javascript" src="//files.cnblogs.com/files/enjoy233/tctip-1.0.3.min.js"></script> <!-- js文件引入 -->
-<script>
-    new tctip({
-        top: '10%',
-        button: {
-            id: 1,
-            type: 'dasang',
-        },
-        list: [
-            {
-                type: 'alipay',
-                qrImg: '//files.cnblogs.com/files/enjoy233/Reward_Alipay_Charge.bmp' //替换成自己的支付宝
-            }, {
-                type: 'wechat',
-                qrImg: '//files.cnblogs.com/files/enjoy233/Reward_WX_Charge.bmp' //替换成自己的微信
+    <link type="text/css" rel="stylesheet" href="https://files.cnblogs.com/files/enjoy233/myRewards-ysh.css">
+    <script>
+        window.tctipConfig = {
+            headText: "欢迎打赏支持我 ^_^",
+            siderText: "打赏",
+            siderTextTop: "-72px",
+            siderBgcolor: "#8CBCD1",
+            siderTop: "9%",
+            buttomText: "了解更多",
+            buttomLink: "https://github.com/haddyyang/tctip",
+
+            list: {
+                alipay: {
+                    name: "支付宝",
+                    icon: "https://www.cnblogs.com/images/cnblogs_com/enjoy233/1389971/o_alipayIcon.png", 
+                    // desc: "用支付宝\n打赏作者",
+                    qrimg: "https://files.cnblogs.com/files/enjoy233/Reward_Alipay_Charge.bmp"
+                },
+                weixin: {
+                    name: "微信",
+                    // desc: "用微信\n打赏作者",
+                    icon: "https://www.cnblogs.com/images/cnblogs_com/enjoy233/1389971/o_weixinIcon.png", 
+                    qrimg: "https://files.cnblogs.com/files/enjoy233/Reward_WX_Charge.bmp"
+                }
             }
-        ]
-    }).init()
-</script>
+
+        };
+    </script>
+    <script src="https://files.cnblogs.com/files/enjoy233/tctip.min-ysh.js"></script>    
 
 <!-- Baidu Share BEGIN -->
 <div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare">
