@@ -74,29 +74,46 @@
             }
 
             if (document.location.href.indexOf('/p/') > 0 || document.location.href.indexOf('/archive/') > 0 || document.location.href.indexOf('/articles') > 0 || document.location.href.indexOf('/diary/') > 0) {
-            $('#ubb_quote')[0].src = "//www.cnblogs.com/images/cnblogs_com/enjoy233/1389971/o_quoteIcon.png";
-            $('#ubb_quote').css({
-            'width': '20px',
-            'height': '20px'
-            });
-            $('#ubb_url')[0].src = "//www.cnblogs.com/images/cnblogs_com/enjoy233/1389971/o_linkIcon.png";
-            $('#ubb_url').css({
-            'width': '18px',
-            'height': '18px'
-            });
-            $('#ubb_code')[0].src = "//www.cnblogs.com/images/cnblogs_com/enjoy233/1389971/o_codeIcon.png";
-            $('#ubb_code').css({
-            'width': '18px',
-            'height': '18px'
-            });
-            $('#ubb_img')[0].src = "//www.cnblogs.com/images/cnblogs_com/enjoy233/1389971/o_imageUploadIcon.png";
-            $('#ubb_img').css({
-            'width': '20px',
-            'height': '20px'
-            });
+            if($('#ubb_quote').length == 1)
+            {
+                $('#ubb_quote')[0].src = "//www.cnblogs.com/images/cnblogs_com/enjoy233/1389971/o_quoteIcon.png";
+                $('#ubb_quote').css({
+                'width': '20px',
+                'height': '20px'
+                });
+            }
+
+            if($('#ubb_url').length == 1)
+            {
+                $('#ubb_url')[0].src = "//www.cnblogs.com/images/cnblogs_com/enjoy233/1389971/o_linkIcon.png";
+                $('#ubb_url').css({
+                'width': '18px',
+                'height': '18px'
+                });
+            }
+
+            if($('#ubb_code').length == 1)
+            {
+                $('#ubb_code')[0].src = "//www.cnblogs.com/images/cnblogs_com/enjoy233/1389971/o_codeIcon.png";
+                $('#ubb_code').css({
+                'width': '18px',
+                'height': '18px'
+                });
+            }
+            
+            if($('#ubb_code').length == 1)
+            {
+                $('#ubb_img')[0].src = "//www.cnblogs.com/images/cnblogs_com/enjoy233/1389971/o_imageUploadIcon.png";
+                $('#ubb_img').css({
+                'width': '20px',
+                'height': '20px'
+                });
+            }              
+
          }
         }
     }
+
     $(function () {
         $("#picLsy li").hover(function () {
             $(this).find('.text:not(:animated)').animate({
@@ -333,15 +350,14 @@
     linkObject.rel = "shortcut icon";
     linkObject.href = "//files.cnblogs.com/files/enjoy233/favicon.ico";
     document.getElementsByTagName("head")[0].appendChild(linkObject);
-// $('<p style="color:blue;">目录</p>').prependTo('.js-toc');
+
 </script>
 
 <script  type="text/javascript">
-    var selfLogin = false;
-    var follow = $('#profile_block').find('#p_b_follow');
-    var block = follow.length >= 1 ? follow[0] : "";
-    var followText = (block != null && block != undefined) ? block.innerHTML : "";
-    if(followText == "") selfLogin = true;
+    var selfLogin = true;
+    if($('#tbCommentAuthor').val() === undefined || $('#tbCommentAuthor').val() != 'Enjoy233')
+        selfLogin = false;
+
     var pageInfo = '\r\n---------------------\r\n著作权归作者所有。\r\n'
         + '商业转载请联系作者获得授权，非商业转载请注明出处。\r\n'
         + '作者：Bravo Yeung\r\n源地址：' + document.location.href
@@ -355,7 +371,8 @@
             var selected = window.getSelection();
             var selectedText = selected.toString();  
             var copyRightStr = (selectedText + pageInfo).replace(/\n/g, '\r\n'); // Solve the line breaks conversion issue
-            ev.clipboardData.setData('text/plain', `${copyRightStr}`);
+            // var rawText = `${copyRightStr}`;
+            ev.clipboardData.setData('text/plain', copyRightStr);  // IE不支持` template string
             ev.preventDefault();
         }
     });
