@@ -1471,3 +1471,12 @@ height: 35px;
      margin-bottom: 4px  !important;	
      max-height: 24px;
 }
+
+#p_b_follow > a {
+    color: #FFFFFF;
+    background-color: #0084FF;
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 32px;
+    padding: 4px 8px 4px 6px;
+}
