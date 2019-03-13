@@ -1,6 +1,7 @@
 <script type="text/javascript" src="//apps.bdimg.com/libs/bootstrap/3.2.0/js/bootstrap.min.js?ver=5.2"></script>
 <script src="//files.cnblogs.com/files/enjoy233/clipboard.min-v2.0.4.js"></script>
 <link rel="stylesheet" href="//files.cnblogs.com/files/enjoy233/copyCodeButton.css">
+<link rel="stylesheet" href="//files.cnblogs.com/files/enjoy233/SignatureStyle.css">
 
 <div class="scrollBtn" id="scrollBtn">
     <ul class="clearfix">
@@ -26,7 +27,31 @@
 
 <script type="text/javascript">
     $(document).ready(function () {
-        $("#cnblogs_post_body").append('<br/><hr/><div id="signature" style="background: url(//www.cnblogs.com/images/cnblogs_com/enjoy233/1389971/o_user_warning.png) #e5f1f4 no-repeat 1% 50%; border-top: #e0e0e0 1px dashed;    border-right: #e0e0e0 1px dashed;    border-bottom: #e0e0e0 1px dashed;    border-left: #e0e0e0 1px dashed;    padding-top: 10px;    padding-right: 10px;    padding-bottom: 10px;    padding-left: 70px; font-size: 13.5px;">   作者：<a href="//www.cnblogs.com/enjoy233/" target="_blank" title="Enjoy233的博客" style="color: brown">Bravo Yeung</a><br>    出处：<a href="//enjoy233.cnblogs.com" target="_blank" title="enjoy233" style="color: blue">//enjoy233.cnblogs.com/</a>    <br>如果您觉得阅读本文对您有帮助，请点击一下右下方的<b style="color: blue; font-size: 16px">推荐</b>按钮，您的<b style="color: blue; font-size: 16px">推荐</b>将是我写作的最大动力！    <br>版权声明：本文为博主原创或转载文章，欢迎转载，<b>但转载文章之后必须在文章页面明显位置注明出处</b>，否则保留追究法律责任的权利。</div>');
+        $("#cnblogs_post_body").append('<br/><hr/>'+
+    '<div class="container">\
+        <div class="row" style="position: relative;">\
+            <div class="profile__heading--desc col-md-5 col-sm-12 col-xs-12">\
+                <div class="profile__heading--desc-heading">\
+                    <span class="profile__heading--desc-heading-dot-warp">\
+                        <span class="profile__heading-dot profile__heading-dot--red"></span>\
+                        <span class="profile__heading-dot profile__heading-dot--yellow"></span>\
+                        <span class="profile__heading-dot profile__heading-dot--green"></span>\
+                    </span>\
+                </div>\
+                <div class="profile__heading--desc-body">\
+                    <div class="profile__desc">\
+                        <div id="signature" style="background: url(https://www.cnblogs.com/images/cnblogs_com/enjoy233/1389971/o_user_warning.png) no-repeat 1% 50%; \
+                        padding-left: 90px; font-size: 13.5px;">\
+                            作者：<a href="//www.cnblogs.com/enjoy233/" target="_blank" title="Enjoy233的博客" style="color: brown; font-family: &quot;Lucida Handwriting&quot;,&quot;Segoe Print&quot;">Bravo Yeung</a><br> \
+                            出处：<a href="//enjoy233.cnblogs.com" target="_blank" title="enjoy233"\
+                                style="color: blue; font-family: &quot;Segoe Print&quot;, &quot;Segoe Script&quot;">https://enjoy233.cnblogs.com/</a> <br>如果您觉得阅读本文对您有帮助，请点击一下右下方的<b style="color: blue; font-size: 16px">推荐</b>按钮，您的\
+                                <b style="color: blue; font-size: 16px">推荐</b>将是我写作的最大动力！\
+                            <br>版权声明：本文为博主原创或转载文章，欢迎转载，<b>但转载文章之后必须在文章页面明显位置注明出处</b>，否则保留追究法律责任的权利。</div>\
+                    </div>\
+                </div>\
+            </div>\
+        </div>\
+    </div>');
 
         if (isLogined) {
             var author = $('#tbCommentAuthor');
