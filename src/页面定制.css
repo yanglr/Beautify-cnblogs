@@ -223,6 +223,10 @@ a:active {
         padding: 0 0px 40px 12px;
 }
 
+input.btn_my_zzk {
+    border: 1.5px solid #2ca6cb !important;
+}
+
 .input_my_zzk_new {
     width: 200px;
     vertical-align: middle;
@@ -1305,7 +1309,7 @@ display:inline-block将对象呈递为内联对象，
 }
 
 div.asideMdContents p {
-    min-width: 100px;
+    min-width: 135px;
 }
 
 .fa {
