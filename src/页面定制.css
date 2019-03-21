@@ -1484,3 +1484,29 @@ height: 35px;
     line-height: 32px;
     padding: 4px 8px 4px 6px;
 }
+
+#cnblogs_post_body > div.toc > div > ul > li a {
+    border-bottom: none !important;
+}
+
+#cnblogs_post_body a:link {
+    border-bottom: 2px solid #08c !important;
+}
+
+#cnblogs_post_body a:hover {
+    background-color: #08c !important;
+    border-radius: unset; 
+}
+
+.postCon a:link {
+    border-bottom: 2px solid #08c !important;
+}
+
+.postCon a:hover {
+    background-color: #08c !important;
+    border-radius: unset;
+}
+
+.toc > .toc-list > ul > li a {
+    border-bottom: none !important;    
+}
