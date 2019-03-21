@@ -384,22 +384,111 @@
     if($('#tbCommentAuthor').val() === undefined || $('#tbCommentAuthor').val() != 'Enjoy233')
         selfLogin = false;
 
+    var isIe = (navigator.userAgent.toLowerCase().indexOf("msie") != -1
+        || navigator.userAgent.toLowerCase().indexOf("trident") != -1);
+        
+    var day = new Date();
+    var fulltime = day.getFullYear() + "-" + ('0' + (day.getMonth() + 1)).slice(-2) + "-" + ('0' + day.getDate()).slice(-2) + " "
+        + ('0' + day.getHours()).slice(-2) + ":" + ('0' + day.getMinutes()).slice(-2) + ":" + ('0' + day.getSeconds()).slice(-2);
+
     var pageInfo = '\r\n---------------------\r\n著作权归作者所有。\r\n'
-        + '商业转载请联系作者获得授权，非商业转载请注明出处。\r\n'
-        + '作者：Bravo Yeung\r\n源地址：' + document.location.href
-        + '\r\n来源：博客园cnblogs\r\n© 版权声明：本文为博主原创文章，转载请附上博文链接！';
-    document.addEventListener('copy', function (ev) {
-        var targetHTML = $.trim($(ev.target).html());
-        // console.log("targetHTML:" + targetHTML)
-        if (targetHTML == "") return;
-        if (!(targetHTML.startsWith('<table class="hljs-ln"') && targetHTML.endsWith('</table>')) || !selfLogin)  // isLogined
-        {
-            var selected = window.getSelection();
-            var selectedText = selected.toString();  
-            var copyRightStr = (selectedText + pageInfo).replace(/\n/g, '\r\n'); // Solve the line breaks conversion issue
-            // var rawText = `${copyRightStr}`;
-            ev.clipboardData.setData('text/plain', copyRightStr); // IE不支持` template string
-            ev.preventDefault();
+    + '商业转载请联系作者获得授权，非商业转载请注明出处。\r\n'
+    + '作者：Bravo Yeung\r\nEmail: legege007@126.com\r\n源地址：' + document.location.href
+    + '\r\n复制时间: ' + fulltime
+    + '\r\n来源：博客园cnblogs\r\n© 版权声明：本文为博主原创文章，转载请附上博文链接！';    
+
+    function getIeVersion() {
+            var userAgent = navigator.userAgent; //取得浏览器的userAgent字符串  
+            var isIE = userAgent.indexOf("compatible") > -1 && userAgent.indexOf("MSIE") > -1; //判断是否IE<11浏览器  
+            var isEdge = userAgent.indexOf("Edge") > -1 && !isIE; //判断是否IE的Edge浏览器  
+            var isIE11 = userAgent.indexOf('Trident') > -1 && userAgent.indexOf("rv:11.0") > -1;
+            if(isIE) {
+                var reIE = new RegExp("MSIE (\\d+\\.\\d+);");
+                reIE.test(userAgent);
+                var fIEVersion = parseFloat(RegExp["$1"]);
+                if(fIEVersion > 6){
+                    return fIEVersion;
+                }else{
+                    return 6;
+                }
+            } else if(isEdge) {
+                return 'edge';//edge
+            } else if(isIE11) {
+                return 11; //IE11  
+            }else{
+                return -1;//不是ie浏览器
+            }
         }
-    });
+
+        //自定义设置剪贴板内容
+        function setClipboardText(event, maxCount){
+            var IEVersion = getIeVersion();
+            //阻止元素发生默认的行为（例如，当点击提交按钮时阻止对表单的提交）。
+            if(IEVersion>-1 && IEVersion!='edge' && IEVersion<11){
+                //IE
+                window.event.returnValue = false;
+            }else{
+                event.preventDefault();
+            }
+
+            var textData = '';
+            var htmlData = '';
+            if(IEVersion>-1 && IEVersion!='edge' && IEVersion<11){
+                //低版本IE
+                //选择的文本
+                textData = document.selection.createRange().text;
+                //选择的html
+                htmlData = document.selection.createRange().htmlText;
+            }else{
+
+                var selectRange = window.getSelection().getRangeAt(0);
+                //选择的文本
+                textData = selectRange.toString();
+
+                //选择的html
+                var node = document.createElement('div');
+                node.appendChild(selectRange.cloneContents());
+                htmlData = node.innerHTML;
+
+            }
+
+            //如果复制的内容超过maxCount个字符则添加版权信息
+            if(textData.length >= maxCount){
+                //文本格式附加版权信息
+                textData = (textData + pageInfo).replace(/\n/g, '\r\n');
+                //html格式附加版权信息
+                htmlData = '<div>' + htmlData + pageInfo.replace(/\n/g, '<br>') + '</div>';
+            }
+
+            if(IEVersion>-1 && IEVersion!='edge') {  //IE
+                return window.clipboardData.setData("text", textData);
+            } else {
+                event.clipboardData.setData("text/html", htmlData);
+                event.clipboardData.setData("text/plain",textData);
+            }
+        }
+
+        if (isIe) {
+            document.body.oncopy = function (e) {
+                if (!selfLogin) {
+                    setClipboardText(e, 6);
+                }                
+            }
+        }
+        else {
+            document.addEventListener('copy', function (ev) {
+                var targetHTML = $.trim($(ev.target).html());
+                // console.log("targetHTML:" + targetHTML)
+                if (targetHTML == "") return;
+                if (!(targetHTML.startsWith('<table class="hljs-ln"') && targetHTML.endsWith('</table>')) || !selfLogin)  // isLogined
+                {
+                    var selected = window.getSelection();
+                    var selectedText = selected.toString();
+                    var copyRightStr = (selectedText + (selfLogin ? "" : pageInfo)).replace(/\n/g, '\r\n'); // Solve the line breaks conversion issue
+                    ev.clipboardData.setData('text/plain', copyRightStr); // IE不支持` template string
+                    ev.preventDefault();
+                }
+            });
+        }
+
 </script>
