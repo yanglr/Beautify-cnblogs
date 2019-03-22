@@ -822,7 +822,8 @@ em {
 	border: none;
 	border-left: 5px solid #f6b73c;
 	margin: 0;
-	padding-left: 10px;
+	padding-left: 4%;
+        padding-top: 36px;
         background: #FFFFCC url(//images.cnblogs.com/cnblogs_com/enjoy233/1389971/o_cnblogs_pin.png) no-repeat 9px 0px;
 }
  
@@ -1515,4 +1516,9 @@ div#signature {
     background: url(https://www.cnblogs.com/images/cnblogs_com/enjoy233/1389971/o_user_warning.png) no-repeat bottom 5px right 10px;
     padding-bottom: 30px;
     font-size: 13.5px;
+}
+
+#sideBarMain a:hover {
+     background-color: #00008B !important;
+     border-radius: unset; 
 }
