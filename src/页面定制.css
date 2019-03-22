@@ -748,7 +748,7 @@ code {
  
 /* 普通文字样式 */
 #cnblogs_post_body p {
-	margin: 18px 35px;
+	margin: 5px 0;
 	color: #000;
 	font-family: Georgia,Times New Roman,Times,sans-serif, monospace !important;
 	font-size: 16px;
@@ -1509,4 +1509,10 @@ height: 35px;
 
 .toc > .toc-list > ul > li a {
     border-bottom: none !important;    
+}
+
+div#signature {
+    background: url(https://www.cnblogs.com/images/cnblogs_com/enjoy233/1389971/o_user_warning.png) no-repeat bottom 5px right 10px;
+    padding-bottom: 30px;
+    font-size: 13.5px;
 }
