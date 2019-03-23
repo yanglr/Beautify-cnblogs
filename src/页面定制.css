@@ -1518,7 +1518,24 @@ div#signature {
     font-size: 13.5px;
 }
 
-#sideBarMain a:hover {
+#sideBarMain li a:hover {
      background-color: #00008B !important;
      border-radius: unset; 
+}
+
+#addThis {
+    position: fixed;
+    bottom: 5px;
+    left: 85px;
+    z-index: 101;
+}
+
+.toc-list ul
+{
+    margin-left:30px;
+}
+
+.toc>.toc-list li {
+   list-style-type:disc !important;
+   list-style:disc !important;
 }
