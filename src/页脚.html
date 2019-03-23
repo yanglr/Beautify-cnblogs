@@ -344,7 +344,11 @@
 <!-- Baidu Share END -->
 
 <script src="//files.cnblogs.com/files/enjoy233/tocbot.min-v4.4.2.js"></script>
-<link rel="stylesheet" href="//files.cnblogs.com/files/enjoy233/tocbot-v4.4.2.css">
+<script type="text/javascript">
+    if(document.location.href.indexOf('/p/') > 0 || document.location.href.indexOf('/archive/') > 0 || document.location.href.indexOf('/articles') > 0 || document.location.href.indexOf('/diary/') > 0) {
+        $('head:first').append('<link rel="stylesheet" type="text/css" href="//files.cnblogs.com/files/enjoy233/tocbot-v4.4.2.css" />');
+    }
+</script>
 
 <script>
     if ($(".cnblogs-markdown pre").length > 0) {
@@ -491,3 +495,24 @@
         }
 
 </script>
+
+<div id="addThis">
+<div class="at-share-tbx-element addthis-smartlayers addthis-animated at4-show">
+        <!-- <b>Share this</b> -->
+        <a class="addthis_button_linkedin"></a>
+        <a class="addthis_button_tencentweibo"></a>
+        <a class="addthis_button_wechat"></a>
+        <a class="addthis_button_qzone"></a>
+        <a class="addthis_button_sinaweibo"></a>
+        <a class="addthis_button_tumblr"></a>
+        <a class="addthis_button_exchangle"></a>
+        <a class="addthis_button_onenote"></a>
+        <a class="addthis_button_evernote"></a>
+        <a class="addthis_button_sms"></a>
+        <a class="addthis_button_pocket"></a>
+        <a class="addthis_button_digg"></a>
+        <a class="addthis_button_compact"></a>
+</div>
+</div>
+<script type="text/javascript">var addthis_config = {"data_track_addressbar":false};</script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5c9576e41b0ceff4" async="async"></script>
