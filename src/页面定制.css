@@ -1518,7 +1518,7 @@ div#signature {
     font-size: 13.5px;
 }
 
-#sideBarMain li a:hover {
+#sideBarMain ul li a:hover {
      background-color: #00008B !important;
      border-radius: unset; 
 }
