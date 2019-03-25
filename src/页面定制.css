@@ -736,14 +736,20 @@ code {
 }
  
 /*
-这是我应用在博客园上的Markdown样式.
+下面是我的Markdown样式.
 */ 
- 
+
 /* 文章标题样式(这个不是markdown里的标题) */
 #topics .postTitle a {
     /* color: #169fe6; */
 	font-family: Georgia,Times New Roman,Times,sans-serif, monospace !important;
 	font-weight: bold;
+}
+
+#cnblogs_post_body > div.toc > div > ul > li > ul > li {
+    list-style: circle !important;
+    list-style-type: circle !important;
+    margin-left: 5px;
 }
  
 /* 普通文字样式 */
