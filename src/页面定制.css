@@ -1310,7 +1310,7 @@ display:inline-block将对象呈递为内联对象，
 }
 
 div.asideMdContents p {
-    min-width: 135px;
+    min-width: 150px;
 }
 
 .fa {
