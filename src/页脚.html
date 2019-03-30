@@ -160,8 +160,8 @@
                 function () { });
         });
 
-        if ($(".cnblogs-markdown pre").length == 0) {
-            $.getScript("//files.cnblogs.com/files/enjoy233/nav.my.js");
+        if ($(".cnblogs-markdown").length == 0) {
+            $.getScript("//files.cnblogs.com/files/enjoy233/nav.my.contents.js");
         }
     });
     function addSourceLineNumbers() {
@@ -351,7 +351,7 @@
 </script>
 
 <script>
-    if ($(".cnblogs-markdown pre").length > 0) {
+    if ($(".cnblogs-markdown").length > 0) {
         // content = $('<div class="tocCol"><p>目录</p><p class="js-toc"></p></div>');
         if ($("h1, h2, h3, h4, h5, h6").length > 0)
             $("#home").prepend('<div class="o1" title="显示/隐藏目录">   <i class="fa fa-list-ul" style="font-size: 40px;"></i></div><div class="asideMdContents">  <div class="close">       <div class="x"></div>       <div class="x2"></div>   </div>  <p>目录</p><p class="js-toc"></p> </div>');
