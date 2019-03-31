@@ -351,6 +351,38 @@
 </script>
 
 <script>
+    $('h2,h3,h4,h5,h6').filter('[id]').each(function () {
+        var targetId = $(this).attr('id');
+        
+        if(targetId.indexOf('.') > -1)
+        {
+            $(this).append('<a style="text-decoration: none !important; border-bottom: none !important;" id="anchor_' + $(this).attr('id') + '" href="#'+$(this).attr('id')+'"> <i class="fa fa-link anchor_link" title="右键复制链接" style="color: black !important; font-weight: normal !important; line-height:12px !important; display: initial !important; font-size: 22px; padding: 5px; margin: -2px 0 4px -5px;"></i> </a>');
+        }
+        else
+        { 
+            $(this).append('<i class="fa fa-link anchor_link btn" style="font-weight: normal !important; line-height:12px !important; display: initial !important;" data-clipboard-action="copy" href="#'+ targetId +'" data-clipboard-target="#'+ targetId +'" title="复制链接"></i>');
+        }
+        });
+        
+        var clipboard = new ClipboardJS('.anchor_link', {
+          text: function(trigger) {  // $(trigger) 是copyButton
+            return location.toString().split('#')[0] + $(trigger).attr('data-clipboard-target');  // 将相对地址补充成完整网址
+          }
+        });
+        
+        clipboard.on('success', function(e) {
+            console.info('Action:', e.action);
+            console.info('Text:', e.text);
+            console.info('Trigger:', e.trigger);
+        
+            e.clearSelection();
+        });
+        
+        clipboard.on('error', function(e) {
+            console.info('Action:', e.action);
+            console.info('Trigger:', e.trigger);
+        });
+
     if ($(".cnblogs-markdown").length > 0) {
         // content = $('<div class="tocCol"><p>目录</p><p class="js-toc"></p></div>');
         if ($("h1, h2, h3, h4, h5, h6").length > 0)
