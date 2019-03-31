@@ -205,6 +205,8 @@
             this.target = "_blank";
         });
         $('.toc-list').find('a').attr('target', '_self');
+        $('h1,h2,h3,h4,h5,h6').find('a').attr('target', '_self');
+
         // 本人时显示最近评论
         var follow = $('#profile_block').find('#p_b_follow');
         var block = follow.length >= 1 ? follow[0] : "";
