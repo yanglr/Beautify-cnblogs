@@ -746,7 +746,7 @@ code {
 	font-weight: bold;
 }
 
-#cnblogs_post_body > div.toc > div > ul > li > ul > li {
+#cnblogs_post_body > div.toc > div > ul > li > ul >li {
     list-style: circle !important;
     list-style-type: circle !important;
     margin-left: 5px;
@@ -1544,4 +1544,18 @@ div#signature {
 .toc>.toc-list li {
    list-style-type:disc !important;
    list-style:disc !important;
+}
+
+.anchor_link {
+    opacity: 0.0;
+    -webkit-transition: all 500ms ease-in-out;
+    -moz-transition: all 500ms ease-in-out;
+    -ms-transition: all 500ms ease-in-out;
+    -o-transition: all 500ms ease-in-out;
+    transition: all 500ms ease-in-out;
+    width:40px;
+}
+.anchor_link:hover {
+    opacity: 1.0;
+    /* background-color: none !important; */
 }
