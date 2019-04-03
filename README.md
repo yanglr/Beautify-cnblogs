@@ -92,7 +92,7 @@ BlueSky
 
 登陆后依次点击“我的博客” → “管理” → “设置”，在下拉后找到“博客侧边栏公告”，后方有一个“申请js权限”。
 
-![Apply_js](https://www.cnblogs.com/images/cnblogs_com/enjoy233/1389971/o_Apply-js-with-Content.jpg)
+![Apply_js](https://raw.githubusercontent.com/yanglr/Beautify-cnblogs/master/images/Apply-js-with-Content.jpg)
 
 或者也可进博客园园子页面(<https://home.cnblogs.com/feed/all/>)，发状态@博客园团队，申请开通js权限。
 
