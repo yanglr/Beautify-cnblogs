@@ -451,7 +451,6 @@ code {
 }
 
 #div_digg {
-	bottom: 25px;
 	right: 65px;
 	padding: 8px 8px 8px 10px;
 	border: 2px solid #04A292;
@@ -675,7 +674,7 @@ code {
 /*推荐悬浮*/
 #div_digg {
 	position: fixed;
-	bottom: 20px;
+	bottom: 5px !important;
 	right: 100px;
 	padding: 5px;
 	width: 48px;
@@ -926,7 +925,6 @@ em {
 #div_digg {
     width: 110px !important;
     border: 3px solid #55895b !important;
-    bottom: 95px;
 }
 
 .postTitle a:link, .postTitle a:visited, .postTitle a:active {
@@ -1301,7 +1299,7 @@ display:inline-block将对象呈递为内联对象，
 .asideMdContents {
     /* width: 20vw; */
     min-height: 22%;
-    max-height: 40vh;
+    max-height: 35vh;
     overflow-x: hidden;
     overflow-y: scroll;
     font-family: Georgia, 'Microsoft Yahei' !important;
