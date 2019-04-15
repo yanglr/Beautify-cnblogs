@@ -451,6 +451,7 @@ code {
 }
 
 #div_digg {
+        font-weight: bold;
 	right: 65px;
 	padding: 8px 8px 8px 10px;
 	border: 2px solid #04A292;
@@ -501,8 +502,9 @@ code {
 	border: none !important;
 }
 
-#div_digg .diggnum {
-	font-weight: bold;
+.diggnum {
+    font-weight: bold;
+    margin-left: 45px !important;
 }
 
 .diggword {
@@ -674,7 +676,7 @@ code {
 /*推荐悬浮*/
 #div_digg {
 	position: fixed;
-	bottom: 5px !important;
+	bottom: 45px !important;
 	right: 100px;
 	padding: 5px;
 	width: 48px;
@@ -730,8 +732,8 @@ code {
 	margin-left: 38px !important;
         background: url(//images.cnblogs.com/cnblogs_com/enjoy233/1389971/o_vote_fb.png) no-repeat;
         width: 33px !important;
-        height: 12px !important;
-        padding-top: 30px !important;
+        height: 25px !important;
+        /* padding-top: 30px !important;  */
 }
  
 /*
