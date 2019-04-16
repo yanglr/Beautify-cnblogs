@@ -1295,7 +1295,7 @@ display:inline-block将对象呈递为内联对象，
 .asideMdContents {
     /* width: 20vw; */
     min-height: 22%;
-    max-height: 35vh;
+    max-height: 32vh;
     overflow-x: hidden;
     overflow-y: scroll;
     font-family: Georgia, 'Microsoft Yahei' !important;
@@ -1565,4 +1565,8 @@ a.chatPriv {
     -o-transition: background 0s;
     -ms-transition: background 0s;
     transition: background 0s;
+}
+
+a.chatPriv:hover {
+    cursor: pointer;
 }
