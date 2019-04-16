@@ -817,12 +817,6 @@ em {
 	list-style-type: decimal;
 }
  
-/* 超链接 */
-#cnblogs_post_body a:link {
-	text-decoration: none;
-	color: #002C99;
-}
- 
 /* 引用背景 */
 #topics .postBody blockquote {
 	background: #fff3d4;
@@ -1496,11 +1490,11 @@ height: 35px;
     border-bottom: none !important;
 }
 
-#cnblogs_post_body a:link {
+#cnblogs_post_body > p a:link {
     border-bottom: 2px solid #08c !important;
 }
 
-#cnblogs_post_body a:hover {
+#cnblogs_post_body > p a:hover {
     background-color: #08c !important;
     border-radius: unset; 
 }
@@ -1558,4 +1552,17 @@ div#signature {
 .anchor_link:hover {
     opacity: 1.0;
     /* background-color: none !important; */
+}
+
+a.chatPriv {
+    display: inline-block;
+    width: 82px;
+    height: 82px;
+    background: url(//www.cnblogs.com/images/cnblogs_com/enjoy233/1389971/o_zhihu_sixinLogo.png) no-repeat;
+    _background: url(//www.cnblogs.com/images/cnblogs_com/enjoy233/1389971/o_zhihu_sixinLogo.png) no-repeat;
+    -webkit-transition: background 0s;
+    -moz-transition: background 0s;
+    -o-transition: background 0s;
+    -ms-transition: background 0s;
+    transition: background 0s;
 }
