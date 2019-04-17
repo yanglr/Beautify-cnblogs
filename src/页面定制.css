@@ -504,7 +504,7 @@ code {
 
 .diggnum {
     font-weight: bold;
-    margin-left: 45px !important;
+    margin-right: -60px !important;
 }
 
 .diggword {
@@ -1295,7 +1295,7 @@ display:inline-block将对象呈递为内联对象，
 .asideMdContents {
     /* width: 20vw; */
     min-height: 22%;
-    max-height: 32vh;
+    max-height: 35vh;
     overflow-x: hidden;
     overflow-y: scroll;
     font-family: Georgia, 'Microsoft Yahei' !important;
