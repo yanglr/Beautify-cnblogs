@@ -1513,7 +1513,7 @@ height: 35px;
 }
 
 div#signature {
-    background: url(https://www.cnblogs.com/images/cnblogs_com/enjoy233/1389971/o_user_warning.png) no-repeat bottom 5px right 10px;
+    background: url(//www.cnblogs.com/images/cnblogs_com/enjoy233/1389971/o_user_warning.png) no-repeat bottom 5px right 10px;
     padding-bottom: 30px;
     font-size: 13.5px;
 }
@@ -1558,8 +1558,8 @@ a.chatPriv {
     display: inline-block;
     width: 82px;
     height: 82px;
-    background: url(//www.cnblogs.com/images/cnblogs_com/enjoy233/1389971/o_zhihu_sixinLogo.png) no-repeat;
-    _background: url(//www.cnblogs.com/images/cnblogs_com/enjoy233/1389971/o_zhihu_sixinLogo.png) no-repeat;
+    background: url(//www.cnblogs.com/images/cnblogs_com/enjoy233/1389971/o_zhihu_sixin_icon.png) no-repeat;
+    _background: url(//www.cnblogs.com/images/cnblogs_com/enjoy233/1389971/o_zhihu_sixin_icon.png) no-repeat;
     -webkit-transition: background 0s;
     -moz-transition: background 0s;
     -o-transition: background 0s;
