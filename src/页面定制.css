@@ -876,7 +876,6 @@ em {
     border: 2px solid #dedede;
     border-radius: 8px;
     padding: 7px;
-    max-width: 100%;
     display: block;
     -moz-box-shadow: 2px 2px 4px #dedede;
     -webkit-box-shadow: 2px 2px 5px #dedede;
@@ -893,6 +892,10 @@ em {
 }
 .post img:hover {
     transform: scale(1.3);
+}
+
+.cnblogs-post-body img {
+    max-width: 900px !important;
 }
 
 .cnblogs-post-body img:hover {
