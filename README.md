@@ -28,8 +28,9 @@
   * [复制文字时自动加版权](#复制文字时自动加版权)
   * [隐藏博文右下角的"反对"](#隐藏博文右下角的反对)
 
-<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Contents generated with markdown-toc, modified for Chinese</a></i></small>
+<br/>
 
+欢迎访问作者的个人网站: [极客中心](https://www.geekzl.com)
 
 # 前端小白也能快速学会的博客园博客美化全攻略
 
